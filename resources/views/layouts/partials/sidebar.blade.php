@@ -66,6 +66,38 @@
             Profile Demo
         </x-sidebar.link>
 
+        {{-- Timeline Link --}}
+        <x-sidebar.link href="{{ route('timeline.demo') }}" :active="request()->routeIs('timeline.*')">
+            <x-slot:icon>
+                <x-sidebar.icon name="ui" />
+            </x-slot:icon>
+            Timeline
+        </x-sidebar.link>
+
+        {{-- Icons Link --}}
+        <x-sidebar.link href="{{ route('icons.demo') }}" :active="request()->routeIs('icons.*')">
+            <x-slot:icon>
+                <x-sidebar.icon name="ui" />
+            </x-slot:icon>
+            Icons
+        </x-sidebar.link>
+
+        {{-- Comments Link --}}
+        <x-sidebar.link href="{{ route('comments.demo') }}" :active="request()->routeIs('comments.*')">
+            <x-slot:icon>
+                <x-sidebar.icon name="chat" />
+            </x-slot:icon>
+            Comments
+        </x-sidebar.link>
+
+        {{-- File Manager Link --}}
+        <x-sidebar.link href="{{ route('files.demo') }}" :active="request()->routeIs('files.*')">
+            <x-slot:icon>
+                <x-sidebar.icon name="folder" />
+            </x-slot:icon>
+            File Manager
+        </x-sidebar.link>
+
         {{-- Dropdown Menu --}}
         <x-sidebar.dropdown 
             label="Task" 
@@ -161,7 +193,7 @@
                 <x-sidebar.icon name="ticket" />
             </x-slot:icon>
             <x-slot:badge>
-                <x-sidebar.badge>NEW</x-sidebar.badge>
+                <x-sidebar.badge variant="hot">HOT</x-sidebar.badge>
             </x-slot:badge>
             Support Ticket
         </x-sidebar.link>
@@ -186,18 +218,43 @@
             Charts
         </x-sidebar.link>
 
-        <x-sidebar.dropdown label="UI Elements">
+        <x-sidebar.link href="{{ route('usage-demo') }}" :active="request()->routeIs('usage-demo')">
             <x-slot:icon>
                 <x-sidebar.icon name="ui" />
             </x-slot:icon>
-            <x-sidebar.dropdown-item href="#">
+            Usage Component
+        </x-sidebar.link>
+
+        <x-sidebar.dropdown 
+            label="UI Elements" 
+            :active="request()->routeIs('buttons.*') || request()->routeIs('cards.*') || request()->routeIs('modals.*') || request()->routeIs('misc.*') || request()->routeIs('tabs.*') || request()->routeIs('accordion.*') || request()->routeIs('toast.*') || request()->routeIs('typography.*')"
+        >
+            <x-slot:icon>
+                <x-sidebar.icon name="ui" />
+            </x-slot:icon>
+            <x-sidebar.dropdown-item href="{{ route('buttons.demo') }}" :active="request()->routeIs('buttons.*')">
                 Buttons
             </x-sidebar.dropdown-item>
-            <x-sidebar.dropdown-item href="#">
+            <x-sidebar.dropdown-item href="{{ route('cards.demo') }}" :active="request()->routeIs('cards.*')">
                 Cards
             </x-sidebar.dropdown-item>
-            <x-sidebar.dropdown-item href="#">
+            <x-sidebar.dropdown-item href="{{ route('modals.demo') }}" :active="request()->routeIs('modals.*')">
                 Modals
+            </x-sidebar.dropdown-item>
+            <x-sidebar.dropdown-item href="{{ route('misc.demo') }}" :active="request()->routeIs('misc.*')">
+                Misc Components
+            </x-sidebar.dropdown-item>
+            <x-sidebar.dropdown-item href="{{ route('tabs.demo') }}" :active="request()->routeIs('tabs.*')">
+                Tabs
+            </x-sidebar.dropdown-item>
+            <x-sidebar.dropdown-item href="{{ route('accordion.demo') }}" :active="request()->routeIs('accordion.*')">
+                Accordion
+            </x-sidebar.dropdown-item>
+            <x-sidebar.dropdown-item href="{{ route('toast.demo') }}" :active="request()->routeIs('toast.*')">
+                Toast
+            </x-sidebar.dropdown-item>
+            <x-sidebar.dropdown-item href="{{ route('typography.demo') }}" :active="request()->routeIs('typography.*')">
+                Typography
             </x-sidebar.dropdown-item>
         </x-sidebar.dropdown>
 

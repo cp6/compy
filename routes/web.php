@@ -135,6 +135,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/profile/demo', function () {
         return view('profile-demo');
     })->name('profile.demo');
+    
+    Route::get('/typography/demo', function () {
+        return view('typography-demo');
+    })->name('typography.demo');
 });
 
 Route::middleware('auth')->group(function () {

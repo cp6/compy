@@ -587,6 +587,34 @@
                             </div>
                         </x-card>
                     </a>
+
+                    <!-- Typography Demo -->
+                    <a href="{{ route('typography.demo') }}" class="group">
+                        <x-card.card hover variant="gradient" class="h-full transition-all duration-300 group-hover:scale-[1.02]">
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0">
+                                    <div class="w-12 h-12 rounded-xl bg-dodger-blue-100 dark:bg-dodger-blue-900/30 flex items-center justify-center">
+                                        <svg class="w-6 h-6 text-dodger-blue-600 dark:text-dodger-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 group-hover:text-dodger-blue-600 dark:group-hover:text-dodger-blue-400 transition-colors">
+                                        Typography Demo
+                                    </h3>
+                                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                                        Explore typography styles, headings, paragraphs, lists, and text utilities
+                                    </p>
+                                </div>
+                                <div class="flex-shrink-0">
+                                    <svg class="w-5 h-5 text-gray-400 group-hover:text-dodger-blue-600 dark:group-hover:text-dodger-blue-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </x-card>
+                    </a>
                 </div>
             </div>
 </x-app-layout>

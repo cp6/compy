@@ -84,6 +84,7 @@ npm run dev          # Terminal 2
 - **Calendar**: Full calendar system with month, week, and day views with event management
 - **Tabs & Accordions**: Content organization
 - **Lists**: Various list styles with avatars, badges, and actions
+- **Typography**: Comprehensive typography system with headings, paragraphs, lists, quotes, and text utilities
 - **Spinners & Loaders**: Multiple spinner variants (default, gradient, pulse) with various sizes and loading text support
 
 ### Dark Mode Support
@@ -365,6 +366,7 @@ Component demonstration pages located in `resources/views/`:
 - `modals/demo.blade.php` - Modal components demo (Route: `/modals/demo`)
 - `tables/demo.blade.php` - Table components demo (Route: `/tables/demo`)
 - `misc-demo.blade.php` - Miscellaneous components demo including spinners/loaders, badges, alerts, progress bars, and more (Route: `/misc/demo`)
+- `typography-demo.blade.php` - Typography demo showcasing headings, paragraphs, lists, quotes, text utilities, and responsive typography (Route: `/typography/demo`)
 - `premium-demo.blade.php` - Premium components demo (Route: `/premium-demo`)
 - `usage-demo.blade.php` - Component usage examples (Route: `/usage-demo`)
 
@@ -456,6 +458,7 @@ Email templates located in `resources/views/emails/`:
 - `GET /files/demo` - Files demo
 - `GET /modals/demo` - Modals demo
 - `GET /misc/demo` - Miscellaneous demo
+- `GET /typography/demo` - Typography demo
 
 ### Development Routes (Local/Development only)
 - `GET /email-preview` - Email preview index
@@ -523,6 +526,7 @@ After logging in, you can access component demos from the sidebar:
 - **E-store Demo**: `/estore/demo` - E-commerce store with product cards, grids, ratings, badges, and pricing
 - **Charts Demo**: `/charts/demo` - Interactive charts and data visualization with Chart.js including line, bar, pie, doughnut, radar, polar area, scatter, and bubble charts
 - **Misc Demo**: `/misc/demo` - Spinners/loaders, badges, alerts, progress bars, status indicators, and more
+- **Typography Demo**: `/typography/demo` - Typography showcase with headings, paragraphs, lists, quotes, text utilities, and responsive typography
 - And many more...
 
 ### Using Components in Your Views
