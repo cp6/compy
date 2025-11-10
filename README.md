@@ -5,16 +5,16 @@
 </p>
 
 <p align="center">
-  <a href="#-quick-start">Quick Start</a> •
-  <a href="#-features">Features</a> •
-  <a href="#-documentation">Documentation</a> •
-  <a href="#-component-library">Components</a> •
-  <a href="#-requirements">Requirements</a>
+  <a href="#quick-start">Quick Start</a> •
+  <a href="#features">Features</a> •
+  <a href="#documentation">Documentation</a> •
+  <a href="#component-library">Components</a> •
+  <a href="#requirements">Requirements</a>
 </p>
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 Get up and running in under 2 minutes:
 
@@ -57,15 +57,15 @@ npm run dev          # Terminal 2
 
 ---
 
-## ✨ Features
+## Features
 
-### 🔐 Complete Authentication System
+### Complete Authentication System
 - User registration and login (Laravel Breeze)
 - Password reset with email notifications
 - Email verification
 - Profile management (update info, change password, delete account)
 
-### 🎨 100+ Pre-built Components
+### 100+ Pre-built Components
 - **Alerts & Notifications**: Success, error, warning, info alerts + toast notifications
 - **Buttons**: Primary, secondary, danger variants with groups and dropdowns
 - **Cards**: Image cards, profile cards, action cards, and more
@@ -79,13 +79,13 @@ npm run dev          # Terminal 2
 - **Tabs & Accordions**: Content organization
 - **Lists**: Various list styles with avatars, badges, and actions
 
-### 🌙 Dark Mode Support
+### Dark Mode Support
 - Automatic system preference detection
 - Manual toggle switch
 - Persistent user preference
 - Fully styled dark mode for all components
 
-### 🛠️ Developer Experience
+### Developer Experience
 - **Laravel Pail**: Real-time log monitoring
 - **Pest Testing**: Modern testing framework
 - **Laravel Pint**: Automatic code styling
@@ -93,12 +93,12 @@ npm run dev          # Terminal 2
 - **Concurrently Scripts**: Run all dev services with one command
 - **Email Preview**: Preview emails in browser (dev only)
 
-### 📱 Responsive Design
+### Responsive Design
 - Mobile-first approach
 - Responsive layouts for all screen sizes
 - Touch-friendly navigation
 
-### 🎯 Production Ready
+### Production Ready
 - Optimized asset building
 - Database migrations
 - Proper error pages (401, 403, 404, 419, 500, 503)
@@ -107,18 +107,18 @@ npm run dev          # Terminal 2
 
 ---
 
-## 📚 Documentation
+## Documentation
 
 Comprehensive guides to help you get started and customize your application:
 
 - **[Installation Guide](INSTALLATION.md)** - Detailed setup instructions, deployment, troubleshooting
 - **[Customization Guide](CUSTOMIZATION.md)** - Branding, colors, layouts, adding features
 - **[Starter Kit Guide](STARTER_KIT_GUIDE.md)** - How to use this as a template for new projects
-- **[Component Library](#-component-library)** - Full list of available components (below)
+  - **[Component Library](#component-library)** - Full list of available components (below)
 
 ---
 
-## 📦 Requirements
+## Requirements
 
 - **PHP**: 8.3 or higher
 - **Composer**: Latest version
@@ -128,7 +128,7 @@ Comprehensive guides to help you get started and customize your application:
 
 ---
 
-## 🎨 Component Library
+## Component Library
 
 This starter kit includes a comprehensive component library built with Tailwind CSS and Alpine.js. All components support dark mode and are fully customizable.
 
@@ -400,7 +400,7 @@ Email templates located in `resources/views/emails/`:
 
 ---
 
-## 🏗️ Architecture & Best Practices
+## Architecture & Best Practices
 
 This starter kit follows Laravel and industry best practices:
 
@@ -430,7 +430,7 @@ This starter kit follows Laravel and industry best practices:
 
 ---
 
-## 🚦 Usage
+## Usage
 
 ### Accessing Demo Pages
 
@@ -509,7 +509,7 @@ All components are located in `resources/views/components/`. Use them in your Bl
 
 ---
 
-## 🧪 Testing
+## Testing
 
 Run the test suite:
 
@@ -529,7 +529,7 @@ composer test
 
 ---
 
-## 🎨 Customization Quick Tips
+## Customization Quick Tips
 
 ### Change Application Name
 Edit `.env`:
@@ -553,7 +553,7 @@ For detailed customization instructions, see [CUSTOMIZATION.md](CUSTOMIZATION.md
 
 ---
 
-## 🚀 Deployment
+## Deployment
 
 ### Production Checklist
 
@@ -584,7 +584,7 @@ For detailed deployment instructions, see [INSTALLATION.md](INSTALLATION.md).
 
 ---
 
-## 📝 Creating Your First Feature
+## Creating Your First Feature
 
 Example: Adding a "Tasks" feature
 
@@ -607,19 +607,19 @@ See [CUSTOMIZATION.md](CUSTOMIZATION.md) for a complete CRUD example.
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! If you find a bug or have a feature request, please open an issue.
 
 ---
 
-## 📄 License
+## License
 
 This starter kit is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
 ---
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 Built with:
 - [Laravel 12](https://laravel.com) - The PHP Framework for Web Artisans
@@ -629,7 +629,7 @@ Built with:
 
 ---
 
-## 📞 Support
+## Support
 
 - **Documentation**: See guides in this repository
 - **Laravel Docs**: https://laravel.com/docs/12.x
@@ -638,4 +638,4 @@ Built with:
 
 ---
 
-<p align="center">Made with ❤️ for the Laravel community</p>
+<p align="center">Made with love for the Laravel community</p>
