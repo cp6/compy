@@ -315,6 +315,11 @@ Reusable Blade components located in `resources/views/components/`:
 - `table/row.blade.php` - Table row
 - `table/table.blade.php` - Base table component
 
+#### Pagination Components
+- `pagination/text.blade.php` - Pagination with text-only Previous/Next buttons
+- `pagination/text-icon.blade.php` - Pagination with text and icon buttons
+- `pagination/icon.blade.php` - Pagination with icon-only Previous/Next buttons
+
 #### Landing Page Components
 - `landing/navbar.blade.php` - Sticky navigation bar with logo, menu links, theme switcher, and CTA button
 - `landing/hero.blade.php` - Hero section with title, subtitle, social proof, CTAs, and product showcase
@@ -334,7 +339,7 @@ Reusable Blade components located in `resources/views/components/`:
 - `application-logo.blade.php` - Application logo
 - `auth-session-status.blade.php` - Authentication session status
 - `breadcrumb.blade.php` - Breadcrumb navigation
-- `pagination.blade.php` - Pagination component
+- `pagination.blade.php` - Pagination component (legacy)
 - `spinner.blade.php` - Loading spinner
 - `theme-switcher.blade.php` - Dark/light theme switcher
 - `usage.blade.php` - Component usage documentation
@@ -604,6 +609,40 @@ All components are located in `resources/views/components/`. Use them in your Bl
         @endforeach
     </x-table.body>
 </x-table.table>
+
+{{-- Pagination Components --}}
+{{-- Pagination with Text --}}
+<div x-data="{ currentPage: 1, lastPage: 10 }">
+    <x-pagination.text 
+        :currentPage="currentPage" 
+        :lastPage="lastPage"
+        onPrevious="currentPage--"
+        onNext="currentPage++"
+        onPage="(page) => currentPage = page"
+    />
+</div>
+
+{{-- Pagination with Text and Icon --}}
+<div x-data="{ currentPage: 1, lastPage: 10 }">
+    <x-pagination.text-icon 
+        :currentPage="currentPage" 
+        :lastPage="lastPage"
+        onPrevious="currentPage--"
+        onNext="currentPage++"
+        onPage="(page) => currentPage = page"
+    />
+</div>
+
+{{-- Pagination with Icon --}}
+<div x-data="{ currentPage: 1, lastPage: 10 }">
+    <x-pagination.icon 
+        :currentPage="currentPage" 
+        :lastPage="lastPage"
+        onPrevious="currentPage--"
+        onNext="currentPage++"
+        onPage="(page) => currentPage = page"
+    />
+</div>
 
 {{-- Chat Components --}}
 <x-chat.container :messages="$messages" height="h-[600px]">

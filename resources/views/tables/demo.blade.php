@@ -892,4 +892,61 @@
                 </div>
             </template>
         </div>
+
+            <!-- Pagination Components -->
+            <x-card.card variant="gradient">
+                <x-slot name="header">
+                    <h3 class="text-lg sm:text-xl font-semibold text-gray-900 dark:text-gray-100">
+                        Pagination Components
+                    </h3>
+                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                        Three pagination component variations with different button styles
+                    </p>
+                </x-slot>
+
+                <div class="space-y-8">
+                    <!-- Pagination with Text -->
+                    <div x-data="{ paginationPage1: 1, lastPage: 10 }">
+                        <h4 class="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-4">
+                            Pagination with Text
+                        </h4>
+                        <x-pagination.text 
+                            currentPage="1" 
+                            lastPage="10"
+                            onPrevious="paginationPage1--"
+                            onNext="paginationPage1++"
+                            onPage="(page) => paginationPage1 = page"
+                        />
+                    </div>
+
+                    <!-- Pagination with Text and Icon -->
+                    <div x-data="{ paginationPage2: 1, lastPage: 10 }">
+                        <h4 class="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-4">
+                            Pagination with Text and Icon
+                        </h4>
+                        <x-pagination.text-icon 
+                            currentPage="1" 
+                            lastPage="10"
+                            onPrevious="paginationPage2--"
+                            onNext="paginationPage2++"
+                            onPage="(page) => paginationPage2 = page"
+                        />
+                    </div>
+
+                    <!-- Pagination with Icon -->
+                    <div x-data="{ paginationPage3: 1, lastPage: 10 }">
+                        <h4 class="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-4">
+                            Pagination with Icon
+                        </h4>
+                        <x-pagination.icon 
+                            currentPage="1" 
+                            lastPage="10"
+                            onPrevious="paginationPage3--"
+                            onNext="paginationPage3++"
+                            onPage="(page) => paginationPage3 = page"
+                        />
+                    </div>
+                </div>
+            </x-card>
+        </div>
 </x-app-layout>
