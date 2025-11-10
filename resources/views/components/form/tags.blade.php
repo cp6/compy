@@ -103,7 +103,7 @@
 
     <div class="relative">
         <div 
-            class="min-h-[3rem] w-full px-3 py-2 rounded-xl border transition-all duration-200 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-0 {{ $hasError ? 'border-red-500 dark:border-red-500 bg-red-50 dark:bg-red-900/20 focus-within:ring-red-500 dark:focus-within:ring-red-400' : 'border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 focus-within:border-emerald-500 dark:focus-within:border-emerald-400 focus-within:ring-emerald-500 dark:focus-within:ring-emerald-400' }} {{ $disabled ? 'opacity-50 cursor-not-allowed' : '' }}"
+            class="min-h-[3rem] w-full px-3 py-2 rounded-lg border transition-all duration-200 ease-out focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-0 {{ $hasError ? 'border-red-500 dark:border-red-500 bg-red-50 dark:bg-red-900/20 focus-within:ring-red-500 dark:focus-within:ring-red-400 focus-within:border-red-500 dark:focus-within:border-red-500' : 'border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 focus-within:border-dodger-blue-500 dark:focus-within:border-dodger-blue-400 focus-within:ring-dodger-blue-500 dark:focus-within:ring-dodger-blue-400 shadow-sm focus-within:shadow-md' }} {{ $disabled ? 'opacity-50 cursor-not-allowed' : '' }}"
             @click.away="showSuggestions = false; isFocused = false"
         >
             <div class="flex flex-wrap gap-2 items-center">
@@ -154,7 +154,7 @@
             x-transition:leave="transition ease-in duration-150"
             x-transition:leave-start="opacity-100 transform scale-100"
             x-transition:leave-end="opacity-0 transform scale-95"
-            class="absolute z-50 w-full mt-1 bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-600 rounded-xl shadow-lg max-h-60 overflow-auto"
+            class="absolute z-50 w-full mt-1 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg shadow-lg max-h-60 overflow-auto"
             style="display: none;"
         >
             <template x-for="(suggestion, index) in filteredSuggestions" :key="index">
