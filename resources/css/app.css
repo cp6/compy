@@ -1,0 +1,53 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+    
+    --color-dodger-blue-50: #eff9ff;
+    --color-dodger-blue-100: #dbf1fe;
+    --color-dodger-blue-200: #bfe8fe;
+    --color-dodger-blue-300: #93dcfd;
+    --color-dodger-blue-400: #60c6fa;
+    --color-dodger-blue-500: #3baaf6;
+    --color-dodger-blue-600: #3093ec;
+    --color-dodger-blue-700: #1d76d8;
+    --color-dodger-blue-800: #1e5faf;
+    --color-dodger-blue-900: #1e518a;
+    --color-dodger-blue-950: #173254;
+}
+
+/* Alpine.js x-cloak - hide elements until Alpine initializes */
+[x-cloak] {
+    display: none !important;
+}
+
+/* Prevent horizontal overflow */
+html {
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+
+body {
+    overflow-x: hidden;
+    max-width: 100%;
+    position: relative;
+}
+
+/* Ensure main layout flex containers can shrink */
+.min-h-screen.flex {
+    min-width: 0;
+}
+
+/* Prevent content from overflowing */
+img, video, iframe {
+    max-width: 100%;
+    height: auto;
+}
