@@ -22,13 +22,13 @@
     };
     
     $shadowClasses = match($variant) {
-        'gradient' => 'shadow-2xl shadow-gray-200/50 dark:shadow-gray-900/50',
-        'glass' => 'shadow-xl shadow-gray-200/20 dark:shadow-gray-900/30',
-        default => 'shadow-xl shadow-gray-200/50 dark:shadow-gray-900/30',
+        'gradient' => 'shadow-lg shadow-gray-200/40 dark:shadow-gray-900/60',
+        'glass' => 'shadow-xl shadow-gray-200/30 dark:shadow-gray-900/40',
+        default => 'shadow-md shadow-gray-200/30 dark:shadow-gray-900/50',
     };
     
-    $hoverShadowClasses = $hover ? ' hover:shadow-2xl hover:shadow-gray-300/60 dark:hover:shadow-gray-900/50 hover:scale-[1.02]' : '';
-    $cardClasses = $baseClasses . ' overflow-hidden rounded-2xl border border-gray-200/60 dark:border-gray-700/60 transition-all duration-500 ease-out ' . $shadowClasses . $hoverShadowClasses;
+    $hoverShadowClasses = $hover ? ' hover:shadow-xl hover:shadow-gray-300/50 dark:hover:shadow-gray-900/70 hover:-translate-y-0.5 transition-all duration-300 ease-out' : 'transition-all duration-300 ease-out';
+    $cardClasses = $baseClasses . ' overflow-hidden rounded-xl border border-gray-200/60 dark:border-gray-700/60 ' . $shadowClasses . ' ' . $hoverShadowClasses;
     
     // Rarity color mapping
     $rarityColors = [
@@ -95,7 +95,7 @@
     </div>
     
     <!-- Content Section -->
-    <div class="p-4 sm:p-6">
+    <div class="p-5 sm:p-6">
         <!-- Weapon and Skin Name -->
         <div class="mb-3">
             <h3 class="text-lg font-bold text-gray-900 dark:text-gray-100">
@@ -117,28 +117,28 @@
         <div class="space-y-2 mb-4">
             @if($condition)
                 <div class="flex items-center justify-between text-sm">
-                    <span class="text-gray-600 dark:text-gray-400">Condition:</span>
+                    <span class="text-gray-700 dark:text-gray-300">Condition:</span>
                     <span class="font-semibold {{ $conditionColor }}">{{ $condition }}</span>
                 </div>
             @endif
             
             @if($float !== null)
                 <div class="flex items-center justify-between text-sm">
-                    <span class="text-gray-600 dark:text-gray-400">Float Value:</span>
+                    <span class="text-gray-700 dark:text-gray-300">Float Value:</span>
                     <span class="font-mono font-semibold text-gray-900 dark:text-gray-100">{{ number_format($float, 4) }}</span>
                 </div>
             @endif
             
             @if($pattern !== null)
                 <div class="flex items-center justify-between text-sm">
-                    <span class="text-gray-600 dark:text-gray-400">Pattern:</span>
+                    <span class="text-gray-700 dark:text-gray-300">Pattern:</span>
                     <span class="font-mono font-semibold text-gray-900 dark:text-gray-100">#{{ $pattern }}</span>
                 </div>
             @endif
             
             @if($stickerCount > 0)
                 <div class="flex items-center justify-between text-sm">
-                    <span class="text-gray-600 dark:text-gray-400">Stickers:</span>
+                    <span class="text-gray-700 dark:text-gray-300">Stickers:</span>
                     <span class="font-semibold text-gray-900 dark:text-gray-100">{{ $stickerCount }} Applied</span>
                 </div>
             @endif
@@ -148,7 +148,7 @@
         @if($price !== null)
             <div class="pt-4 border-t border-gray-200 dark:border-gray-700">
                 <div class="flex items-center justify-between">
-                    <span class="text-sm text-gray-600 dark:text-gray-400">Price:</span>
+                    <span class="text-sm text-gray-700 dark:text-gray-300">Price:</span>
                     <span class="text-xl font-bold text-gray-900 dark:text-gray-100">${{ number_format($price, 2) }}</span>
                 </div>
             </div>

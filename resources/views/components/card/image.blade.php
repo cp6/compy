@@ -72,7 +72,7 @@
                     <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">{{ $title }}</h3>
                 @endif
                 @if(!$overlay && $subtitle)
-                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">{{ $subtitle }}</p>
+                    <p class="text-sm text-gray-700 dark:text-gray-300 mb-3">{{ $subtitle }}</p>
                 @endif
                 @if($description)
                     <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">{{ $description }}</p>
@@ -163,7 +163,7 @@
                 <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">{{ $title }}</h3>
             @endif
             @if(!$overlay && $subtitle)
-                <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">{{ $subtitle }}</p>
+                <p class="text-sm text-gray-700 dark:text-gray-300 mb-3">{{ $subtitle }}</p>
             @endif
             @if($description)
                 <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">{{ $description }}</p>

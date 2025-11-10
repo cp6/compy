@@ -24,7 +24,7 @@
     $shadowClasses = match($variant) {
         'gradient' => 'shadow-lg shadow-gray-200/40 dark:shadow-gray-900/60',
         'glass' => 'shadow-xl shadow-gray-200/30 dark:shadow-gray-900/40',
-        'accent' => 'shadow-lg shadow-gray-200/40 dark:shadow-gray-900/60',
+        'accent' => 'shadow-md shadow-gray-200/30 dark:shadow-gray-900/50',
         default => 'shadow-md shadow-gray-200/30 dark:shadow-gray-900/50',
     };
     
@@ -62,7 +62,7 @@
         </div>
     @endif
 
-    <div class="p-5 sm:p-6 md:p-7 text-gray-700 dark:text-gray-300 leading-relaxed text-sm sm:text-base relative z-0">
+    <div class="p-5 sm:p-6 text-gray-700 dark:text-gray-300 leading-relaxed text-sm sm:text-base relative z-0">
         {{ $slot }}
     </div>
 </div>

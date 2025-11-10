@@ -41,7 +41,7 @@
 @endphp
 
 <div {{ $attributes->merge(['class' => $cardClasses]) }}>
-    <div class="p-6 sm:p-7 text-center">
+    <div class="p-5 sm:p-6 text-center">
         <!-- Avatar -->
         <div class="flex justify-center mb-5">
             @if($avatar)
@@ -82,7 +82,7 @@
 
         <!-- Bio -->
         @if($bio)
-            <p class="text-sm text-gray-600 dark:text-gray-400 mb-4 max-w-md mx-auto">
+            <p class="text-sm text-gray-700 dark:text-gray-300 mb-4 max-w-md mx-auto">
                 {{ $bio }}
             </p>
         @endif
@@ -131,7 +131,7 @@
 
         <!-- Slot Content -->
         @if($slot->isNotEmpty())
-            <div class="mt-4 text-gray-600 dark:text-gray-400">
+            <div class="mt-4 text-gray-700 dark:text-gray-300">
                 {{ $slot }}
             </div>
         @endif
