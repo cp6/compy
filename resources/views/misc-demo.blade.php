@@ -363,6 +363,85 @@
             </div>
         </section>
 
+        <!-- Spinner Component Demo -->
+        <section>
+            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-4">Spinner Component</h2>
+            <div class="space-y-8">
+                {{-- Sizes --}}
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">Sizes</h3>
+                    <div class="flex items-center gap-8 flex-wrap">
+                        <div class="flex flex-col items-center gap-2">
+                            <x-spinner size="sm" />
+                            <span class="text-xs text-gray-600 dark:text-gray-400">Small</span>
+                        </div>
+                        <div class="flex flex-col items-center gap-2">
+                            <x-spinner size="md" />
+                            <span class="text-xs text-gray-600 dark:text-gray-400">Medium</span>
+                        </div>
+                        <div class="flex flex-col items-center gap-2">
+                            <x-spinner size="lg" />
+                            <span class="text-xs text-gray-600 dark:text-gray-400">Large</span>
+                        </div>
+                        <div class="flex flex-col items-center gap-2">
+                            <x-spinner size="xl" />
+                            <span class="text-xs text-gray-600 dark:text-gray-400">Extra Large</span>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Variants --}}
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">Variants</h3>
+                    <div class="flex items-center gap-8 flex-wrap">
+                        <div class="flex flex-col items-center gap-2">
+                            <x-spinner variant="default" size="lg" />
+                            <span class="text-xs text-gray-600 dark:text-gray-400">Default</span>
+                        </div>
+                        <div class="flex flex-col items-center gap-2">
+                            <x-spinner variant="gradient" size="lg" />
+                            <span class="text-xs text-gray-600 dark:text-gray-400">Gradient</span>
+                        </div>
+                        <div class="flex flex-col items-center gap-2">
+                            <x-spinner variant="pulse" size="lg" />
+                            <span class="text-xs text-gray-600 dark:text-gray-400">Pulse</span>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- With Text --}}
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">With Loading Text</h3>
+                    <div class="flex items-center gap-8 flex-wrap">
+                        <x-spinner size="md" text="Loading..." />
+                        <x-spinner size="lg" variant="gradient" text="Please wait..." />
+                        <x-spinner size="xl" variant="pulse" text="Processing..." />
+                    </div>
+                </div>
+
+                {{-- Code Examples --}}
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">Usage Examples</h3>
+                    <div class="bg-gray-50 dark:bg-gray-900/50 rounded-lg p-4 overflow-x-auto">
+                        <pre class="text-sm text-gray-800 dark:text-gray-200"><code>&lt;!-- Basic inline spinner --&gt;
+&lt;x-spinner /&gt;
+
+&lt;!-- Full-page loader with text --&gt;
+&lt;x-spinner fullPage text="Loading..." /&gt;
+
+&lt;!-- Large gradient spinner --&gt;
+&lt;x-spinner size="lg" variant="gradient" text="Please wait..." /&gt;
+
+&lt;!-- Small spinner without overlay --&gt;
+&lt;x-spinner size="sm" fullPage :overlay="false" /&gt;
+
+&lt;!-- Pulse variant --&gt;
+&lt;x-spinner variant="pulse" size="xl" text="Processing..." /&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Tags Section -->
         <section>
             <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-4">Tags</h2>

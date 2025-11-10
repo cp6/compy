@@ -44,10 +44,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
         return view('tables.demo');
     })->name('tables.demo');
     
-    Route::get('/sidebar/demo', function () {
-        return view('sidebar.demo');
-    })->name('sidebar.demo');
-    
     Route::get('/lists/demo', function () {
         return view('lists.demo');
     })->name('lists.demo');

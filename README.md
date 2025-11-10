@@ -78,6 +78,7 @@ npm run dev          # Terminal 2
 - **Timeline**: Event timeline display
 - **Tabs & Accordions**: Content organization
 - **Lists**: Various list styles with avatars, badges, and actions
+- **Spinners & Loaders**: Multiple spinner variants (default, gradient, pulse) with various sizes and loading text support
 
 ### Dark Mode Support
 - Automatic system preference detection
@@ -302,9 +303,8 @@ Component demonstration pages located in `resources/views/`:
 - `forms/demo.blade.php` - Form components demo (Route: `/forms/demo`)
 - `lists/demo.blade.php` - List components demo (Route: `/lists/demo`)
 - `modals/demo.blade.php` - Modal components demo (Route: `/modals/demo`)
-- `sidebar/demo.blade.php` - Sidebar components demo (Route: `/sidebar/demo`)
 - `tables/demo.blade.php` - Table components demo (Route: `/tables/demo`)
-- `misc-demo.blade.php` - Miscellaneous components demo (Route: `/misc/demo`)
+- `misc-demo.blade.php` - Miscellaneous components demo including spinners/loaders, badges, alerts, progress bars, and more (Route: `/misc/demo`)
 - `premium-demo.blade.php` - Premium components demo (Route: `/premium-demo`)
 - `usage-demo.blade.php` - Component usage examples (Route: `/usage-demo`)
 
@@ -373,7 +373,6 @@ Email templates located in `resources/views/emails/`:
 - `GET /forms/demo` - Forms demo
 - `POST /forms/demo` - Submit form demo
 - `GET /tables/demo` - Tables demo
-- `GET /sidebar/demo` - Sidebar demo
 - `GET /lists/demo` - Lists demo
 - `GET /cards/demo` - Cards demo
 - `GET /buttons/demo` - Buttons demo
@@ -441,6 +440,7 @@ After logging in, you can access component demos from the sidebar:
 - **Buttons Demo**: `/buttons/demo` - Button variants and styles
 - **Cards Demo**: `/cards/demo` - Card component examples
 - **Modals Demo**: `/modals/demo` - Modal dialog examples
+- **Misc Demo**: `/misc/demo` - Spinners/loaders, badges, alerts, progress bars, status indicators, and more
 - And many more...
 
 ### Using Components in Your Views

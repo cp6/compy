@@ -116,14 +116,11 @@
         {{-- Dropdown Menu --}}
         <x-sidebar.dropdown 
             label="Pages" 
-            :active="request()->routeIs('sidebar.demo') || request()->routeIs('blank') || request()->routeIs('sample') || request()->routeIs('grid.demo')"
+            :active="request()->routeIs('blank') || request()->routeIs('sample') || request()->routeIs('grid.demo')"
         >
             <x-slot:icon>
                 <x-sidebar.icon name="pages" />
             </x-slot:icon>
-            <x-sidebar.dropdown-item href="{{ route('sidebar.demo') }}" :active="request()->routeIs('sidebar.demo')">
-                Sidebar Demo
-            </x-sidebar.dropdown-item>
             <x-sidebar.dropdown-item href="{{ route('grid.demo') }}" :active="request()->routeIs('grid.demo')">
                 Grid Demo
             </x-sidebar.dropdown-item>
