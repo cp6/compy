@@ -16,11 +16,11 @@
     style="display: none;"
 >
     @if(isset($title))
-        <h3 class="px-2 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">
+        <h3 class="px-3 text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-3 mt-6 first:mt-0">
             {{ $title }}
         </h3>
     @endif
-    <div class="space-y-1">
+    <div class="space-y-1.5">
         {{ $slot }}
     </div>
 </div>

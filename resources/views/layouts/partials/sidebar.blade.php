@@ -1,8 +1,8 @@
 <x-sidebar.sidebar>
     {{-- Brand/Logo Section --}}
-    <div class="flex justify-center mb-6 px-2">
-        <a href="{{ route('dashboard') }}" class="inline-block transition-transform hover:scale-105">
-            <x-application-logo class="w-12 h-12 text-dodger-blue-600 dark:text-dodger-blue-400" />
+    <div class="flex justify-center mb-8 px-2">
+        <a href="{{ route('dashboard') }}" class="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-dodger-blue-500 to-dodger-blue-600 dark:from-dodger-blue-600 dark:to-dodger-blue-700 shadow-lg shadow-dodger-blue-500/25 dark:shadow-dodger-blue-900/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-dodger-blue-500/30 dark:hover:shadow-dodger-blue-900/60">
+            <x-application-logo class="w-8 h-8 text-white" />
         </a>
     </div>
 

@@ -1,8 +1,8 @@
 @props(['label', 'active' => false, 'open' => false])
 
 @php
-$baseClasses = 'flex items-center px-3 py-2 text-sm font-medium rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white transition-colors duration-150 w-full';
-$activeClasses = ($active ?? false) ? 'bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300' : '';
+$baseClasses = 'flex items-center px-3 py-2.5 text-sm font-medium rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700/50 hover:text-gray-900 dark:hover:text-white transition-all duration-200 w-full';
+$activeClasses = ($active ?? false) ? 'bg-dodger-blue-50 dark:bg-dodger-blue-900/20 text-dodger-blue-700 dark:text-dodger-blue-300 border-l-4 border-dodger-blue-600 dark:border-dodger-blue-400 shadow-sm' : '';
 @endphp
 
 <div 
@@ -35,7 +35,7 @@ $activeClasses = ($active ?? false) ? 'bg-blue-50 dark:bg-blue-900/20 text-blue-
         {{ $attributes->merge(['class' => $baseClasses . ' ' . $activeClasses]) }}
     >
         @isset($icon)
-            <div class="flex-shrink-0 mr-3">
+            <div class="flex-shrink-0 mr-3 flex items-center justify-center w-5 h-5">
                 {{ $icon }}
             </div>
         @endisset
@@ -67,7 +67,7 @@ $activeClasses = ($active ?? false) ? 'bg-blue-50 dark:bg-blue-900/20 text-blue-
         x-transition:leave="transition ease-in duration-150"
         x-transition:leave-start="opacity-100 translate-y-0"
         x-transition:leave-end="opacity-0 -translate-y-1"
-        class="pl-4 space-y-1"
+        class="pl-6 ml-2 border-l-2 border-gray-200 dark:border-gray-700 space-y-1.5 mt-1.5"
         style="display: none;"
     >
         {{ $items ?? $slot }}

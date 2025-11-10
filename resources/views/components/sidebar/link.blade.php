@@ -3,8 +3,8 @@
 @php
 $isActive = filter_var($active, FILTER_VALIDATE_BOOLEAN);
 $classes = $isActive
-    ? 'flex items-center px-3 py-2 text-sm font-medium rounded-md bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300'
-    : 'flex items-center px-3 py-2 text-sm font-medium rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white transition-colors duration-150';
+    ? 'flex items-center px-3 py-2.5 text-sm font-medium rounded-lg bg-dodger-blue-50 dark:bg-dodger-blue-900/20 text-dodger-blue-700 dark:text-dodger-blue-300 border-l-4 border-dodger-blue-600 dark:border-dodger-blue-400 shadow-sm'
+    : 'flex items-center px-3 py-2.5 text-sm font-medium rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700/50 hover:text-gray-900 dark:hover:text-white transition-all duration-200 hover:translate-x-0.5';
 @endphp
 
 <a 
@@ -26,7 +26,7 @@ $classes = $isActive
     {{ $attributes->except('class') }}
 >
     @isset($icon)
-        <div class="flex-shrink-0 mr-3">
+        <div class="flex-shrink-0 mr-3 flex items-center justify-center w-5 h-5">
             {{ $icon }}
         </div>
     @endisset

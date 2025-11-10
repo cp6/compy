@@ -1,12 +1,12 @@
 @props([])
 
-<div class="mt-auto pt-4 border-t border-gray-200 dark:border-gray-700 px-4 pb-4">
+<div class="mt-auto pt-6 border-t border-gray-200 dark:border-gray-700 px-3 pb-4 bg-gray-50/50 dark:bg-gray-800/50">
     <div class="flex items-center justify-between gap-2">
         @auth
             {{-- User Profile Icon --}}
             <a 
                 href="{{ route('profile.edit') }}"
-                class="inline-flex items-center justify-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none transition ease-in-out duration-150"
+                class="inline-flex items-center justify-center px-3 py-2 border border-gray-200 dark:border-gray-700 text-sm leading-4 font-medium rounded-lg text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-dodger-blue-500 transition-all duration-200 shadow-sm hover:shadow"
                 aria-label="Profile"
             >
                 <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -19,7 +19,7 @@
                 @csrf
                 <button 
                     type="submit"
-                    class="w-full inline-flex items-center justify-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none transition ease-in-out duration-150"
+                    class="w-full inline-flex items-center justify-center px-3 py-2 border border-gray-200 dark:border-gray-700 text-sm leading-4 font-medium rounded-lg text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-dodger-blue-500 transition-all duration-200 shadow-sm hover:shadow"
                     aria-label="Log out"
                 >
                     {{ __('Log Out') }}
@@ -29,7 +29,7 @@
             {{-- Login Button --}}
             <a 
                 href="{{ route('login') }}"
-                class="flex-1 inline-flex items-center justify-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none transition ease-in-out duration-150"
+                class="flex-1 inline-flex items-center justify-center px-3 py-2 border border-gray-200 dark:border-gray-700 text-sm leading-4 font-medium rounded-lg text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-dodger-blue-500 transition-all duration-200 shadow-sm hover:shadow"
                 aria-label="Log in"
             >
                 {{ __('Log In') }}
@@ -39,7 +39,7 @@
         {{-- Theme Toggle Button --}}
         <button 
             id="theme-toggle-sidebar" 
-            class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none transition ease-in-out duration-150"
+            class="inline-flex items-center px-3 py-2 border border-gray-200 dark:border-gray-700 text-sm leading-4 font-medium rounded-lg text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-dodger-blue-500 transition-all duration-200 shadow-sm hover:shadow"
             aria-label="Toggle theme"
         >
             <svg id="theme-toggle-light-sidebar" class="hidden h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
