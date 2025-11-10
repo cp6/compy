@@ -533,6 +533,60 @@
                             </div>
                         </x-card>
                     </a>
+
+                    <!-- E-store Demo -->
+                    <a href="{{ route('estore.demo') }}" class="group">
+                        <x-card.card hover variant="gradient" class="h-full transition-all duration-300 group-hover:scale-[1.02]">
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0">
+                                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-100 to-teal-100 dark:from-emerald-900/30 dark:to-teal-900/30 flex items-center justify-center">
+                                        <x-sidebar.icon name="ecommerce" />
+                                    </div>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 group-hover:text-dodger-blue-600 dark:group-hover:text-dodger-blue-400 transition-colors">
+                                        E-store Demo
+                                    </h3>
+                                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                                        E-commerce store with product cards, grids, ratings, and badges
+                                    </p>
+                                </div>
+                                <div class="flex-shrink-0">
+                                    <svg class="w-5 h-5 text-gray-400 group-hover:text-dodger-blue-600 dark:group-hover:text-dodger-blue-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </x-card>
+                    </a>
+
+                    <!-- Charts Demo -->
+                    <a href="{{ route('charts.demo') }}" class="group">
+                        <x-card.card hover variant="gradient" class="h-full transition-all duration-300 group-hover:scale-[1.02]">
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0">
+                                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-100 to-purple-100 dark:from-indigo-900/30 dark:to-purple-900/30 flex items-center justify-center">
+                                        <svg class="w-6 h-6 text-indigo-600 dark:text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 group-hover:text-dodger-blue-600 dark:group-hover:text-dodger-blue-400 transition-colors">
+                                        Charts Demo
+                                    </h3>
+                                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                                        Interactive charts and data visualization with Chart.js
+                                    </p>
+                                </div>
+                                <div class="flex-shrink-0">
+                                    <svg class="w-5 h-5 text-gray-400 group-hover:text-dodger-blue-600 dark:group-hover:text-dodger-blue-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </x-card>
+                    </a>
                 </div>
             </div>
 </x-app-layout>

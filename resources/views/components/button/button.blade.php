@@ -29,7 +29,7 @@
     
     // Variant classes
     $variantClasses = match($variant) {
-        'primary' => 'bg-dodger-blue-600 dark:bg-dodger-blue-500 text-white hover:bg-dodger-blue-700 dark:hover:bg-dodger-blue-600 focus:ring-dodger-blue-500 dark:focus:ring-dodger-blue-400 active:bg-dodger-blue-800 dark:active:bg-dodger-blue-700 shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0',
+        'primary' => 'bg-dodger-blue-700 dark:bg-dodger-blue-500 text-white hover:bg-dodger-blue-800 dark:hover:bg-dodger-blue-600 focus:ring-dodger-blue-500 dark:focus:ring-dodger-blue-400 active:bg-dodger-blue-900 dark:active:bg-dodger-blue-700 shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0',
         'primary2' => 'bg-dodger-blue-500 dark:bg-dodger-blue-400 text-white hover:bg-dodger-blue-600 dark:hover:bg-dodger-blue-500 focus:ring-dodger-blue-400 dark:focus:ring-dodger-blue-300 active:bg-dodger-blue-700 dark:active:bg-dodger-blue-600 shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0',
         'primary3' => 'bg-dodger-blue-700 dark:bg-dodger-blue-600 text-white hover:bg-dodger-blue-800 dark:hover:bg-dodger-blue-700 focus:ring-dodger-blue-600 dark:focus:ring-dodger-blue-500 active:bg-dodger-blue-900 dark:active:bg-dodger-blue-800 shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0',
         'primary4' => 'bg-dodger-blue-400 dark:bg-dodger-blue-300 text-white hover:bg-dodger-blue-500 dark:hover:bg-dodger-blue-400 focus:ring-dodger-blue-300 dark:focus:ring-dodger-blue-200 active:bg-dodger-blue-600 dark:active:bg-dodger-blue-500 shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0',
@@ -41,7 +41,7 @@
         'info' => 'bg-cyan-600 dark:bg-cyan-500 text-white hover:bg-cyan-700 dark:hover:bg-cyan-600 focus:ring-cyan-500 dark:focus:ring-cyan-400 active:bg-cyan-800 dark:active:bg-cyan-700 shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0',
         'ghost' => 'bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700/80 focus:ring-gray-500 dark:focus:ring-gray-400 active:bg-gray-100 dark:active:bg-gray-600 shadow-sm hover:shadow-md hover:-translate-y-0.5 active:translate-y-0',
         'outline' => 'bg-transparent border-2 border-dodger-blue-600 dark:border-dodger-blue-500 text-dodger-blue-600 dark:text-dodger-blue-400 hover:bg-dodger-blue-50 dark:hover:bg-dodger-blue-900/20 focus:ring-dodger-blue-500 dark:focus:ring-dodger-blue-400 active:bg-dodger-blue-100 dark:active:bg-dodger-blue-900/30 hover:-translate-y-0.5 active:translate-y-0',
-        default => 'bg-dodger-blue-600 dark:bg-dodger-blue-500 text-white hover:bg-dodger-blue-700 dark:hover:bg-dodger-blue-600 focus:ring-dodger-blue-500 dark:focus:ring-dodger-blue-400 active:bg-dodger-blue-800 dark:active:bg-dodger-blue-700 shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0',
+        default => 'bg-dodger-blue-700 dark:bg-dodger-blue-500 text-white hover:bg-dodger-blue-800 dark:hover:bg-dodger-blue-600 focus:ring-dodger-blue-500 dark:focus:ring-dodger-blue-400 active:bg-dodger-blue-900 dark:active:bg-dodger-blue-700 shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0',
     };
     
     // Full width

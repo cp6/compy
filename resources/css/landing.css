@@ -1,0 +1,172 @@
+@import 'tailwindcss';
+
+/* Landing Page Specific Styles */
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Sticky navbar styles */
+.navbar-sticky {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.navbar-sticky.scrolled {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.dark .navbar-sticky.scrolled {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+
+/* Hero section animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-fade-in-up-delay-1 {
+    animation: fadeInUp 0.6s ease-out 0.2s forwards;
+    opacity: 0;
+}
+
+.animate-fade-in-up-delay-2 {
+    animation: fadeInUp 0.6s ease-out 0.4s forwards;
+    opacity: 0;
+}
+
+/* Bento box card hover effects */
+.bento-card {
+    transition: all 0.3s ease;
+}
+
+.bento-card:hover {
+    transform: translateY(-4px);
+}
+
+/* Pricing card highlight */
+.pricing-card-popular {
+    position: relative;
+    transform: scale(1.05);
+}
+
+.pricing-card-popular::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, #3baaf6, #60c6fa, #93dcfd);
+    border-radius: 1rem;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+.dark .pricing-card-popular::before {
+    opacity: 0.2;
+}
+
+/* Testimonial carousel */
+.testimonial-carousel {
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.testimonial-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.testimonial-card {
+    scroll-snap-align: start;
+}
+
+/* Star rating */
+.star-rating {
+    display: inline-flex;
+    gap: 0.125rem;
+}
+
+/* Partner logos fade */
+.partner-logo {
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+    filter: grayscale(100%);
+}
+
+.partner-logo:hover {
+    opacity: 1;
+    filter: grayscale(0%);
+}
+
+.dark .partner-logo {
+    opacity: 0.4;
+    filter: grayscale(100%) brightness(1.2);
+}
+
+.dark .partner-logo:hover {
+    opacity: 0.8;
+    filter: grayscale(0%) brightness(1.2);
+}
+
+/* Section spacing */
+.section-spacing {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+@media (min-width: 768px) {
+    .section-spacing {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .section-spacing {
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+    }
+}
+
+/* Gradient text */
+.gradient-text {
+    background: linear-gradient(135deg, #3baaf6, #60c6fa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.dark .gradient-text {
+    background: linear-gradient(135deg, #60c6fa, #93dcfd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Newsletter input focus */
+.newsletter-input:focus {
+    outline: none;
+    ring: 2px;
+    ring-color: #3baaf6;
+}
+
+/* Smooth transitions for theme changes */
+* {
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+

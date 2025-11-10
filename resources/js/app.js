@@ -7,6 +7,11 @@ window.Alpine = Alpine;
 
 Alpine.start();
 
+// Import Chart.js and make it globally available
+import { Chart, registerables } from 'chart.js';
+Chart.register(...registerables);
+window.Chart = Chart;
+
 // Copy to clipboard function with fallback
 function copyToClipboard(text) {
     // Modern clipboard API

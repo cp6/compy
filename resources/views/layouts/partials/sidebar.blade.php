@@ -21,7 +21,7 @@
         </x-sidebar.link>
 
         {{-- Link with Badge --}}
-        <x-sidebar.link href="#">
+        <x-sidebar.link href="{{ route('ai-chat.demo') }}" :active="request()->routeIs('ai-chat.*')">
             <x-slot:icon>
                 <x-sidebar.icon name="ai" />
             </x-slot:icon>
@@ -32,7 +32,7 @@
         </x-sidebar.link>
 
         {{-- Link with Badge (Alternative) --}}
-        <x-sidebar.link href="#">
+        <x-sidebar.link href="{{ route('estore.demo') }}" :active="request()->routeIs('estore.*')">
             <x-slot:icon>
                 <x-sidebar.icon name="ecommerce" />
             </x-slot:icon>
@@ -43,7 +43,7 @@
         </x-sidebar.link>
 
         {{-- Simple Link --}}
-        <x-sidebar.link href="#">
+        <x-sidebar.link href="{{ route('calendar.demo') }}" :active="request()->routeIs('calendar.*')">
             <x-slot:icon>
                 <x-sidebar.icon name="calendar" />
             </x-slot:icon>
@@ -51,11 +51,19 @@
         </x-sidebar.link>
 
         {{-- Profile Link --}}
-        <x-sidebar.link href="{{ route('profile.edit') }}" :active="request()->routeIs('profile.*')">
+        <x-sidebar.link href="{{ route('profile.edit') }}" :active="request()->routeIs('profile.edit')">
             <x-slot:icon>
                 <x-sidebar.icon name="user" />
             </x-slot:icon>
             User Profile
+        </x-sidebar.link>
+
+        {{-- Profile Demo Link --}}
+        <x-sidebar.link href="{{ route('profile.demo') }}" :active="request()->routeIs('profile.demo')">
+            <x-slot:icon>
+                <x-sidebar.icon name="user" />
+            </x-slot:icon>
+            Profile Demo
         </x-sidebar.link>
 
         {{-- Dropdown Menu --}}
@@ -66,10 +74,10 @@
             <x-slot:icon>
                 <x-sidebar.icon name="task" />
             </x-slot:icon>
-            <x-sidebar.dropdown-item href="#" :active="request()->routeIs('task.list')">
+            <x-sidebar.dropdown-item href="{{ route('task.list') }}" :active="request()->routeIs('task.list')">
                 Task List
             </x-sidebar.dropdown-item>
-            <x-sidebar.dropdown-item href="#" :active="request()->routeIs('task.create')">
+            <x-sidebar.dropdown-item href="{{ route('task.create') }}" :active="request()->routeIs('task.create')">
                 Create Task
             </x-sidebar.dropdown-item>
         </x-sidebar.dropdown>
@@ -141,14 +149,14 @@
 
     {{-- Support Section --}}
     <x-sidebar.section title="SUPPORT">
-        <x-sidebar.link href="#">
+        <x-sidebar.link href="{{ route('chat.demo') }}" :active="request()->routeIs('chat.*')">
             <x-slot:icon>
                 <x-sidebar.icon name="chat" />
             </x-slot:icon>
             Chat
         </x-sidebar.link>
 
-        <x-sidebar.link href="#">
+        <x-sidebar.link href="{{ route('support-ticket.demo') }}" :active="request()->routeIs('support-ticket.*')">
             <x-slot:icon>
                 <x-sidebar.icon name="ticket" />
             </x-slot:icon>
@@ -158,7 +166,7 @@
             Support Ticket
         </x-sidebar.link>
 
-        <x-sidebar.link href="#">
+        <x-sidebar.link href="{{ route('email.demo') }}" :active="request()->routeIs('email.*')">
             <x-slot:icon>
                 <x-sidebar.icon name="email" />
             </x-slot:icon>
@@ -171,7 +179,7 @@
 
     {{-- Others Section --}}
     <x-sidebar.section title="OTHERS">
-        <x-sidebar.link href="#">
+        <x-sidebar.link href="{{ route('charts.demo') }}" :active="request()->routeIs('charts.*')">
             <x-slot:icon>
                 <x-sidebar.icon name="charts" />
             </x-slot:icon>

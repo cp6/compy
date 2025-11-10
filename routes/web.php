@@ -95,6 +95,46 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/grid/demo', function () {
         return view('grid.demo');
     })->name('grid.demo');
+    
+    Route::get('/calendar/demo', function () {
+        return view('calendar-demo');
+    })->name('calendar.demo');
+    
+    Route::get('/ai-chat/demo', function () {
+        return view('ai-chat-demo');
+    })->name('ai-chat.demo');
+    
+    Route::get('/support-ticket/demo', function () {
+        return view('support-ticket-demo');
+    })->name('support-ticket.demo');
+    
+    Route::get('/chat/demo', function () {
+        return view('chat-demo');
+    })->name('chat.demo');
+    
+    Route::get('/email/demo', function () {
+        return view('email-demo');
+    })->name('email.demo');
+    
+    Route::get('/estore/demo', function () {
+        return view('estore-demo');
+    })->name('estore.demo');
+    
+    Route::get('/charts/demo', function () {
+        return view('charts-demo');
+    })->name('charts.demo');
+    
+    Route::get('/task/create', function () {
+        return view('task-create-demo');
+    })->name('task.create');
+    
+    Route::get('/task/list', function () {
+        return view('task-list-demo');
+    })->name('task.list');
+    
+    Route::get('/profile/demo', function () {
+        return view('profile-demo');
+    })->name('profile.demo');
 });
 
 Route::middleware('auth')->group(function () {

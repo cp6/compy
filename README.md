@@ -66,6 +66,7 @@ npm run dev          # Terminal 2
 - Profile management (update info, change password, delete account)
 
 ### 100+ Pre-built Components
+- **Landing Page**: Complete SaaS landing page with 10 reusable sections (navbar, hero, partners, benefits, how-it-works, pricing, testimonials, FAQ, CTA, footer)
 - **Alerts & Notifications**: Success, error, warning, info alerts + toast notifications
 - **Buttons**: Primary, secondary, danger variants with groups and dropdowns
 - **Cards**: Image cards, profile cards, action cards, and more
@@ -74,8 +75,13 @@ npm run dev          # Terminal 2
 - **Modals**: Customizable modal dialogs with headers and footers
 - **File Manager**: Upload, browse, and manage files
 - **Comments**: Nested comment system with replies
+- **Chat**: Team chat interface with conversations, message bubbles, input area, and typing indicators
+- **Email**: Email inbox interface with list view, detail view, and compose functionality
+- **Support Tickets**: Complete ticket management system with status tracking, priorities, categories, and replies
+- **E-store**: E-commerce product cards and grid layouts with ratings, badges, and pricing
 - **Navigation**: Sidebar, dropdowns, breadcrumbs
 - **Timeline**: Event timeline display
+- **Calendar**: Full calendar system with month, week, and day views with event management
 - **Tabs & Accordions**: Content organization
 - **Lists**: Various list styles with avatars, badges, and actions
 - **Spinners & Loaders**: Multiple spinner variants (default, gradient, pulse) with various sizes and loading text support
@@ -171,6 +177,35 @@ Reusable Blade components located in `resources/views/components/`:
 - `comment/comment.blade.php` - Single comment item with nested replies support
 - `comment/form.blade.php` - Comment form with textarea and submit
 - `comment/list.blade.php` - Comments list container with close all functionality
+
+#### Chat Components
+- `chat/message.blade.php` - Individual chat message with user/AI styling, avatars, and typing indicators
+- `chat/input.blade.php` - Chat input area with auto-resizing textarea and send button
+- `chat/container.blade.php` - Chat container component that holds messages and input area
+
+#### Email Components
+- `email/item.blade.php` - Individual email item with sender, subject, preview, and status indicators
+- `email/list.blade.php` - Email list container for displaying multiple emails
+- `email/detail.blade.php` - Detailed email view with full content and attachments
+- `email/compose.blade.php` - Email composition form with recipient, subject, and message fields
+
+#### Ticket Components
+- `ticket/status-badge.blade.php` - Ticket status badge (open, pending, resolved, closed, urgent)
+- `ticket/priority-badge.blade.php` - Ticket priority badge (low, medium, high, urgent)
+- `ticket/item.blade.php` - Individual ticket card component with status, priority, and metadata
+- `ticket/list.blade.php` - Ticket list container for displaying multiple tickets
+- `ticket/detail.blade.php` - Detailed ticket view with description and replies
+- `ticket/form.blade.php` - Form component for creating new support tickets
+
+#### Task Components
+- `task/status-badge.blade.php` - Task status badge (todo, in_progress, review, done)
+- `task/priority-badge.blade.php` - Task priority badge (low, medium, high, urgent)
+- `task/item.blade.php` - Individual task card component with status, priority, progress, tags, assignee, and due date
+- `task/list.blade.php` - Task list container for displaying multiple tasks
+
+#### E-store Components
+- `estore/product-card.blade.php` - Product card component with image, price, rating, badges, and hover effects
+- `estore/product-grid.blade.php` - Product grid container with responsive column layouts
 
 #### Tabs Components
 - `tabs/tabs.blade.php` - Tab container component
@@ -279,6 +314,21 @@ Reusable Blade components located in `resources/views/components/`:
 - `table/row.blade.php` - Table row
 - `table/table.blade.php` - Base table component
 
+#### Landing Page Components
+- `landing/navbar.blade.php` - Sticky navigation bar with logo, menu links, theme switcher, and CTA button
+- `landing/hero.blade.php` - Hero section with title, subtitle, social proof, CTAs, and product showcase
+- `landing/partners.blade.php` - Partners/companies section displaying trusted brands
+- `landing/benefits.blade.php` - Benefits/services section with icon cards highlighting key features
+- `landing/how-it-works.blade.php` - Step-by-step process section with numbered cards
+- `landing/pricing.blade.php` - Pricing plans section with multiple tiers and feature lists
+- `landing/testimonials.blade.php` - Customer testimonials carousel with ratings and author info
+- `landing/faq.blade.php` - Frequently asked questions section using accordion components
+- `landing/cta-section.blade.php` - Call-to-action section with customizable title, subtitle, and CTA button
+- `landing/footer.blade.php` - Footer with logo, menu links, legal links, newsletter signup, and social media icons
+
+#### Chart Components
+- `chart/chart.blade.php` - Chart component wrapper for Chart.js supporting line, bar, pie, doughnut, radar, polar area, scatter, and bubble charts with dark mode support
+
 #### Utility Components
 - `application-logo.blade.php` - Application logo
 - `auth-session-status.blade.php` - Authentication session status
@@ -295,10 +345,20 @@ Component demonstration pages located in `resources/views/`:
 - `buttons/demo.blade.php` - Button components demo (Route: `/buttons/demo`)
 - `cards/demo.blade.php` - Card components demo (Route: `/cards/demo`)
 - `comments-demo.blade.php` - Nested comments system demo (Route: `/comments/demo`)
+- `ai-chat-demo.blade.php` - AI chat interface demo with interactive messaging (Route: `/ai-chat/demo`)
+- `chat-demo.blade.php` - Team chat interface demo with conversations and messaging (Route: `/chat/demo`)
+- `email-demo.blade.php` - Email inbox demo with list view, detail view, and compose functionality (Route: `/email/demo`)
+- `support-ticket-demo.blade.php` - Support ticket management system demo with status tracking, priorities, and replies (Route: `/support-ticket/demo`)
+- `task-list-demo.blade.php` - Task list management demo with status tracking, priorities, progress bars, and filters (Route: `/task/list`)
+- `task-create-demo.blade.php` - Task creation form demo with comprehensive task fields (Route: `/task/create`)
+- `profile-demo.blade.php` - User profile demo showcasing various profile layouts, cards, and information displays (Route: `/profile/demo`)
+- `estore-demo.blade.php` - E-commerce store demo with product cards, grids, ratings, and badges (Route: `/estore/demo`)
+- `charts-demo.blade.php` - Interactive charts and data visualization demo with Chart.js (Route: `/charts/demo`)
 - `tabs-demo.blade.php` - Tab navigation components demo (Route: `/tabs/demo`)
 - `accordion-demo.blade.php` - Accordion components demo (Route: `/accordion/demo`)
 - `toast-demo.blade.php` - Toast notification components demo (Route: `/toast/demo`)
 - `timeline-demo.blade.php` - Timeline components demo (Route: `/timeline/demo`)
+- `calendar-demo.blade.php` - Calendar components demo with month, week, and day views (Route: `/calendar/demo`)
 - `files/demo.blade.php` - File components demo (Route: `/files/demo`)
 - `forms/demo.blade.php` - Form components demo (Route: `/forms/demo`)
 - `lists/demo.blade.php` - List components demo (Route: `/lists/demo`)
@@ -312,7 +372,10 @@ Component demonstration pages located in `resources/views/`:
 
 Core application pages:
 
-- `welcome.blade.php` - Landing page (Route: `/`)
+- `welcome.blade.php` - High-converting SaaS landing page with all sections (Route: `/`)
+  - Uses all landing page components: navbar, hero, partners, benefits, how-it-works, pricing, testimonials, FAQ, CTA, and footer
+  - Fully responsive with dark mode support
+  - Customizable through component props
 - `dashboard.blade.php` - User dashboard (Route: `/dashboard`, Auth required)
 - `blank.blade.php` - Blank page template (Route: `/blank`)
 - `pricing.blade.php` - Pricing page (Route: `/pricing`)
@@ -377,10 +440,19 @@ Email templates located in `resources/views/emails/`:
 - `GET /cards/demo` - Cards demo
 - `GET /buttons/demo` - Buttons demo
 - `GET /comments/demo` - Comments demo (nested comment system)
+- `GET /ai-chat/demo` - AI chat interface demo
+- `GET /chat/demo` - Team chat interface demo
+- `GET /email/demo` - Email inbox demo
+- `GET /support-ticket/demo` - Support ticket management system demo
+- `GET /task/list` - Task list management demo with status tracking, priorities, and progress bars
+- `GET /task/create` - Task creation form demo with comprehensive task fields
+- `GET /profile/demo` - User profile demo showcasing various profile layouts and components
+- `GET /estore/demo` - E-store demo with product cards and grids
 - `GET /tabs/demo` - Tabs demo
 - `GET /accordion/demo` - Accordion demo
 - `GET /toast/demo` - Toast notifications demo
 - `GET /timeline/demo` - Timeline demo
+- `GET /calendar/demo` - Calendar demo (month, week, day views with events)
 - `GET /files/demo` - Files demo
 - `GET /modals/demo` - Modals demo
 - `GET /misc/demo` - Miscellaneous demo
@@ -440,6 +512,16 @@ After logging in, you can access component demos from the sidebar:
 - **Buttons Demo**: `/buttons/demo` - Button variants and styles
 - **Cards Demo**: `/cards/demo` - Card component examples
 - **Modals Demo**: `/modals/demo` - Modal dialog examples
+- **Calendar Demo**: `/calendar/demo` - Calendar system with month, week, and day views
+- **AI Chat Demo**: `/ai-chat/demo` - Interactive AI chat interface with message bubbles and input
+- **Chat Demo**: `/chat/demo` - Team chat interface with conversations, messaging, and notifications
+- **Email Demo**: `/email/demo` - Email inbox with list view, detail view, compose, and attachments
+- **Support Ticket Demo**: `/support-ticket/demo` - Complete ticket management system with status tracking, priorities, categories, and replies
+- **Task List Demo**: `/task/list` - Task list management with status tracking, priorities, progress bars, filters, and statistics
+- **Create Task Demo**: `/task/create` - Comprehensive task creation form with all task fields
+- **Profile Demo**: `/profile/demo` - User profile demo showcasing various profile layouts, cards, stats, social links, and information displays
+- **E-store Demo**: `/estore/demo` - E-commerce store with product cards, grids, ratings, badges, and pricing
+- **Charts Demo**: `/charts/demo` - Interactive charts and data visualization with Chart.js including line, bar, pie, doughnut, radar, polar area, scatter, and bubble charts
 - **Misc Demo**: `/misc/demo` - Spinners/loaders, badges, alerts, progress bars, status indicators, and more
 - And many more...
 
@@ -470,6 +552,19 @@ All components are located in `resources/views/components/`. Use them in your Bl
         <x-button.primary>Action</x-button.primary>
     </x-slot>
 </x-card.card>
+
+{{-- Profile Card --}}
+<x-card.profile
+    name="John Doe"
+    role="Senior Developer"
+    bio="Passionate developer with 8+ years of experience..."
+    avatarText="JD"
+    variant="gradient"
+    :showStats="true"
+    :stats="[['label' => 'Projects', 'value' => '42']]"
+    :showSocial="true"
+    :socialLinks="[...]"
+/>
 
 {{-- Form --}}
 <form method="POST" action="{{ route('your.route') }}">
@@ -505,6 +600,171 @@ All components are located in `resources/views/components/`. Use them in your Bl
         @endforeach
     </x-table.body>
 </x-table.table>
+
+{{-- Chat Components --}}
+<x-chat.container :messages="$messages" height="h-[600px]">
+    <x-chat.input placeholder="Type your message..." />
+</x-chat.container>
+
+<x-chat.message
+    author="AI Assistant"
+    content="Hello! How can I help you?"
+    timestamp="10:30 AM"
+    :isAi="true"
+/>
+
+{{-- Calendar Components --}}
+{{-- Month View --}}
+<x-calendar.month-view :events="$events" />
+
+{{-- Week View --}}
+<x-calendar.week-view :events="$events" />
+
+{{-- Day View --}}
+<x-calendar.day-view :events="$events" />
+
+{{-- Event Item --}}
+<x-calendar.event-item 
+    :event="['title' => 'Meeting', 'time' => '10:00 AM', 'color' => 'dodger-blue']"
+    size="default"
+/>
+
+{{-- Ticket Components --}}
+{{-- Ticket List --}}
+<x-ticket.list :tickets="$tickets" />
+
+{{-- Individual Ticket Item --}}
+<x-ticket.item
+    id="1001"
+    title="Ticket Title"
+    description="Ticket description..."
+    status="open"
+    priority="high"
+    category="Technical Support"
+    author="John Doe"
+    createdAt="2 hours ago"
+    href="#"
+/>
+
+{{-- Ticket Detail View --}}
+<x-ticket.detail
+    :id="$ticket['id']"
+    :title="$ticket['title']"
+    :description="$ticket['description']"
+    :status="$ticket['status']"
+    :priority="$ticket['priority']"
+    :category="$ticket['category']"
+    :author="$ticket['author']"
+    :createdAt="$ticket['createdAt']"
+    :replies="$ticket['replies']"
+/>
+
+{{-- Status and Priority Badges --}}
+<x-ticket.status-badge status="open" />
+<x-ticket.priority-badge priority="high" />
+
+{{-- Task Components --}}
+{{-- Task List --}}
+<x-task.list :tasks="$tasks" />
+
+{{-- Individual Task Item --}}
+<x-task.item
+    id="1001"
+    title="Task Title"
+    description="Task description..."
+    status="in_progress"
+    priority="high"
+    category="Development"
+    assignee="John Doe"
+    dueDate="2024-12-20"
+    :tags="['backend', 'feature']"
+    progress="65"
+    href="#"
+/>
+
+{{-- Status and Priority Badges --}}
+<x-task.status-badge status="in_progress" />
+<x-task.priority-badge priority="high" />
+
+{{-- Create Ticket Form --}}
+<x-ticket.form action="#" method="POST" />
+
+{{-- Email Components --}}
+{{-- Email List --}}
+<x-email.list :emails="$emails" />
+
+{{-- Individual Email Item --}}
+<x-email.item
+    id="1"
+    from="John Doe"
+    subject="Email Subject"
+    preview="Email preview text..."
+    timestamp="2 hours ago"
+    :unread="true"
+    :important="false"
+    :attachments="true"
+    href="#"
+/>
+
+{{-- Email Detail View --}}
+<x-email.detail
+    :id="$email['id']"
+    :from="$email['from']"
+    :to="$email['to']"
+    :subject="$email['subject']"
+    :content="$email['content']"
+    :timestamp="$email['timestamp']"
+    :important="$email['important']"
+    :attachments="$email['attachments']"
+/>
+
+{{-- Compose Email Form --}}
+<x-email.compose action="#" method="POST" />
+
+{{-- E-store Components --}}
+{{-- Product Card --}}
+<x-estore.product-card
+    id="1"
+    name="Product Name"
+    :price="99.99"
+    :originalPrice="129.99"
+    badge="sale"
+    :rating="4.5"
+    :reviews="234"
+    href="/products/1"
+    variant="gradient"
+    hover
+/>
+
+{{-- Product Grid --}}
+<x-estore.product-grid 
+    :products="$products" 
+    :columns="4"
+/>
+
+{{-- Landing Page Components --}}
+{{-- Navbar --}}
+<x-landing.navbar />
+
+{{-- Hero Section --}}
+<x-landing.hero 
+    title="Your Amazing Product"
+    subtitle="Transform your business with our powerful platform"
+    socialProof="1000+ active users"
+/>
+
+{{-- Benefits Section --}}
+<x-landing.benefits :benefits="[
+    ['title' => 'Feature 1', 'description' => 'Description here', 'icon' => 'M13 10V3L4 14h7v7l9-11h-7z'],
+    ['title' => 'Feature 2', 'description' => 'Description here', 'icon' => 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z'],
+]" />
+
+{{-- CTA Section --}}
+<x-landing.cta-section 
+    title="Ready to Get Started?"
+    subtitle="Join thousands of teams already using our platform"
+    ctaText="Start Your Free Trial"
+/>
 ```
 
 ---

@@ -9,7 +9,7 @@
     $variantClasses = match($variant) {
         'gradient' => 'bg-gradient-to-r from-dodger-blue-600 to-dodger-blue-500 dark:from-dodger-blue-500 dark:to-dodger-blue-400 text-white hover:from-dodger-blue-700 hover:to-dodger-blue-600 dark:hover:from-dodger-blue-600 dark:hover:to-dodger-blue-500 focus:ring-dodger-blue-500 dark:focus:ring-dodger-blue-400 active:from-dodger-blue-800 active:to-dodger-blue-700 dark:active:from-dodger-blue-700 dark:active:to-dodger-blue-600 shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0',
         'outline' => 'bg-transparent border-2 border-dodger-blue-600 dark:border-dodger-blue-500 text-dodger-blue-600 dark:text-dodger-blue-400 hover:bg-dodger-blue-50 dark:hover:bg-dodger-blue-900/20 focus:ring-dodger-blue-500 dark:focus:ring-dodger-blue-400 active:bg-dodger-blue-100 dark:active:bg-dodger-blue-900/30 hover:-translate-y-0.5 active:translate-y-0',
-        default => 'bg-dodger-blue-600 dark:bg-dodger-blue-500 text-white hover:bg-dodger-blue-700 dark:hover:bg-dodger-blue-600 focus:ring-dodger-blue-500 dark:focus:ring-dodger-blue-400 active:bg-dodger-blue-800 dark:active:bg-dodger-blue-700 shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0',
+        default => 'bg-dodger-blue-700 dark:bg-dodger-blue-500 text-white hover:bg-dodger-blue-800 dark:hover:bg-dodger-blue-600 focus:ring-dodger-blue-500 dark:focus:ring-dodger-blue-400 active:bg-dodger-blue-900 dark:active:bg-dodger-blue-700 shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0',
     };
 @endphp
 
