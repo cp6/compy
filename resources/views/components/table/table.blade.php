@@ -8,7 +8,8 @@
 @php
     $wrapperClasses = 'overflow-x-auto';
     if ($fullWidth) {
-        $wrapperClasses .= ' -mx-4 sm:-mx-6 md:-mx-8';
+        // Match card padding exactly: p-5 (px-5 = 1.25rem) and sm:p-6 (sm:px-6 = 1.5rem)
+        $wrapperClasses .= ' -mx-5 sm:-mx-6';
     }
     
     $tableClasses = 'min-w-full divide-y divide-gray-200 dark:divide-gray-700';

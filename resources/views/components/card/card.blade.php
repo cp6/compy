@@ -27,7 +27,7 @@
     };
     
     $hoverShadowClasses = $hover ? ' hover:shadow-xl hover:shadow-gray-300/50 dark:hover:shadow-gray-900/70 hover:-translate-y-0.5 transition-all duration-300 ease-out' : 'transition-all duration-300 ease-out';
-    $cardClasses = $baseClasses . ' rounded-xl ' . $borderClasses . ' ' . $shadowClasses . ' ' . $hoverShadowClasses;
+    $cardClasses = $baseClasses . ' rounded-xl overflow-hidden ' . $borderClasses . ' ' . $shadowClasses . ' ' . $hoverShadowClasses;
     
     // Header classes - improved gradient with better visual separation
     $headerClasses = match($variant) {
@@ -58,7 +58,7 @@
         </div>
     @endif
 
-    <div class="p-5 sm:p-6 text-gray-700 dark:text-gray-300 leading-relaxed text-sm sm:text-base">
+    <div class="p-5 sm:p-6 text-gray-900 dark:text-gray-300 leading-relaxed text-sm sm:text-base">
         {{ $slot }}
     </div>
 </div>
