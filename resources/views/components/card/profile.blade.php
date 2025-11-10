@@ -17,19 +17,19 @@
 
 @php
     $baseClasses = match($variant) {
-        'gradient' => 'bg-gradient-to-br from-white via-white to-gray-50 dark:from-gray-800 dark:via-gray-800 dark:to-gray-900',
-        'glass' => 'bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl border border-white/20 dark:border-gray-700/50',
+        'gradient' => 'bg-gradient-to-br from-white via-gray-50/50 to-gray-100/50 dark:from-gray-800 dark:via-gray-800/90 dark:to-gray-900',
+        'glass' => 'bg-white/90 dark:bg-gray-800/90 backdrop-blur-xl border border-white/30 dark:border-gray-700/40',
         default => 'bg-white dark:bg-gray-800',
     };
     
     $shadowClasses = match($variant) {
-        'gradient' => 'shadow-2xl shadow-gray-200/50 dark:shadow-gray-900/50',
-        'glass' => 'shadow-xl shadow-gray-200/20 dark:shadow-gray-900/30',
-        default => 'shadow-xl shadow-gray-200/50 dark:shadow-gray-900/30',
+        'gradient' => 'shadow-lg shadow-gray-200/40 dark:shadow-gray-900/60',
+        'glass' => 'shadow-xl shadow-gray-200/30 dark:shadow-gray-900/40',
+        default => 'shadow-md shadow-gray-200/30 dark:shadow-gray-900/50',
     };
     
-    $hoverShadowClasses = $hover ? ' hover:shadow-2xl hover:shadow-gray-300/60 dark:hover:shadow-gray-900/50 hover:scale-[1.02]' : '';
-    $cardClasses = $baseClasses . ' overflow-hidden rounded-2xl border border-gray-200/60 dark:border-gray-700/60 transition-all duration-500 ease-out ' . $shadowClasses . $hoverShadowClasses;
+    $hoverShadowClasses = $hover ? ' hover:shadow-xl hover:shadow-gray-300/50 dark:hover:shadow-gray-900/70 hover:-translate-y-0.5 transition-all duration-300 ease-out' : 'transition-all duration-300 ease-out';
+    $cardClasses = $baseClasses . ' overflow-hidden rounded-xl border border-gray-200/60 dark:border-gray-700/60 ' . $shadowClasses . ' ' . $hoverShadowClasses;
     
     $avatarSizeClasses = match($avatarSize) {
         'sm' => 'w-16 h-16 text-lg',
@@ -41,17 +41,17 @@
 @endphp
 
 <div {{ $attributes->merge(['class' => $cardClasses]) }}>
-    <div class="p-6 text-center">
+    <div class="p-6 sm:p-7 text-center">
         <!-- Avatar -->
-        <div class="flex justify-center mb-4">
+        <div class="flex justify-center mb-5">
             @if($avatar)
-                <img src="{{ $avatar }}" alt="{{ $name }}" class="{{ $avatarSizeClasses }} rounded-full object-cover border-4 border-white dark:border-gray-800 shadow-lg">
+                <img src="{{ $avatar }}" alt="{{ $name }}" class="{{ $avatarSizeClasses }} rounded-full object-cover border-4 border-white dark:border-gray-800 shadow-xl ring-4 ring-dodger-blue-100 dark:ring-dodger-blue-900/30">
             @elseif($avatarText)
-                <div class="{{ $avatarSizeClasses }} rounded-full bg-gradient-to-br from-dodger-blue-500 to-purple-600 flex items-center justify-center text-white font-bold border-4 border-white dark:border-gray-800 shadow-lg">
+                <div class="{{ $avatarSizeClasses }} rounded-full bg-gradient-to-br from-dodger-blue-500 to-dodger-blue-600 dark:from-dodger-blue-600 dark:to-dodger-blue-700 flex items-center justify-center text-white font-bold border-4 border-white dark:border-gray-800 shadow-xl ring-4 ring-dodger-blue-100 dark:ring-dodger-blue-900/30">
                     {{ $avatarText }}
                 </div>
             @else
-                <div class="{{ $avatarSizeClasses }} rounded-full bg-gradient-to-br from-dodger-blue-500 to-purple-600 flex items-center justify-center text-white font-bold border-4 border-white dark:border-gray-800 shadow-lg">
+                <div class="{{ $avatarSizeClasses }} rounded-full bg-gradient-to-br from-dodger-blue-500 to-dodger-blue-600 dark:from-dodger-blue-600 dark:to-dodger-blue-700 flex items-center justify-center text-white font-bold border-4 border-white dark:border-gray-800 shadow-xl ring-4 ring-dodger-blue-100 dark:ring-dodger-blue-900/30">
                     <svg class="w-1/2 h-1/2" fill="currentColor" viewBox="0 0 20 20">
                         <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
                     </svg>
@@ -89,9 +89,9 @@
 
         <!-- Stats -->
         @if($showStats && count($stats) > 0)
-            <div class="grid grid-cols-{{ count($stats) }} gap-4 my-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+            <div class="grid grid-cols-{{ count($stats) }} gap-4 my-6 pt-6 border-t border-gray-200/60 dark:border-gray-700/60">
                 @foreach($stats as $stat)
-                    <div>
+                    <div class="text-center">
                         <div class="text-2xl font-bold text-gray-900 dark:text-gray-100">
                             {{ $stat['value'] ?? '0' }}
                         </div>
@@ -105,10 +105,10 @@
 
         <!-- Social Links -->
         @if($showSocial && count($socialLinks) > 0)
-            <div class="flex justify-center gap-3 my-4">
+            <div class="flex justify-center gap-3 my-5">
                 @foreach($socialLinks as $link)
                     <a href="{{ $link['url'] ?? '#' }}" 
-                       class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-dodger-blue-100 dark:hover:bg-dodger-blue-900/30 hover:text-dodger-blue-600 dark:hover:text-dodger-blue-400 transition-colors"
+                       class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-700/50 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-dodger-blue-100 dark:hover:bg-dodger-blue-900/30 hover:text-dodger-blue-600 dark:hover:text-dodger-blue-400 hover:scale-110 transition-all duration-200 shadow-sm hover:shadow-md"
                        title="{{ $link['label'] ?? '' }}">
                         @if(isset($link['icon']))
                             {!! $link['icon'] !!}

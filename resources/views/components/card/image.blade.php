@@ -13,19 +13,19 @@
 
 @php
     $baseClasses = match($variant) {
-        'gradient' => 'bg-gradient-to-br from-white via-white to-gray-50 dark:from-gray-800 dark:via-gray-800 dark:to-gray-900',
-        'glass' => 'bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl border border-white/20 dark:border-gray-700/50',
+        'gradient' => 'bg-gradient-to-br from-white via-gray-50/50 to-gray-100/50 dark:from-gray-800 dark:via-gray-800/90 dark:to-gray-900',
+        'glass' => 'bg-white/90 dark:bg-gray-800/90 backdrop-blur-xl border border-white/30 dark:border-gray-700/40',
         default => 'bg-white dark:bg-gray-800',
     };
     
     $shadowClasses = match($variant) {
-        'gradient' => 'shadow-2xl shadow-gray-200/50 dark:shadow-gray-900/50',
-        'glass' => 'shadow-xl shadow-gray-200/20 dark:shadow-gray-900/30',
-        default => 'shadow-xl shadow-gray-200/50 dark:shadow-gray-900/30',
+        'gradient' => 'shadow-lg shadow-gray-200/40 dark:shadow-gray-900/60',
+        'glass' => 'shadow-xl shadow-gray-200/30 dark:shadow-gray-900/40',
+        default => 'shadow-md shadow-gray-200/30 dark:shadow-gray-900/50',
     };
     
-    $hoverShadowClasses = $hover ? ' hover:shadow-2xl hover:shadow-gray-300/60 dark:hover:shadow-gray-900/50 hover:scale-[1.02]' : '';
-    $cardClasses = $baseClasses . ' overflow-hidden rounded-2xl border border-gray-200/60 dark:border-gray-700/60 transition-all duration-500 ease-out ' . $shadowClasses . $hoverShadowClasses;
+    $hoverShadowClasses = $hover ? ' hover:shadow-xl hover:shadow-gray-300/50 dark:hover:shadow-gray-900/70 hover:-translate-y-0.5 transition-all duration-300 ease-out' : 'transition-all duration-300 ease-out';
+    $cardClasses = $baseClasses . ' overflow-hidden rounded-xl border border-gray-200/60 dark:border-gray-700/60 ' . $shadowClasses . ' ' . $hoverShadowClasses;
     
     $isHorizontal = in_array($imagePosition, ['left', 'right']);
 @endphp
@@ -67,18 +67,18 @@
             @endif
 
             <!-- Content -->
-            <div class="flex-1 p-4 sm:p-6">
+            <div class="flex-1 p-5 sm:p-6">
                 @if(!$overlay && $title)
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">{{ $title }}</h3>
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">{{ $title }}</h3>
                 @endif
                 @if(!$overlay && $subtitle)
                     <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">{{ $subtitle }}</p>
                 @endif
                 @if($description)
-                    <p class="text-gray-600 dark:text-gray-400 mb-4">{{ $description }}</p>
+                    <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">{{ $description }}</p>
                 @endif
                 @if($slot->isNotEmpty())
-                    <div class="text-gray-600 dark:text-gray-400">
+                    <div class="text-gray-700 dark:text-gray-300">
                         {{ $slot }}
                     </div>
                 @endif
@@ -158,18 +158,18 @@
         @endif
 
         <!-- Content -->
-        <div class="p-4 sm:p-6">
+        <div class="p-5 sm:p-6">
             @if(!$overlay && $title)
-                <h3 class="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">{{ $title }}</h3>
+                <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">{{ $title }}</h3>
             @endif
             @if(!$overlay && $subtitle)
                 <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">{{ $subtitle }}</p>
             @endif
             @if($description)
-                <p class="text-gray-600 dark:text-gray-400 mb-4">{{ $description }}</p>
+                <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">{{ $description }}</p>
             @endif
             @if($slot->isNotEmpty())
-                <div class="text-gray-600 dark:text-gray-400">
+                <div class="text-gray-700 dark:text-gray-300">
                     {{ $slot }}
                 </div>
             @endif

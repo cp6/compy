@@ -2,42 +2,55 @@
     'title' => null,
     'subtitle' => null,
     'hover' => false,
-    'variant' => 'default', // 'default', 'gradient', 'glass'
+    'variant' => 'default', // 'default', 'gradient', 'glass', 'accent'
+    'accent' => false, // Add accent border
 ])
 
 @php
     $baseClasses = match($variant) {
-        'gradient' => 'bg-gradient-to-br from-white via-white to-gray-50 dark:from-gray-800 dark:via-gray-800 dark:to-gray-900',
-        'glass' => 'bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl border border-white/20 dark:border-gray-700/50',
+        'gradient' => 'bg-gradient-to-br from-white via-gray-50/50 to-gray-100/50 dark:from-gray-800 dark:via-gray-800/90 dark:to-gray-900',
+        'glass' => 'bg-white/90 dark:bg-gray-800/90 backdrop-blur-xl border border-white/30 dark:border-gray-700/40',
+        'accent' => 'bg-white dark:bg-gray-800 border-l-4 border-dodger-blue-500',
         default => 'bg-white dark:bg-gray-800',
     };
     
     $shadowClasses = match($variant) {
-        'gradient' => 'shadow-2xl shadow-gray-200/50 dark:shadow-gray-900/50',
-        'glass' => 'shadow-xl shadow-gray-200/20 dark:shadow-gray-900/30',
-        default => 'shadow-xl shadow-gray-200/50 dark:shadow-gray-900/30',
+        'gradient' => 'shadow-lg shadow-gray-200/40 dark:shadow-gray-900/60',
+        'glass' => 'shadow-xl shadow-gray-200/30 dark:shadow-gray-900/40',
+        'accent' => 'shadow-lg shadow-gray-200/40 dark:shadow-gray-900/60',
+        default => 'shadow-md shadow-gray-200/30 dark:shadow-gray-900/50',
     };
     
-    $hoverShadowClasses = $hover ? ' hover:shadow-2xl hover:shadow-gray-300/60 dark:hover:shadow-gray-900/50 hover:scale-[1.02]' : '';
-    $cardClasses = $baseClasses . ' rounded-2xl border border-gray-200/60 dark:border-gray-700/60 transition-all duration-500 ease-out ' . $shadowClasses . $hoverShadowClasses;
+    $borderClasses = match($variant) {
+        'accent' => 'border-t border-r border-b border-gray-200/60 dark:border-gray-700/60',
+        default => 'border border-gray-200/60 dark:border-gray-700/60',
+    };
     
-    // Header classes - gradient in light mode, no background in dark mode to match card body
-    $headerClasses = 'bg-gradient-to-r from-gray-50/50 via-transparent to-gray-50/50 dark:bg-none';
+    $hoverShadowClasses = $hover ? ' hover:shadow-xl hover:shadow-gray-300/50 dark:hover:shadow-gray-900/70 hover:-translate-y-0.5 transition-all duration-300 ease-out' : 'transition-all duration-300 ease-out';
+    $cardClasses = $baseClasses . ' rounded-xl ' . $borderClasses . ' ' . $shadowClasses . ' ' . $hoverShadowClasses;
+    
+    // Header classes - improved gradient with better visual separation
+    $headerClasses = match($variant) {
+        'gradient' => 'bg-gradient-to-r from-gray-50/80 via-gray-50/40 to-transparent dark:from-gray-800/80 dark:via-gray-800/40 dark:to-transparent border-b border-gray-200/50 dark:border-gray-700/50',
+        'glass' => 'bg-white/50 dark:bg-gray-800/50 border-b border-white/20 dark:border-gray-700/30',
+        'accent' => 'bg-gradient-to-r from-dodger-blue-50/50 via-transparent to-transparent dark:from-dodger-blue-900/20 dark:via-transparent dark:to-transparent border-b border-gray-200/50 dark:border-gray-700/50',
+        default => 'bg-gradient-to-r from-gray-50/60 via-transparent to-transparent dark:from-gray-800/60 dark:via-transparent dark:to-transparent border-b border-gray-200/50 dark:border-gray-700/50',
+    };
 @endphp
 
 <div {{ $attributes->merge(['class' => $cardClasses]) }}>
     @if($title || $subtitle || isset($header))
-        <div class="px-4 py-3 sm:px-5 sm:py-4 md:px-6 md:py-5 {{ $headerClasses }} overflow-hidden rounded-t-2xl">
+        <div class="px-5 py-4 sm:px-6 sm:py-5 {{ $headerClasses }} overflow-hidden rounded-t-xl">
             @if(isset($header))
                 {{ $header }}
             @else
                 @if($title)
-                    <h3 class="text-lg sm:text-xl font-bold bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 dark:from-gray-100 dark:via-gray-50 dark:to-gray-100 bg-clip-text text-transparent tracking-tight">
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-gray-100 tracking-tight">
                         {{ $title }}
                     </h3>
                 @endif
                 @if($subtitle)
-                    <p class="mt-1 text-xs sm:text-sm text-gray-600 dark:text-gray-400">
+                    <p class="mt-1.5 text-xs sm:text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
                         {{ $subtitle }}
                     </p>
                 @endif
@@ -45,7 +58,7 @@
         </div>
     @endif
 
-    <div class="p-4 sm:p-5 md:p-6 text-gray-600 dark:text-gray-300 leading-relaxed text-sm sm:text-base">
+    <div class="p-5 sm:p-6 md:p-7 text-gray-700 dark:text-gray-300 leading-relaxed text-sm sm:text-base">
         {{ $slot }}
     </div>
 </div>
