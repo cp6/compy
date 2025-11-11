@@ -172,6 +172,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/currency-exchange/demo', function () {
         return view('currency-exchange-demo');
     })->name('currency-exchange.demo');
+    
+    Route::get('/bitcoin/demo', function () {
+        return view('bitcoin-demo');
+    })->name('bitcoin.demo');
 });
 
 Route::middleware('auth')->group(function () {

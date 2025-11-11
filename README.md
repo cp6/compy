@@ -225,6 +225,12 @@ Reusable Blade components located in `resources/views/components/`:
 - `video/player.blade.php` - Video player component with custom controls, progress bar, volume control, and fullscreen support
 - `video/playlist.blade.php` - Video playlist component with thumbnail previews, duration badges, and active state indicators
 
+#### Bitcoin Components
+- `bitcoin/price-display.blade.php` - Bitcoin price display component with current price, 24h change, and percentage change
+- `bitcoin/wallet-balance.blade.php` - Wallet balance component showing BTC balance, USD equivalent, and wallet address
+- `bitcoin/transaction-item.blade.php` - Individual transaction item component with type (sent/received), amount, confirmations, and timestamp
+- `bitcoin/transaction-list.blade.php` - Transaction list container for displaying multiple Bitcoin transactions
+
 #### API Keys Components
 - `api-keys/table.blade.php` - API keys management table with copy-to-clipboard, regenerate, enable/disable toggle, and action buttons
 
@@ -399,6 +405,7 @@ Component demonstration pages located in `resources/views/`:
 - `carbon-demo.blade.php` - Carbon date formatting demo showcasing 100+ date/time format strings (Route: `/carbon/demo`)
 - `weather-demo.blade.php` - Weather demo with current conditions, hourly forecast, and 7-day outlook (Route: `/weather/demo`)
 - `currency-exchange-demo.blade.php` - Currency exchange demo with converter, live rates, and popular pairs (Route: `/currency-exchange/demo`)
+- `bitcoin-demo.blade.php` - Bitcoin demo with price tracking, wallet balance, transaction history, and price charts (Route: `/bitcoin/demo`)
 - `premium-demo.blade.php` - Premium components demo (Route: `/premium-demo`)
 - `usage-demo.blade.php` - Component usage examples (Route: `/usage-demo`)
 
@@ -497,6 +504,7 @@ Email templates located in `resources/views/emails/`:
 - `GET /carbon/demo` - Carbon date formatting demo with 100+ format examples
 - `GET /weather/demo` - Weather demo with current conditions and forecasts
 - `GET /currency-exchange/demo` - Currency exchange demo with converter and rates
+- `GET /bitcoin/demo` - Bitcoin demo with price tracking, wallet balance, transaction history, and charts
 
 ### Development Routes (Local/Development only)
 - `GET /email-preview` - Email preview index
@@ -661,6 +669,7 @@ After logging in, you can access component demos from the sidebar:
 - **Carbon Demo**: `/carbon/demo` - PHP Carbon date formatting demo showcasing 100+ different date/time format strings
 - **Weather Demo**: `/weather/demo` - Weather dashboard with current conditions, hourly forecast, and 7-day outlook
 - **Currency Exchange Demo**: `/currency-exchange/demo` - Currency converter with live exchange rates and popular currency pairs
+- **Bitcoin Demo**: `/bitcoin/demo` - Bitcoin dashboard with real-time price tracking, wallet balance, transaction history, price charts, and market statistics
 - **Product CRUD Demo**: `/products` - Complete CRUD (Create, Read, Update, Delete) example with Product model, form validation, and blade components
 - And many more...
 
@@ -992,6 +1001,39 @@ All components are located in `resources/views/components/`. Use them in your Bl
         :currentIndex="0"
     />
 </div>
+
+{{-- Bitcoin Components --}}
+{{-- Price Display --}}
+<x-bitcoin.price-display
+    :price="43250.75"
+    :change="1250.50"
+    :changePercent="2.98"
+    currency="USD"
+    size="large"
+/>
+
+{{-- Wallet Balance --}}
+<x-bitcoin.wallet-balance
+    :balance="0.05234123"
+    :balanceUsd="2264.50"
+    address="bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh"
+    :showAddress="true"
+/>
+
+{{-- Transaction List --}}
+<x-bitcoin.transaction-list :transactions="$transactions" />
+
+{{-- Individual Transaction Item --}}
+<x-bitcoin.transaction-item
+    hash="a1b2c3d4e5f6789012345678901234567890abcdef1234567890abcdef123456"
+    type="received"
+    :amount="0.00123456"
+    :amountUsd="53.42"
+    :fee="0"
+    :confirmations="12"
+    :timestamp="now()"
+    address="bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh"
+/>
 
 {{-- Landing Page Components --}}
 {{-- Navbar --}}
