@@ -164,6 +164,14 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/carbon/demo', function () {
         return view('carbon-demo');
     })->name('carbon.demo');
+    
+    Route::get('/weather/demo', function () {
+        return view('weather-demo');
+    })->name('weather.demo');
+    
+    Route::get('/currency-exchange/demo', function () {
+        return view('currency-exchange-demo');
+    })->name('currency-exchange.demo');
 });
 
 Route::middleware('auth')->group(function () {

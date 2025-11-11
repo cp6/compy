@@ -8,9 +8,30 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
-- Initial starter kit release
-- Complete documentation suite
-- 100+ pre-built components
+- Billing demo page with reusable components
+- Product CRUD demo with components
+- Dynamic cards demo page with pagination, filtering, and search
+- API keys feature
+- Pagination components with three variants (text, text-icon, icon)
+- Typography demo page with comprehensive typography examples
+- New components and demo pages
+
+### Changed
+- Enhanced chat functionality
+- Updated card and modal components
+- Improved form input components design and dark mode consistency
+- Improved button component design and interactions
+- Improved card component design and styling
+- Enhanced sidebar components with improved styling and custom scrollbar
+- Updated button styles for better accessibility and visual consistency
+- Added custom scrollbar styles for a refined user experience
+
+### Fixed
+- Fixed table overflow issue in cards
+
+### Removed
+- Removed sidebar demo page (moved spinner components to misc demo)
+- Removed emojis from README for cleaner documentation
 
 ## [1.0.0] - 2025-11-10
 

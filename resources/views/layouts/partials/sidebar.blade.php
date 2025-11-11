@@ -261,6 +261,20 @@
             Carbon Demo
         </x-sidebar.link>
 
+        <x-sidebar.link href="{{ route('weather.demo') }}" :active="request()->routeIs('weather.*')">
+            <x-slot:icon>
+                <x-sidebar.icon name="ui" />
+            </x-slot:icon>
+            Weather Demo
+        </x-sidebar.link>
+
+        <x-sidebar.link href="{{ route('currency-exchange.demo') }}" :active="request()->routeIs('currency-exchange.*')">
+            <x-slot:icon>
+                <x-sidebar.icon name="ui" />
+            </x-slot:icon>
+            Currency Exchange
+        </x-sidebar.link>
+
         <x-sidebar.dropdown 
             label="UI Elements" 
             :active="request()->routeIs('buttons.*') || request()->routeIs('cards.*') || request()->routeIs('modals.*') || request()->routeIs('misc.*') || request()->routeIs('tabs.*') || request()->routeIs('accordion.*') || request()->routeIs('toast.*') || request()->routeIs('typography.*')"
