@@ -86,3 +86,41 @@ img, video, iframe {
 .dark .scrollbar-thin:hover::-webkit-scrollbar-thumb {
     background-color: rgb(107 114 128);
 }
+
+/* Hot badge flame effect */
+@keyframes flame-flicker {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    25% {
+        opacity: 0.9;
+        transform: scale(1.02);
+    }
+    50% {
+        opacity: 0.95;
+        transform: scale(0.98);
+    }
+    75% {
+        opacity: 0.9;
+        transform: scale(1.01);
+    }
+}
+
+.hot-badge-flame {
+    animation: flame-flicker 1.5s ease-in-out infinite;
+    position: relative;
+}
+
+.hot-badge-flame::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,165,0,0.6) 50%, transparent 100%);
+    border-radius: 50%;
+    animation: flame-flicker 1.5s ease-in-out infinite;
+}

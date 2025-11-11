@@ -5,6 +5,8 @@
     'timestamp' => null,
     'isAi' => false,
     'isTyping' => false,
+    'codeBlocks' => [],
+    'suggestedResponses' => [],
 ])
 
 @php
@@ -37,7 +39,22 @@
                     <div class="w-2 h-2 bg-current opacity-60 rounded-full animate-bounce" style="animation-delay: 0.4s"></div>
                 </div>
             @else
-                <p class="text-sm leading-relaxed whitespace-pre-wrap break-words">{{ $content }}</p>
+                <div class="space-y-2">
+                    <p class="text-sm leading-relaxed whitespace-pre-wrap break-words">{{ $content }}</p>
+                    
+                    @if(!empty($codeBlocks))
+                        @foreach($codeBlocks as $codeBlock)
+                            <x-chat.code-block 
+                                :language="$codeBlock['language'] ?? 'text'"
+                                :code="$codeBlock['code'] ?? ''"
+                            />
+                        @endforeach
+                    @endif
+                    
+                    @if(!empty($suggestedResponses) && $isAi)
+                        <x-chat.suggested-responses :suggestions="$suggestedResponses" />
+                    @endif
+                </div>
             @endif
         </div>
         @if($timestamp && !$isTyping)

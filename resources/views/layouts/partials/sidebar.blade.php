@@ -130,13 +130,16 @@
         {{-- Dropdown Menu --}}
         <x-sidebar.dropdown 
             label="Tables" 
-            :active="request()->routeIs('tables.*')"
+            :active="request()->routeIs('tables.*') || request()->routeIs('api-keys.*')"
         >
             <x-slot:icon>
                 <x-sidebar.icon name="tables" />
             </x-slot:icon>
             <x-sidebar.dropdown-item href="{{ route('tables.demo') }}" :active="request()->routeIs('tables.demo')">
                 Table Demo
+            </x-sidebar.dropdown-item>
+            <x-sidebar.dropdown-item href="{{ route('api-keys.demo') }}" :active="request()->routeIs('api-keys.*')">
+                API Keys
             </x-sidebar.dropdown-item>
         </x-sidebar.dropdown>
 

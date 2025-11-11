@@ -184,6 +184,9 @@
                 </main>
             </div>
         </div>
+
+        <!-- Footer -->
+        <x-footer :hasSidebar="$hasSidebar" />
         
         @stack('scripts')
     </body>

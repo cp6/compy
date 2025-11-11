@@ -20,141 +20,179 @@
 
     <x-alert.alerts />
 
-    <div class="space-y-8">
-        <!-- Default Timeline -->
+    <div class="space-y-10">
+        <!-- Project Milestones -->
         <section>
-            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-4">Default Timeline</h2>
-            <x-card.card variant="gradient">
+            <div class="mb-6">
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">Project Milestones</h2>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Track key project phases and deliverables</p>
+            </div>
+            <x-card.card>
                 <x-timeline.timeline>
                     <x-timeline.timeline-item
-                        title="Project Created"
-                        description="New project 'Website Redesign' was created and assigned to the team."
-                        timestamp="2 hours ago"
-                        color="dodger-blue"
-                    />
-                    <x-timeline.timeline-item
-                        title="Design Approved"
-                        description="The initial design mockups have been approved by the client."
-                        timestamp="1 day ago"
+                        title="Q4 Release Deployed"
+                        description="Version 2.4.0 successfully deployed to production. Includes new dashboard analytics, improved API performance, and security enhancements."
+                        timestamp="Dec 15, 2024"
                         color="green"
                         status="success"
                     />
                     <x-timeline.timeline-item
-                        title="Kickoff Meeting"
-                        description="Project kickoff meeting scheduled and completed successfully."
+                        title="Security Audit Completed"
+                        description="Third-party security assessment passed with zero critical vulnerabilities. All recommendations have been implemented."
+                        timestamp="Dec 8, 2024"
+                        color="green"
+                        status="success"
+                    />
+                    <x-timeline.timeline-item
+                        title="Beta Testing Phase"
+                        description="Beta release distributed to 500+ users. Collecting feedback and monitoring performance metrics."
+                        timestamp="Nov 28, 2024"
+                        color="dodger-blue"
+                    />
+                    <x-timeline.timeline-item
+                        title="Development Sprint Completed"
+                        description="Sprint 12 completed ahead of schedule. All planned features implemented and unit tests passing."
+                        timestamp="Nov 15, 2024"
+                        color="purple"
+                    />
+                </x-timeline.timeline>
+            </x-card.card>
+        </section>
+
+        <!-- Transaction History -->
+        <section>
+            <div class="mb-6">
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">Transaction History</h2>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Recent account activity and payment processing</p>
+            </div>
+            <x-card.card>
+                <x-timeline.timeline>
+                    <x-timeline.timeline-item
+                        title="Subscription Renewed"
+                        description="Annual Pro plan subscription renewed automatically. Payment of $1,199.00 processed via credit card ending in 4242."
+                        timestamp="2 hours ago"
+                        color="green"
+                        status="success"
+                        icon='<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>'
+                    />
+                    <x-timeline.timeline-item
+                        title="Invoice #INV-2024-0847 Generated"
+                        description="Monthly invoice generated for December 2024. Includes usage-based charges and platform fees."
+                        timestamp="Yesterday"
+                        color="dodger-blue"
+                        icon='<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>'
+                    />
+                    <x-timeline.timeline-item
+                        title="Payment Method Updated"
+                        description="Credit card information updated. New card ending in 4242 is now the default payment method."
                         timestamp="3 days ago"
                         color="purple"
+                        icon='<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>'
                     />
                     <x-timeline.timeline-item
-                        title="Requirements Gathered"
-                        description="All project requirements have been collected and documented."
+                        title="Refund Processed"
+                        description="Refund of $299.00 issued for canceled subscription. Funds will appear in 5-7 business days."
                         timestamp="1 week ago"
                         color="gray"
+                        icon='<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" /></svg>'
                     />
                 </x-timeline.timeline>
             </x-card.card>
         </section>
 
-        <!-- Timeline with Icons -->
+        <!-- Activity Feed -->
         <section>
-            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-4">Timeline with Custom Icons</h2>
-            <x-card.card variant="gradient">
-                <x-timeline.timeline>
-                    <x-timeline.timeline-item
-                        title="User Registered"
-                        description="New user account created successfully."
-                        timestamp="5 minutes ago"
-                        color="green"
-                        :icon='\'<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>\''
-                    />
-                    <x-timeline.timeline-item
-                        title="Payment Received"
-                        description="Payment of $299.00 has been processed successfully."
-                        timestamp="2 hours ago"
-                        color="green"
-                        status="success"
-                        :icon='\'<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>\''
-                    />
-                    <x-timeline.timeline-item
-                        title="Order Shipped"
-                        description="Order #12345 has been shipped and is on its way."
-                        timestamp="1 day ago"
-                        color="dodger-blue"
-                        :icon='\'<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" /></svg>\''
-                    />
-                    <x-timeline.timeline-item
-                        title="Order Placed"
-                        description="New order has been placed and is being processed."
-                        timestamp="2 days ago"
-                        color="purple"
-                        :icon='\'<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>\''
-                    />
-                </x-timeline.timeline>
-            </x-card.card>
-        </section>
-
-        <!-- Activity Timeline -->
-        <section>
-            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-4">Activity Timeline</h2>
-            <x-card.card variant="gradient">
+            <div class="mb-6">
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">Activity Feed</h2>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Team collaboration and system events</p>
+            </div>
+            <x-card.card>
                 <x-timeline.timeline variant="detailed">
                     <x-timeline.timeline-item
-                        title="Document Updated"
-                        timestamp="Just now"
-                        color="dodger-blue"
-                        status="success"
-                    >
-                        <div class="mt-2 p-3 bg-gray-50 dark:bg-gray-900/50 rounded-lg">
-                            <p class="text-sm text-gray-600 dark:text-gray-400">
-                                <strong class="text-gray-900 dark:text-gray-100">John Doe</strong> updated the project documentation.
-                            </p>
-                            <p class="text-xs text-gray-500 dark:text-gray-500 mt-1">
-                                Updated sections: Getting Started, API Reference
-                            </p>
-                        </div>
-                    </x-timeline.timeline-item>
-
-                    <x-timeline.timeline-item
-                        title="Comment Added"
-                        timestamp="30 minutes ago"
-                        color="purple"
-                    >
-                        <div class="mt-2 p-3 bg-gray-50 dark:bg-gray-900/50 rounded-lg">
-                            <p class="text-sm text-gray-600 dark:text-gray-400">
-                                <strong class="text-gray-900 dark:text-gray-100">Jane Smith</strong> commented on the design proposal.
-                            </p>
-                            <blockquote class="mt-2 text-sm italic text-gray-600 dark:text-gray-400 border-l-4 border-dodger-blue-500 pl-3">
-                                "This looks great! Can we add more spacing between elements?"
-                            </blockquote>
-                        </div>
-                    </x-timeline.timeline-item>
-
-                    <x-timeline.timeline-item
-                        title="Task Completed"
-                        timestamp="2 hours ago"
+                        title="Code Review Completed"
+                        timestamp="45 minutes ago"
                         color="green"
                         status="success"
                     >
-                        <div class="mt-2 p-3 bg-gray-50 dark:bg-gray-900/50 rounded-lg">
-                            <p class="text-sm text-gray-600 dark:text-gray-400">
-                                Task <strong class="text-gray-900 dark:text-gray-100">"Implement user authentication"</strong> has been marked as completed.
+                        <div class="mt-3 p-4 bg-gray-50 dark:bg-gray-900/50 rounded-lg border border-gray-200 dark:border-gray-800">
+                            <div class="flex items-start justify-between mb-2">
+                                <div>
+                                    <p class="text-sm text-gray-900 dark:text-gray-100 font-medium">
+                                        Sarah Chen approved pull request #847
+                                    </p>
+                                    <p class="text-xs text-gray-500 dark:text-gray-500 mt-1">
+                                        Feature: User notification preferences
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex gap-2 mt-3">
+                                <span class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300">
+                                    Approved
+                                </span>
+                                <span class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">
+                                    12 files changed
+                                </span>
+                            </div>
+                        </div>
+                    </x-timeline.timeline-item>
+
+                    <x-timeline.timeline-item
+                        title="Database Migration Executed"
+                        timestamp="2 hours ago"
+                        color="dodger-blue"
+                    >
+                        <div class="mt-3 p-4 bg-gray-50 dark:bg-gray-900/50 rounded-lg border border-gray-200 dark:border-gray-800">
+                            <p class="text-sm text-gray-900 dark:text-gray-100 font-medium mb-2">
+                                Migration: add_user_preferences_table
+                            </p>
+                            <p class="text-xs text-gray-600 dark:text-gray-400">
+                                Executed by system automatically. Added new table for storing user notification preferences with indexes on user_id and preference_key.
                             </p>
                         </div>
                     </x-timeline.timeline-item>
 
                     <x-timeline.timeline-item
-                        title="Issue Reported"
-                        timestamp="1 day ago"
+                        title="Deployment Started"
+                        timestamp="4 hours ago"
+                        color="purple"
+                    >
+                        <div class="mt-3 p-4 bg-gray-50 dark:bg-gray-900/50 rounded-lg border border-gray-200 dark:border-gray-800">
+                            <p class="text-sm text-gray-900 dark:text-gray-100 font-medium mb-2">
+                                Staging environment deployment initiated
+                            </p>
+                            <p class="text-xs text-gray-600 dark:text-gray-400 mb-3">
+                                Build #2847 deploying to staging. Includes bug fixes and performance improvements.
+                            </p>
+                            <div class="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-500">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                </svg>
+                                <span>Deployment completed successfully</span>
+                            </div>
+                        </div>
+                    </x-timeline.timeline-item>
+
+                    <x-timeline.timeline-item
+                        title="Security Alert"
+                        timestamp="Yesterday"
                         color="red"
                         status="error"
                     >
-                        <div class="mt-2 p-3 bg-gray-50 dark:bg-gray-900/50 rounded-lg">
-                            <p class="text-sm text-gray-600 dark:text-gray-400">
-                                <strong class="text-gray-900 dark:text-gray-100">Bug Report #42</strong> - Login page not loading on mobile devices.
+                        <div class="mt-3 p-4 bg-red-50 dark:bg-red-950/40 rounded-lg border border-red-200 dark:border-red-800/50">
+                            <p class="text-sm text-gray-900 dark:text-red-100 font-medium mb-2">
+                                Multiple failed login attempts detected
                             </p>
-                            <span class="inline-block mt-2 px-2 py-1 text-xs font-medium rounded bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300">
-                                High Priority
-                            </span>
+                            <p class="text-xs text-gray-600 dark:text-red-200/80 mb-3">
+                                IP address 192.168.1.45 attempted to access account with invalid credentials 5 times within 10 minutes.
+                            </p>
+                            <div class="flex items-center gap-2">
+                                <span class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium bg-red-100 dark:bg-red-900/50 text-red-800 dark:text-red-200 border border-red-300 dark:border-red-800/50">
+                                    High Priority
+                                </span>
+                                <span class="text-xs text-gray-500 dark:text-red-300/70">
+                                    Account temporarily locked for security
+                                </span>
+                            </div>
                         </div>
                     </x-timeline.timeline-item>
                 </x-timeline.timeline>

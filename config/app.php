@@ -123,4 +123,33 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Avatar Configuration
+    |--------------------------------------------------------------------------
+    |
+    | Configure the default avatar provider and settings for user avatars.
+    | Available providers: dicebear, ui-avatars, gravatar, boring-avatars,
+    | multiavatar, adorable, robohash
+    |
+    */
+
+    'avatar_provider' => env('AVATAR_PROVIDER', 'boring-avatars'),
+    'avatar_size' => env('AVATAR_SIZE', 256),
+    
+    // DiceBear specific settings
+    'avatar_dicebear_style' => env('AVATAR_DICEBEAR_STYLE', 'avataaars'), // avataaars, adventurer, big-smile, bottts, lorelei, etc.
+    
+    // UI Avatars specific settings
+    'avatar_ui_background' => env('AVATAR_UI_BACKGROUND', 'random'), // random, hex color, or color name
+    
+    // Gravatar specific settings
+    'avatar_gravatar_default' => env('AVATAR_GRAVATAR_DEFAULT', 'identicon'), // identicon, monsterid, wavatar, retro, robohash, blank, 404
+    
+    // Boring Avatars specific settings
+    'avatar_boring_variant' => env('AVATAR_BORING_VARIANT', 'marble'), // marble, beam, pixel, sunset, ring, bauhaus
+    
+    // RoboHash specific settings
+    'avatar_robohash_set' => env('AVATAR_ROBOHASH_SET', 'set1'), // set1-set5, any1-any5
+
 ];

@@ -139,6 +139,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/typography/demo', function () {
         return view('typography-demo');
     })->name('typography.demo');
+    
+    Route::get('/api-keys/demo', function () {
+        return view('api-keys.demo');
+    })->name('api-keys.demo');
 });
 
 Route::middleware('auth')->group(function () {

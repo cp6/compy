@@ -17,11 +17,11 @@
     <x-alert.alerts />
             
             <!-- Premium Banner -->
-            <x-card.card variant="gradient" class="mb-8 bg-gradient-to-r from-dodger-blue-600 via-dodger-blue-500 to-purple-600 dark:from-dodger-blue-700 dark:via-dodger-blue-600 dark:to-purple-700 text-white border-0">
+            <x-card.card class="mb-8 bg-gradient-to-r from-dodger-blue-600 via-dodger-blue-500 to-purple-600 dark:from-dodger-blue-700 dark:via-dodger-blue-600 dark:to-purple-700 text-white border-0 shadow-lg">
                 <div class="flex flex-col md:flex-row items-center justify-between gap-4">
                     <div>
-                        <h2 class="text-2xl font-bold mb-2">Unlock Premium Features</h2>
-                        <p class="text-dodger-blue-100 dark:text-dodger-blue-200">Get access to advanced analytics, unlimited exports, priority support, and more.</p>
+                        <h2 class="text-2xl font-bold mb-2 text-white">Unlock Premium Features</h2>
+                        <p class="text-white/90 dark:text-dodger-blue-200">Get access to advanced analytics, unlimited exports, priority support, and more.</p>
                     </div>
                     <x-button.button variant="primary" size="lg" class="bg-white text-dodger-blue-600 hover:bg-gray-100 dark:bg-gray-100 dark:text-dodger-blue-700 dark:hover:bg-gray-200">
                         Upgrade to Premium

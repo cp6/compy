@@ -62,7 +62,7 @@
         </div>
     @endif
 
-    <div class="p-5 sm:p-6 text-gray-700 dark:text-gray-300 leading-relaxed text-sm sm:text-base relative z-0">
+    <div class="p-5 sm:p-6 text-gray-900 dark:text-gray-300 leading-relaxed text-sm sm:text-base relative z-0">
         {{ $slot }}
     </div>
 </div>

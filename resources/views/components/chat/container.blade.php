@@ -1,5 +1,6 @@
 @props([
     'height' => 'h-[600px]',
+    'messages' => [],
 ])
 
 <div 
@@ -26,7 +27,7 @@
         class="flex-1 overflow-y-auto p-4 space-y-4"
         style="scroll-behavior: smooth;"
     >
-        @if(isset($messages) && is_array($messages))
+        @if(!empty($messages) && is_array($messages))
             @foreach($messages as $message)
                 <x-chat.message
                     :author="$message['author'] ?? 'User'"
@@ -34,6 +35,8 @@
                     :timestamp="$message['timestamp'] ?? null"
                     :isAi="$message['isAi'] ?? false"
                     :isTyping="$message['isTyping'] ?? false"
+                    :codeBlocks="$message['codeBlocks'] ?? []"
+                    :suggestedResponses="$message['suggestedResponses'] ?? []"
                 />
             @endforeach
         @endif

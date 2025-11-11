@@ -1,11 +1,40 @@
 @php
     // Demo user data
+    $demoEmail = 'john.doe@example.com';
+    $demoName = 'John Doe';
+    
+    // Generate avatar URL using UI Avatars - generates avatar with initials
+    // Color is determined by: config('app.avatar_ui_background', 'random')
+    // If 'random', a deterministic color is picked based on name hash
+    $background = config('app.avatar_ui_background', 'random');
+    
+    // If 'random', generate deterministic color based on name hash (same as User model)
+    if ($background === 'random') {
+        $colorPalette = [
+            '264653', // Dark teal
+            '2a9d8f', // Teal
+            'e9c46a', // Yellow
+            'f4a261', // Orange
+            'e76f51', // Coral
+            '92A1C6', // Blue-gray
+            '146A7C', // Dark blue
+            'F0AB3D', // Gold
+            'C271B4', // Purple
+            'C20D90', // Magenta
+        ];
+        $hash = crc32($demoName);
+        $colorIndex = abs($hash) % count($colorPalette);
+        $background = $colorPalette[$colorIndex];
+    }
+    
+    $avatarUrl = "https://ui-avatars.com/api/?name=" . urlencode($demoName) . "&background={$background}&size=256&bold=true&color=fff&format=svg";
+    
     $user = [
         'name' => 'John Doe',
-        'email' => 'john.doe@example.com',
+        'email' => $demoEmail,
         'role' => 'Senior Developer',
         'bio' => 'Passionate full-stack developer with 8+ years of experience building scalable web applications. Love working with Laravel, React, and modern web technologies.',
-        'avatar' => null,
+        'avatar' => $avatarUrl,
         'avatarText' => 'JD',
         'location' => 'San Francisco, CA',
         'website' => 'https://johndoe.dev',
@@ -75,6 +104,7 @@
                     :name="$user['name']"
                     :role="$user['role']"
                     :bio="$user['bio']"
+                    :avatar="$user['avatar']"
                     :avatarText="$user['avatarText']"
                     variant="default"
                 />
@@ -84,6 +114,7 @@
                     :name="$user['name']"
                     :role="$user['role']"
                     :bio="$user['bio']"
+                    :avatar="$user['avatar']"
                     :avatarText="$user['avatarText']"
                     variant="gradient"
                     :showStats="true"
@@ -95,6 +126,7 @@
                     :name="$user['name']"
                     :role="$user['role']"
                     :bio="$user['bio']"
+                    :avatar="$user['avatar']"
                     :avatarText="$user['avatarText']"
                     variant="glass"
                     :showSocial="true"
@@ -111,6 +143,7 @@
                     :name="$user['name']"
                     :role="$user['role']"
                     :bio="$user['bio']"
+                    :avatar="$user['avatar']"
                     :avatarText="$user['avatarText']"
                     avatarSize="xl"
                     variant="gradient"
@@ -224,9 +257,13 @@
             <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-4">Compact Profile Layout</h2>
             <x-card.card variant="gradient">
                 <div class="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-                    <div class="w-20 h-20 rounded-full bg-gradient-to-br from-dodger-blue-500 to-dodger-blue-600 dark:from-dodger-blue-600 dark:to-dodger-blue-700 flex items-center justify-center text-white font-bold text-2xl flex-shrink-0">
-                        {{ $user['avatarText'] }}
-                    </div>
+                    @if($user['avatar'])
+                        <img src="{{ $user['avatar'] }}" alt="{{ $user['name'] }}" class="w-20 h-20 rounded-full object-cover border-4 border-white dark:border-gray-800 shadow-xl ring-4 ring-dodger-blue-100 dark:ring-dodger-blue-900/30 flex-shrink-0">
+                    @else
+                        <div class="w-20 h-20 rounded-full bg-gradient-to-br from-dodger-blue-500 to-dodger-blue-600 dark:from-dodger-blue-600 dark:to-dodger-blue-700 flex items-center justify-center text-white font-bold text-2xl flex-shrink-0">
+                            {{ $user['avatarText'] }}
+                        </div>
+                    @endif
                     <div class="flex-1 min-w-0">
                         <h3 class="text-xl font-bold text-gray-900 dark:text-gray-100">{{ $user['name'] }}</h3>
                         <p class="text-sm text-dodger-blue-600 dark:text-dodger-blue-400 font-medium mt-1">{{ $user['role'] }}</p>
@@ -248,6 +285,7 @@
     name="John Doe"
     role="Senior Developer"
     bio="Passionate developer..."
+    :avatar="$user->avatar"
     avatarText="JD"
     variant="gradient"
     :showStats="true"
@@ -260,6 +298,7 @@
 &lt;x-card.profile
     name="John Doe"
     role="Senior Developer"
+    :avatar="$user->avatar"
     avatarText="JD"
     variant="gradient"
 &gt;
@@ -271,4 +310,5 @@
         </x-card.card>
     </div>
 </x-app-layout>
+
 

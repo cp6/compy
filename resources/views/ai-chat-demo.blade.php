@@ -6,6 +6,11 @@
             'content' => 'Hello! I\'m your AI assistant. How can I help you today?',
             'timestamp' => '10:30 AM',
             'isAi' => true,
+            'suggestedResponses' => [
+                'What is Laravel?',
+                'Show me a code example',
+                'How do I create a component?',
+            ],
         ],
         [
             'author' => 'You',
@@ -29,11 +34,54 @@ Key features of Laravel include:
 Laravel makes development faster and more enjoyable by providing tools and features that handle common tasks, allowing developers to focus on building their applications.',
             'timestamp' => '10:31 AM',
             'isAi' => true,
+            'suggestedResponses' => [
+                'Show me a routing example',
+                'How do I use Eloquent?',
+                'What are Blade components?',
+            ],
         ],
         [
             'author' => 'You',
-            'content' => 'That\'s really helpful! Can you also tell me about Blade components?',
+            'content' => 'That\'s really helpful! Can you show me a code example of how to create a route?',
             'timestamp' => '10:32 AM',
+            'isAi' => false,
+        ],
+        [
+            'author' => 'AI Assistant',
+            'content' => 'Absolutely! Here\'s how you can create routes in Laravel. Routes are typically defined in the `routes/web.php` file:',
+            'timestamp' => '10:32 AM',
+            'isAi' => true,
+            'codeBlocks' => [
+                [
+                    'language' => 'php',
+                    'code' => 'use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+
+// Basic route
+Route::get(\'/users\', [UserController::class, \'index\']);
+
+// Route with parameters
+Route::get(\'/users/{id}\', [UserController::class, \'show\']);
+
+// Named route
+Route::get(\'/profile\', [UserController::class, \'profile\'])->name(\'profile\');
+
+// Route group with middleware
+Route::middleware([\'auth\'])->group(function () {
+    Route::get(\'/dashboard\', [DashboardController::class, \'index\']);
+});',
+                ],
+            ],
+            'suggestedResponses' => [
+                'How do I create a controller?',
+                'Show me Eloquent examples',
+                'What about API routes?',
+            ],
+        ],
+        [
+            'author' => 'You',
+            'content' => 'Great! Now can you tell me about Blade components?',
+            'timestamp' => '10:33 AM',
             'isAi' => false,
         ],
         [
@@ -50,9 +98,220 @@ Components help you:
 • Make templates easier to read and maintain
 • Encapsulate complex UI logic
 
-For example, you might have a `<x-button>` component that you can use anywhere with different props like `<x-button variant="primary">Click me</x-button>`.',
-            'timestamp' => '10:32 AM',
+Here\'s an example of creating and using a simple button component:',
+            'timestamp' => '10:33 AM',
             'isAi' => true,
+            'codeBlocks' => [
+                [
+                    'language' => 'php',
+                    'code' => '// resources/views/components/button.blade.php
+@props([\'variant\' => \'primary\'])
+
+<button {{ $attributes->merge([\'class\' => \'px-4 py-2 rounded \' . 
+    ($variant === \'primary\' ? \'bg-blue-500\' : \'bg-gray-500\')]) }}>
+    {{ $slot }}
+</button>
+
+// Usage in a view
+<x-button variant="primary">Click Me</x-button>
+<x-button variant="secondary">Cancel</x-button>',
+                ],
+            ],
+            'suggestedResponses' => [
+                'Show me class-based components',
+                'How do I pass data to components?',
+                'What about component slots?',
+            ],
+        ],
+        [
+            'author' => 'You',
+            'content' => 'How do I use Eloquent to query the database?',
+            'timestamp' => '10:35 AM',
+            'isAi' => false,
+        ],
+        [
+            'author' => 'AI Assistant',
+            'content' => 'Eloquent is Laravel\'s ORM (Object-Relational Mapping) that makes database interactions elegant and intuitive. Here are some common Eloquent operations:',
+            'timestamp' => '10:35 AM',
+            'isAi' => true,
+            'codeBlocks' => [
+                [
+                    'language' => 'php',
+                    'code' => '// Retrieve all records
+$users = User::all();
+
+// Find by ID
+$user = User::find(1);
+
+// Find or fail (throws exception if not found)
+$user = User::findOrFail(1);
+
+// Query with conditions
+$activeUsers = User::where(\'status\', \'active\')
+    ->where(\'email_verified_at\', \'!= \', null)
+    ->get();
+
+// Create a new record
+$user = User::create([
+    \'name\' => \'John Doe\',
+    \'email\' => \'john@example.com\',
+    \'password\' => Hash::make(\'password\'),
+]);
+
+// Update a record
+$user = User::find(1);
+$user->update([\'name\' => \'Jane Doe\']);
+
+// Delete a record
+User::find(1)->delete();
+
+// Relationships
+$user = User::with(\'posts\')->find(1);
+$posts = $user->posts;',
+                ],
+            ],
+            'suggestedResponses' => [
+                'How do I define relationships?',
+                'Show me more query examples',
+                'What about eager loading?',
+            ],
+        ],
+        [
+            'author' => 'You',
+            'content' => 'Can you show me how to define relationships between models?',
+            'timestamp' => '10:37 AM',
+            'isAi' => false,
+        ],
+        [
+            'author' => 'AI Assistant',
+            'content' => 'Eloquent relationships make it easy to work with related data. Here are the most common relationship types:',
+            'timestamp' => '10:37 AM',
+            'isAi' => true,
+            'codeBlocks' => [
+                [
+                    'language' => 'php',
+                    'code' => '// One-to-Many: User has many Posts
+class User extends Model
+{
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
+}
+
+// Many-to-One: Post belongs to User
+class Post extends Model
+{
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+}
+
+// Many-to-Many: User has many Roles
+class User extends Model
+{
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class);
+    }
+}
+
+// Has One Through
+class Supplier extends Model
+{
+    public function userHistory()
+    {
+        return $this->hasOneThrough(History::class, User::class);
+    }
+}
+
+// Usage
+$user = User::find(1);
+$posts = $user->posts; // Get all posts
+$post = Post::find(1);
+$author = $post->user; // Get the user who created the post',
+                ],
+            ],
+            'suggestedResponses' => [
+                'How do I use migrations?',
+                'Show me validation examples',
+                'What about form requests?',
+            ],
+        ],
+        [
+            'author' => 'You',
+            'content' => 'This is really helpful! One more question - how do I handle form validation?',
+            'timestamp' => '10:39 AM',
+            'isAi' => false,
+        ],
+        [
+            'author' => 'AI Assistant',
+            'content' => 'Laravel provides powerful validation features. You can validate data in controllers or use Form Request classes for more complex validation. Here are examples:',
+            'timestamp' => '10:39 AM',
+            'isAi' => true,
+            'codeBlocks' => [
+                [
+                    'language' => 'php',
+                    'code' => '// In a controller
+public function store(Request $request)
+{
+    $validated = $request->validate([
+        \'name\' => \'required|string|max:255\',
+        \'email\' => \'required|email|unique:users\',
+        \'password\' => \'required|min:8|confirmed\',
+        \'age\' => \'nullable|integer|min:18\',
+    ]);
+    
+    // $validated contains only validated data
+    User::create($validated);
+}
+
+// Using Form Request (recommended for complex validation)
+// php artisan make:request StoreUserRequest
+
+class StoreUserRequest extends FormRequest
+{
+    public function rules(): array
+    {
+        return [
+            \'name\' => [\'required\', \'string\', \'max:255\'],
+            \'email\' => [\'required\', \'email\', \'unique:users\'],
+            \'password\' => [\'required\', \'min:8\', \'confirmed\'],
+        ];
+    }
+    
+    public function messages(): array
+    {
+        return [
+            \'email.unique\' => \'This email is already registered.\',
+        ];
+    }
+}',
+                ],
+            ],
+            'suggestedResponses' => [
+                'How do I create custom validation rules?',
+                'Show me middleware examples',
+                'What about API authentication?',
+            ],
+        ],
+        [
+            'author' => 'You',
+            'content' => 'Perfect! Thanks for all the help. This has been very informative.',
+            'timestamp' => '10:41 AM',
+            'isAi' => false,
+        ],
+        [
+            'author' => 'AI Assistant',
+            'content' => 'You\'re very welcome! I\'m glad I could help. Feel free to ask if you have any more questions about Laravel or web development. Happy coding! 🚀',
+            'timestamp' => '10:41 AM',
+            'isAi' => true,
+            'suggestedResponses' => [
+                'Tell me about Laravel queues',
+                'How do I use caching?',
+                'Show me testing examples',
+            ],
         ],
     ];
 @endphp
