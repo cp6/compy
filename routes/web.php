@@ -160,6 +160,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/billing/demo', function () {
         return view('billing-demo');
     })->name('billing.demo');
+    
+    Route::get('/carbon/demo', function () {
+        return view('carbon-demo');
+    })->name('carbon.demo');
 });
 
 Route::middleware('auth')->group(function () {

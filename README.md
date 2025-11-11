@@ -396,6 +396,7 @@ Component demonstration pages located in `resources/views/`:
 - `typography-demo.blade.php` - Typography demo showcasing headings, paragraphs, lists, quotes, text utilities, and responsive typography (Route: `/typography/demo`)
 - `video-player-demo.blade.php` - Video player demo with custom controls, playlists, and various player configurations (Route: `/video-player/demo`)
 - `api-keys/demo.blade.php` - API keys management demo (Route: `/api-keys/demo`)
+- `carbon-demo.blade.php` - Carbon date formatting demo showcasing 100+ date/time format strings (Route: `/carbon/demo`)
 - `premium-demo.blade.php` - Premium components demo (Route: `/premium-demo`)
 - `usage-demo.blade.php` - Component usage examples (Route: `/usage-demo`)
 
@@ -491,6 +492,7 @@ Email templates located in `resources/views/emails/`:
 - `GET /misc/demo` - Miscellaneous demo
 - `GET /typography/demo` - Typography demo
 - `GET /video-player/demo` - Video player demo with custom controls and playlists
+- `GET /carbon/demo` - Carbon date formatting demo with 100+ format examples
 
 ### Development Routes (Local/Development only)
 - `GET /email-preview` - Email preview index
@@ -652,6 +654,7 @@ After logging in, you can access component demos from the sidebar:
 - **Video Player Demo**: `/video-player/demo` - Modern video player with custom controls, playlists, fullscreen support, and auto-hide controls
 - **Misc Demo**: `/misc/demo` - Spinners/loaders, badges, alerts, progress bars, status indicators, and more
 - **Typography Demo**: `/typography/demo` - Typography showcase with headings, paragraphs, lists, quotes, text utilities, and responsive typography
+- **Carbon Demo**: `/carbon/demo` - PHP Carbon date formatting demo showcasing 100+ different date/time format strings
 - **Product CRUD Demo**: `/products` - Complete CRUD (Create, Read, Update, Delete) example with Product model, form validation, and blade components
 - And many more...
 

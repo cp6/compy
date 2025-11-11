@@ -254,6 +254,13 @@
             Usage Component
         </x-sidebar.link>
 
+        <x-sidebar.link href="{{ route('carbon.demo') }}" :active="request()->routeIs('carbon.*')">
+            <x-slot:icon>
+                <x-sidebar.icon name="calendar" />
+            </x-slot:icon>
+            Carbon Demo
+        </x-sidebar.link>
+
         <x-sidebar.dropdown 
             label="UI Elements" 
             :active="request()->routeIs('buttons.*') || request()->routeIs('cards.*') || request()->routeIs('modals.*') || request()->routeIs('misc.*') || request()->routeIs('tabs.*') || request()->routeIs('accordion.*') || request()->routeIs('toast.*') || request()->routeIs('typography.*')"
