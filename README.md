@@ -640,7 +640,54 @@ After logging in, you can access component demos from the sidebar:
 - **Video Player Demo**: `/video-player/demo` - Modern video player with custom controls, playlists, fullscreen support, and auto-hide controls
 - **Misc Demo**: `/misc/demo` - Spinners/loaders, badges, alerts, progress bars, status indicators, and more
 - **Typography Demo**: `/typography/demo` - Typography showcase with headings, paragraphs, lists, quotes, text utilities, and responsive typography
+- **Product CRUD Demo**: `/products` - Complete CRUD (Create, Read, Update, Delete) example with Product model, form validation, and blade components
 - And many more...
+
+### Product CRUD Demo
+
+A complete CRUD (Create, Read, Update, Delete) implementation demonstrating Laravel best practices:
+
+**Features:**
+- **Model**: `Product` model with UUID (GUID) generation, proper casts, and fillable attributes
+- **Migration**: Database migration with all required fields including `guid`, `name`, `description`, `sku`, `price`, `stock_quantity`, `sold_amount`, `status`, and `image_url`
+- **Form Requests**: `StoreProductRequest` and `UpdateProductRequest` with comprehensive validation rules
+- **Controller**: `ProductController` following Laravel best practices with type hints, final class, and proper return types
+- **Views**: Complete set of views using blade components:
+  - `index.blade.php` - Product listing with table component, pagination, and action buttons
+  - `show.blade.php` - Product detail view with card components
+  - `create.blade.php` - Product creation form using form components
+  - `edit.blade.php` - Product editing form using form components
+
+**Routes:**
+- `GET /products` - List all products
+- `GET /products/create` - Show create form
+- `POST /products` - Store new product
+- `GET /products/{product}` - Show product details
+- `GET /products/{product}/edit` - Show edit form
+- `PUT /products/{product}` - Update product
+- `DELETE /products/{product}` - Delete product
+
+**Database Schema:**
+```php
+- id (bigint, primary key)
+- guid (uuid, unique, indexed)
+- name (string, required)
+- description (text, nullable)
+- sku (string, unique, indexed)
+- price (decimal 10,2, required)
+- stock_quantity (integer, default 0)
+- sold_amount (decimal 10,2, default 0)
+- status (enum: 'active'|'inactive', default 'active', indexed)
+- image_url (string, nullable)
+- timestamps
+```
+
+**Usage:**
+1. Run migrations: `php artisan migrate`
+2. Access `/products` after logging in
+3. Create, view, edit, and delete products using the interface
+
+This serves as a reference implementation for building CRUD functionality in Laravel applications.
 
 ### Using Components in Your Views
 

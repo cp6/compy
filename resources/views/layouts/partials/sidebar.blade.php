@@ -42,6 +42,14 @@
             E-store
         </x-sidebar.link>
 
+        {{-- Products CRUD Link --}}
+        <x-sidebar.link href="{{ route('products.index') }}" :active="request()->routeIs('products.*')">
+            <x-slot:icon>
+                <x-sidebar.icon name="ecommerce" />
+            </x-slot:icon>
+            Products
+        </x-sidebar.link>
+
         {{-- Simple Link --}}
         <x-sidebar.link href="{{ route('calendar.demo') }}" :active="request()->routeIs('calendar.*')">
             <x-slot:icon>

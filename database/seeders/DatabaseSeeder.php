@@ -30,5 +30,9 @@ class DatabaseSeeder extends Seeder
             'uuid' => (string) Str::uuid(),
             'api_key' => Str::random(32),
         ]);
+
+        $this->call([
+            ProductSeeder::class,
+        ]);
     }
 }
