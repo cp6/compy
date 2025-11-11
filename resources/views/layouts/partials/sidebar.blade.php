@@ -74,6 +74,14 @@
             Profile Demo
         </x-sidebar.link>
 
+        {{-- Billing Demo Link --}}
+        <x-sidebar.link href="{{ route('billing.demo') }}" :active="request()->routeIs('billing.*')">
+            <x-slot:icon>
+                <x-sidebar.icon name="billing" />
+            </x-slot:icon>
+            Billing
+        </x-sidebar.link>
+
         {{-- Timeline Link --}}
         <x-sidebar.link href="{{ route('timeline.demo') }}" :active="request()->routeIs('timeline.*')">
             <x-slot:icon>

@@ -32,6 +32,15 @@ composer dev
 
 Visit **http://localhost:8000** and start building!
 
+### Building Assets
+
+For production builds, use:
+```bash
+npm run build
+```
+
+This compiles and optimizes all CSS and JavaScript assets using Vite.
+
 ### Alternative: Manual Setup
 
 ```bash
@@ -47,8 +56,11 @@ php artisan key:generate
 # Run migrations (creates SQLite database by default)
 php artisan migrate
 
-# Install Node dependencies and build assets
-npm install && npm run build
+# Install Node dependencies
+npm install
+
+# Build assets for production
+npm run build
 
 # Start servers separately
 php artisan serve    # Terminal 1

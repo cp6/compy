@@ -188,6 +188,28 @@
         <!-- Footer -->
         <x-footer :hasSidebar="$hasSidebar" />
         
+        <!-- Global Page Loader - Shows when $store.pageLoading.loading is true -->
+        <div 
+            x-data
+            x-show="$store.pageLoading.loading"
+            x-transition:enter="transition ease-out duration-200"
+            x-transition:enter-start="opacity-0"
+            x-transition:enter-end="opacity-100"
+            x-transition:leave="transition ease-in duration-200"
+            x-transition:leave-start="opacity-100"
+            x-transition:leave-end="opacity-0"
+            x-cloak
+            class="fixed inset-0 z-[9999]"
+            style="display: none;"
+        >
+            <x-spinner 
+                fullPage 
+                variant="gradient" 
+                size="xl"
+                text="Loading..."
+            />
+        </div>
+        
         @stack('scripts')
     </body>
 </html>

@@ -15,9 +15,14 @@
         A fully interactive card grid with async loading, pagination, filtering, searching, and sorting powered by the Mock Data API
     </x-slot>
 
-    <div class="space-y-6 sm:space-y-8">
+    <div 
+        x-data="dynamicCards()"
+        x-init="loadData()"
+        class="space-y-6 sm:space-y-8"
+    >
         <x-alert.alerts />
 
+        <!-- Header Section -->
         <x-card.card variant="gradient">
             <x-slot name="header">
                 <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
@@ -45,12 +50,11 @@
                     </div>
                 </div>
             </x-slot>
+        </x-card.card>
 
-            <div 
-                x-data="dynamicCards()"
-                x-init="loadData()"
-                class="space-y-4"
-            >
+        <!-- Filters Section -->
+        <x-card.card variant="gradient">
+            <div class="space-y-4">
                 <!-- Filters and Search Bar -->
                 <div class="flex flex-col lg:flex-row gap-4">
                     <!-- Search -->
@@ -186,275 +190,281 @@
                     <p class="text-sm text-red-800 dark:text-red-200" x-text="error"></p>
                 </div>
 
-                <!-- Cards Grid -->
-                <div x-show="!$store.pageLoading.loading && !error">
-                    <!-- Generic/Users Cards -->
-                    <template x-if="resource === '' || resource === 'users'">
-                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                            <template x-for="item in data" :key="item.id">
-                                <x-card.card variant="gradient" hover class="h-full flex flex-col">
-                                    <x-slot name="header">
-                                        <div class="flex items-center justify-between">
-                                            <div class="flex items-center gap-3 min-w-0 flex-1">
-                                                <div class="w-12 h-12 flex-shrink-0 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center text-white font-bold text-lg shadow-lg" x-text="item.name ? item.name.charAt(0).toUpperCase() : 'U'"></div>
-                                                <div class="min-w-0 flex-1">
-                                                    <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 truncate" x-text="item.name"></h3>
-                                                    <p class="text-sm text-gray-600 dark:text-gray-400 truncate" x-text="item.email"></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </x-slot>
-                                    <div class="space-y-3 flex-1 flex flex-col">
-                                        <div class="flex items-center justify-between">
-                                            <span class="text-sm text-gray-600 dark:text-gray-400">Role</span>
-                                            <span class="px-2 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200" x-text="item.role"></span>
-                                        </div>
-                                        <div class="flex items-center justify-between">
-                                            <span class="text-sm text-gray-600 dark:text-gray-400">Status</span>
-                                            <span 
-                                                class="px-2 py-1 text-xs font-semibold rounded-full"
-                                                :class="{
-                                                    'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200': item.status === 'active',
-                                                    'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200': item.status === 'inactive',
-                                                    'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200': item.status === 'pending',
-                                                    'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200': item.status === 'suspended'
-                                                }"
-                                                x-text="item.status"
-                                            ></span>
-                                        </div>
-                                        <div x-show="item.company" class="flex items-center justify-between">
-                                            <span class="text-sm text-gray-600 dark:text-gray-400">Company</span>
-                                            <span class="text-sm font-medium text-gray-900 dark:text-gray-100 truncate ml-2 text-right" x-text="item.company"></span>
-                                        </div>
-                                        <div x-show="item.department" class="flex items-center justify-between">
-                                            <span class="text-sm text-gray-600 dark:text-gray-400">Department</span>
-                                            <span class="text-sm font-medium text-gray-900 dark:text-gray-100 truncate ml-2 text-right" x-text="item.department"></span>
+            </div>
+        </x-card.card>
+
+        <!-- Cards Grid -->
+        <div x-show="!$store.pageLoading.loading && !error">
+            <!-- Generic/Users Cards -->
+            <template x-if="resource === '' || resource === 'users'">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <template x-for="item in data" :key="item.id">
+                        <x-card.card variant="gradient" hover class="h-full flex flex-col">
+                            <x-slot name="header">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-3 min-w-0 flex-1">
+                                        <div class="w-12 h-12 flex-shrink-0 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center text-white font-bold text-lg shadow-lg" x-text="item.name ? item.name.charAt(0).toUpperCase() : 'U'"></div>
+                                        <div class="min-w-0 flex-1">
+                                            <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 truncate" x-text="item.name"></h3>
+                                            <p class="text-sm text-gray-600 dark:text-gray-400 truncate" x-text="item.email"></p>
                                         </div>
                                     </div>
-                                </x-card.card>
-                            </template>
-                        </div>
+                                </div>
+                            </x-slot>
+                            <div class="space-y-3 flex-1 flex flex-col">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm text-gray-600 dark:text-gray-400">Role</span>
+                                    <span class="px-2 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200" x-text="item.role"></span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm text-gray-600 dark:text-gray-400">Status</span>
+                                    <span 
+                                        class="px-2 py-1 text-xs font-semibold rounded-full"
+                                        :class="{
+                                            'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200': item.status === 'active',
+                                            'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200': item.status === 'inactive',
+                                            'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200': item.status === 'pending',
+                                            'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200': item.status === 'suspended'
+                                        }"
+                                        x-text="item.status"
+                                    ></span>
+                                </div>
+                                <div x-show="item.company" class="flex items-center justify-between">
+                                    <span class="text-sm text-gray-600 dark:text-gray-400">Company</span>
+                                    <span class="text-sm font-medium text-gray-900 dark:text-gray-100 truncate ml-2 text-right" x-text="item.company"></span>
+                                </div>
+                                <div x-show="item.department" class="flex items-center justify-between">
+                                    <span class="text-sm text-gray-600 dark:text-gray-400">Department</span>
+                                    <span class="text-sm font-medium text-gray-900 dark:text-gray-100 truncate ml-2 text-right" x-text="item.department"></span>
+                                </div>
+                            </div>
+                        </x-card.card>
                     </template>
-
-                    <!-- Products Cards -->
-                    <template x-if="resource === 'products'">
-                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                            <template x-for="item in data" :key="item.id">
-                                <x-card.card 
-                                    variant="gradient"
-                                    hover
-                                    class="h-full flex flex-col"
-                                >
-                                    <x-slot name="header">
-                                        <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-gray-100 line-clamp-2" x-text="item.name"></h3>
-                                        <p class="mt-1.5 text-xs sm:text-sm text-gray-600 dark:text-gray-400 leading-relaxed truncate" x-text="item.sku"></p>
-                                    </x-slot>
-                                    <div class="space-y-3 flex-1 flex flex-col">
-                                        <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed line-clamp-3" x-text="item.description"></p>
-                                        <div class="flex items-center justify-between">
-                                            <span class="text-sm text-gray-600 dark:text-gray-400">Price</span>
-                                            <span class="text-lg font-bold text-emerald-600 dark:text-emerald-400" x-text="'$' + parseFloat(item.price).toFixed(2)"></span>
-                                        </div>
-                                        <div class="flex items-center justify-between">
-                                            <span class="text-sm text-gray-600 dark:text-gray-400">Category</span>
-                                            <span class="px-2 py-1 text-xs font-semibold rounded-full bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200" x-text="item.category"></span>
-                                        </div>
-                                        <div class="flex items-center justify-between">
-                                            <span class="text-sm text-gray-600 dark:text-gray-400">Stock</span>
-                                            <span 
-                                                class="px-2 py-1 text-xs font-semibold rounded-full"
-                                                :class="{
-                                                    'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200': item.stock > 50,
-                                                    'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200': item.stock > 0 && item.stock <= 50,
-                                                    'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200': item.stock === 0
-                                                }"
-                                                x-text="item.stock + ' units'"
-                                            ></span>
-                                        </div>
-                                        <div x-show="item.rating" class="flex items-center justify-between">
-                                            <span class="text-sm text-gray-600 dark:text-gray-400">Rating</span>
-                                            <div class="flex items-center gap-1">
-                                                <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                                                </svg>
-                                                <span class="text-sm font-medium text-gray-900 dark:text-gray-100" x-text="parseFloat(item.rating).toFixed(1)"></span>
-                                            </div>
-                                        </div>
-                                        <div class="mt-auto pt-2">
-                                            <x-button.primary variant="gradient" class="w-full">
-                                                View Details
-                                            </x-button.primary>
-                                        </div>
-                                    </div>
-                                </x-card.card>
-                            </template>
-                        </div>
-                    </template>
-
-                    <!-- Orders Cards -->
-                    <template x-if="resource === 'orders'">
-                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                            <template x-for="item in data" :key="item.id">
-                                <x-card.card variant="gradient" hover class="h-full flex flex-col">
-                                    <x-slot name="header">
-                                        <div class="flex items-center justify-between">
-                                            <div class="min-w-0 flex-1">
-                                                <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 truncate" x-text="item.order_number"></h3>
-                                                <p class="text-sm text-gray-600 dark:text-gray-400 mt-1 truncate" x-text="item.customer_name"></p>
-                                            </div>
-                                        </div>
-                                    </x-slot>
-                                    <div class="space-y-3 flex-1 flex flex-col">
-                                        <div class="flex items-center justify-between">
-                                            <span class="text-sm text-gray-600 dark:text-gray-400">Total</span>
-                                            <span class="text-xl font-bold text-emerald-600 dark:text-emerald-400" x-text="'$' + parseFloat(item.total).toFixed(2)"></span>
-                                        </div>
-                                        <div class="flex items-center justify-between">
-                                            <span class="text-sm text-gray-600 dark:text-gray-400">Status</span>
-                                            <span 
-                                                class="px-2 py-1 text-xs font-semibold rounded-full"
-                                                :class="{
-                                                    'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200': item.status === 'delivered',
-                                                    'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200': item.status === 'shipped',
-                                                    'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200': item.status === 'processing' || item.status === 'pending',
-                                                    'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200': item.status === 'cancelled'
-                                                }"
-                                                x-text="item.status"
-                                            ></span>
-                                        </div>
-                                        <div class="flex items-center justify-between">
-                                            <span class="text-sm text-gray-600 dark:text-gray-400">Items</span>
-                                            <span class="text-sm font-medium text-gray-900 dark:text-gray-100" x-text="item.items_count + ' items'"></span>
-                                        </div>
-                                        <div class="flex items-center justify-between">
-                                            <span class="text-sm text-gray-600 dark:text-gray-400">Date</span>
-                                            <span class="text-sm text-gray-500 dark:text-gray-400 truncate ml-2 text-right" x-text="item.created_at"></span>
-                                        </div>
-                                    </div>
-                                </x-card.card>
-                            </template>
-                        </div>
-                    </template>
-
-                    <!-- Posts Cards -->
-                    <template x-if="resource === 'posts'">
-                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                            <template x-for="item in data" :key="item.id">
-                                <x-card.card 
-                                    variant="gradient"
-                                    hover
-                                    class="h-full flex flex-col"
-                                >
-                                    <x-slot name="header">
-                                        <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-gray-100 line-clamp-2" x-text="item.title"></h3>
-                                        <p class="mt-1.5 text-xs sm:text-sm text-gray-600 dark:text-gray-400 leading-relaxed truncate" x-text="item.author"></p>
-                                    </x-slot>
-                                    <div class="space-y-3 flex-1 flex flex-col">
-                                        <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed line-clamp-3" x-text="item.excerpt"></p>
-                                        <div class="flex items-center justify-between">
-                                            <span class="text-sm text-gray-600 dark:text-gray-400">Category</span>
-                                            <span class="px-2 py-1 text-xs font-semibold rounded-full bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200" x-text="item.category"></span>
-                                        </div>
-                                        <div class="flex items-center justify-between">
-                                            <span class="text-sm text-gray-600 dark:text-gray-400">Views</span>
-                                            <span class="text-sm font-medium text-gray-900 dark:text-gray-100" x-text="item.views ? item.views.toLocaleString() : '0'"></span>
-                                        </div>
-                                        <div class="flex items-center justify-between">
-                                            <span class="text-sm text-gray-600 dark:text-gray-400">Status</span>
-                                            <span 
-                                                class="px-2 py-1 text-xs font-semibold rounded-full"
-                                                :class="{
-                                                    'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200': item.status === 'published',
-                                                    'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200': item.status === 'draft',
-                                                    'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200': item.status === 'archived'
-                                                }"
-                                                x-text="item.status"
-                                            ></span>
-                                        </div>
-                                        <div class="mt-auto pt-2">
-                                            <x-button.primary variant="gradient" class="w-full">
-                                                Read More
-                                            </x-button.primary>
-                                        </div>
-                                    </div>
-                                </x-card.card>
-                            </template>
-                        </div>
-                    </template>
-
-                    <!-- Tasks Cards -->
-                    <template x-if="resource === 'tasks'">
-                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                            <template x-for="item in data" :key="item.id">
-                                <x-card.card variant="gradient" hover class="h-full flex flex-col">
-                                    <x-slot name="header">
-                                        <div class="min-w-0">
-                                            <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 line-clamp-2" x-text="item.title"></h3>
-                                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1 truncate" x-text="item.project"></p>
-                                        </div>
-                                    </x-slot>
-                                    <div class="space-y-3 flex-1 flex flex-col">
-                                        <div class="flex items-center justify-between">
-                                            <span class="text-sm text-gray-600 dark:text-gray-400">Assignee</span>
-                                            <span class="text-sm font-medium text-gray-900 dark:text-gray-100 truncate ml-2 text-right" x-text="item.assignee"></span>
-                                        </div>
-                                        <div class="flex items-center justify-between">
-                                            <span class="text-sm text-gray-600 dark:text-gray-400">Status</span>
-                                            <span 
-                                                class="px-2 py-1 text-xs font-semibold rounded-full"
-                                                :class="{
-                                                    'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200': item.status === 'done',
-                                                    'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200': item.status === 'in_progress',
-                                                    'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200': item.status === 'review',
-                                                    'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200': item.status === 'todo',
-                                                    'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200': item.status === 'cancelled'
-                                                }"
-                                                x-text="item.status.replace('_', ' ')"
-                                            ></span>
-                                        </div>
-                                        <div class="flex items-center justify-between">
-                                            <span class="text-sm text-gray-600 dark:text-gray-400">Priority</span>
-                                            <span 
-                                                class="px-2 py-1 text-xs font-semibold rounded-full"
-                                                :class="{
-                                                    'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200': item.priority === 'urgent',
-                                                    'bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200': item.priority === 'high',
-                                                    'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200': item.priority === 'medium',
-                                                    'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200': item.priority === 'low'
-                                                }"
-                                                x-text="item.priority"
-                                            ></span>
-                                        </div>
-                                        <div>
-                                            <div class="flex items-center justify-between mb-1">
-                                                <span class="text-sm text-gray-600 dark:text-gray-400">Progress</span>
-                                                <span class="text-sm font-medium text-gray-900 dark:text-gray-100" x-text="item.progress + '%'"></span>
-                                            </div>
-                                            <div class="flex-1 bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                                                <div 
-                                                    class="bg-emerald-500 h-2 rounded-full transition-all"
-                                                    :style="'width: ' + item.progress + '%'"
-                                                ></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </x-card.card>
-                            </template>
-                        </div>
-                    </template>
-
-                    <!-- Empty State -->
-                    <div x-show="!$store.pageLoading.loading && data.length === 0" class="text-center py-12">
-                        <svg class="mx-auto h-12 w-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"></path>
-                        </svg>
-                        <h3 class="mt-2 text-sm font-medium text-gray-900 dark:text-gray-100">No data found</h3>
-                        <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">Try adjusting your search or filters.</p>
-                    </div>
                 </div>
+            </template>
 
-                <!-- Pagination -->
-                <div x-show="!$store.pageLoading.loading && !error && meta.last_page > 1" class="flex items-center justify-between border-t border-gray-200 dark:border-gray-700 px-4 py-3 sm:px-6">
+            <!-- Products Cards -->
+            <template x-if="resource === 'products'">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <template x-for="item in data" :key="item.id">
+                        <x-card.card 
+                            variant="gradient"
+                            hover
+                            class="h-full flex flex-col"
+                        >
+                            <x-slot name="header">
+                                <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-gray-100 line-clamp-2" x-text="item.name"></h3>
+                                <p class="mt-1.5 text-xs sm:text-sm text-gray-600 dark:text-gray-400 leading-relaxed truncate" x-text="item.sku"></p>
+                            </x-slot>
+                            <div class="space-y-3 flex-1 flex flex-col">
+                                <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed line-clamp-3" x-text="item.description"></p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm text-gray-600 dark:text-gray-400">Price</span>
+                                    <span class="text-lg font-bold text-emerald-600 dark:text-emerald-400" x-text="'$' + parseFloat(item.price).toFixed(2)"></span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm text-gray-600 dark:text-gray-400">Category</span>
+                                    <span class="px-2 py-1 text-xs font-semibold rounded-full bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200" x-text="item.category"></span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm text-gray-600 dark:text-gray-400">Stock</span>
+                                    <span 
+                                        class="px-2 py-1 text-xs font-semibold rounded-full"
+                                        :class="{
+                                            'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200': item.stock > 50,
+                                            'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200': item.stock > 0 && item.stock <= 50,
+                                            'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200': item.stock === 0
+                                        }"
+                                        x-text="item.stock + ' units'"
+                                    ></span>
+                                </div>
+                                <div x-show="item.rating" class="flex items-center justify-between">
+                                    <span class="text-sm text-gray-600 dark:text-gray-400">Rating</span>
+                                    <div class="flex items-center gap-1">
+                                        <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                        </svg>
+                                        <span class="text-sm font-medium text-gray-900 dark:text-gray-100" x-text="parseFloat(item.rating).toFixed(1)"></span>
+                                    </div>
+                                </div>
+                                <div class="mt-auto pt-2">
+                                    <x-button.primary variant="gradient" class="w-full">
+                                        View Details
+                                    </x-button.primary>
+                                </div>
+                            </div>
+                        </x-card.card>
+                    </template>
+                </div>
+            </template>
+
+            <!-- Orders Cards -->
+            <template x-if="resource === 'orders'">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <template x-for="item in data" :key="item.id">
+                        <x-card.card variant="gradient" hover class="h-full flex flex-col">
+                            <x-slot name="header">
+                                <div class="flex items-center justify-between">
+                                    <div class="min-w-0 flex-1">
+                                        <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 truncate" x-text="item.order_number"></h3>
+                                        <p class="text-sm text-gray-600 dark:text-gray-400 mt-1 truncate" x-text="item.customer_name"></p>
+                                    </div>
+                                </div>
+                            </x-slot>
+                            <div class="space-y-3 flex-1 flex flex-col">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm text-gray-600 dark:text-gray-400">Total</span>
+                                    <span class="text-xl font-bold text-emerald-600 dark:text-emerald-400" x-text="'$' + parseFloat(item.total).toFixed(2)"></span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm text-gray-600 dark:text-gray-400">Status</span>
+                                    <span 
+                                        class="px-2 py-1 text-xs font-semibold rounded-full"
+                                        :class="{
+                                            'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200': item.status === 'delivered',
+                                            'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200': item.status === 'shipped',
+                                            'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200': item.status === 'processing' || item.status === 'pending',
+                                            'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200': item.status === 'cancelled'
+                                        }"
+                                        x-text="item.status"
+                                    ></span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm text-gray-600 dark:text-gray-400">Items</span>
+                                    <span class="text-sm font-medium text-gray-900 dark:text-gray-100" x-text="item.items_count + ' items'"></span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm text-gray-600 dark:text-gray-400">Date</span>
+                                    <span class="text-sm text-gray-500 dark:text-gray-400 truncate ml-2 text-right" x-text="item.created_at"></span>
+                                </div>
+                            </div>
+                        </x-card.card>
+                    </template>
+                </div>
+            </template>
+
+            <!-- Posts Cards -->
+            <template x-if="resource === 'posts'">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <template x-for="item in data" :key="item.id">
+                        <x-card.card 
+                            variant="gradient"
+                            hover
+                            class="h-full flex flex-col"
+                        >
+                            <x-slot name="header">
+                                <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-gray-100 line-clamp-2" x-text="item.title"></h3>
+                                <p class="mt-1.5 text-xs sm:text-sm text-gray-600 dark:text-gray-400 leading-relaxed truncate" x-text="item.author"></p>
+                            </x-slot>
+                            <div class="space-y-3 flex-1 flex flex-col">
+                                <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed line-clamp-3" x-text="item.excerpt"></p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm text-gray-600 dark:text-gray-400">Category</span>
+                                    <span class="px-2 py-1 text-xs font-semibold rounded-full bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200" x-text="item.category"></span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm text-gray-600 dark:text-gray-400">Views</span>
+                                    <span class="text-sm font-medium text-gray-900 dark:text-gray-100" x-text="item.views ? item.views.toLocaleString() : '0'"></span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm text-gray-600 dark:text-gray-400">Status</span>
+                                    <span 
+                                        class="px-2 py-1 text-xs font-semibold rounded-full"
+                                        :class="{
+                                            'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200': item.status === 'published',
+                                            'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200': item.status === 'draft',
+                                            'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200': item.status === 'archived'
+                                        }"
+                                        x-text="item.status"
+                                    ></span>
+                                </div>
+                                <div class="mt-auto pt-2">
+                                    <x-button.primary variant="gradient" class="w-full">
+                                        Read More
+                                    </x-button.primary>
+                                </div>
+                            </div>
+                        </x-card.card>
+                    </template>
+                </div>
+            </template>
+
+            <!-- Tasks Cards -->
+            <template x-if="resource === 'tasks'">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <template x-for="item in data" :key="item.id">
+                        <x-card.card variant="gradient" hover class="h-full flex flex-col">
+                            <x-slot name="header">
+                                <div class="min-w-0">
+                                    <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 line-clamp-2" x-text="item.title"></h3>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-1 truncate" x-text="item.project"></p>
+                                </div>
+                            </x-slot>
+                            <div class="space-y-3 flex-1 flex flex-col">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm text-gray-600 dark:text-gray-400">Assignee</span>
+                                    <span class="text-sm font-medium text-gray-900 dark:text-gray-100 truncate ml-2 text-right" x-text="item.assignee"></span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm text-gray-600 dark:text-gray-400">Status</span>
+                                    <span 
+                                        class="px-2 py-1 text-xs font-semibold rounded-full"
+                                        :class="{
+                                            'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200': item.status === 'done',
+                                            'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200': item.status === 'in_progress',
+                                            'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200': item.status === 'review',
+                                            'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200': item.status === 'todo',
+                                            'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200': item.status === 'cancelled'
+                                        }"
+                                        x-text="item.status.replace('_', ' ')"
+                                    ></span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm text-gray-600 dark:text-gray-400">Priority</span>
+                                    <span 
+                                        class="px-2 py-1 text-xs font-semibold rounded-full"
+                                        :class="{
+                                            'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200': item.priority === 'urgent',
+                                            'bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200': item.priority === 'high',
+                                            'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200': item.priority === 'medium',
+                                            'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200': item.priority === 'low'
+                                        }"
+                                        x-text="item.priority"
+                                    ></span>
+                                </div>
+                                <div>
+                                    <div class="flex items-center justify-between mb-1">
+                                        <span class="text-sm text-gray-600 dark:text-gray-400">Progress</span>
+                                        <span class="text-sm font-medium text-gray-900 dark:text-gray-100" x-text="item.progress + '%'"></span>
+                                    </div>
+                                    <div class="flex-1 bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                        <div 
+                                            class="bg-emerald-500 h-2 rounded-full transition-all"
+                                            :style="'width: ' + item.progress + '%'"
+                                        ></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </x-card.card>
+                    </template>
+                </div>
+            </template>
+
+            <!-- Empty State -->
+            <div x-show="!$store.pageLoading.loading && data.length === 0" class="text-center py-12">
+                <svg class="mx-auto h-12 w-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"></path>
+                </svg>
+                <h3 class="mt-2 text-sm font-medium text-gray-900 dark:text-gray-100">No data found</h3>
+                <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">Try adjusting your search or filters.</p>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <div 
+            x-show="!$store.pageLoading.loading && !error && meta.last_page > 1" 
+            class="flex items-center justify-between border-t border-gray-200 dark:border-gray-700 px-4 py-3 sm:px-6"
+        >
                     <div class="hidden sm:block">
                         <p class="text-sm text-gray-700 dark:text-gray-300">
                             Showing
@@ -517,8 +527,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </x-card.card>
+        </div>
     </div>
 
     @push('scripts')

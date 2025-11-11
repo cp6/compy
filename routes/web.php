@@ -156,6 +156,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/video-player/demo', function () {
         return view('video-player-demo');
     })->name('video-player.demo');
+    
+    Route::get('/billing/demo', function () {
+        return view('billing-demo');
+    })->name('billing.demo');
 });
 
 Route::middleware('auth')->group(function () {
