@@ -275,6 +275,13 @@
             Currency Exchange
         </x-sidebar.link>
 
+        <x-sidebar.link href="{{ route('bitcoin.demo') }}" :active="request()->routeIs('bitcoin.*')">
+            <x-slot:icon>
+                <x-sidebar.icon name="ui" />
+            </x-slot:icon>
+            Bitcoin Demo
+        </x-sidebar.link>
+
         <x-sidebar.dropdown 
             label="UI Elements" 
             :active="request()->routeIs('buttons.*') || request()->routeIs('cards.*') || request()->routeIs('modals.*') || request()->routeIs('misc.*') || request()->routeIs('tabs.*') || request()->routeIs('accordion.*') || request()->routeIs('toast.*') || request()->routeIs('typography.*')"
