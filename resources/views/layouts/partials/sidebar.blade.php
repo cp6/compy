@@ -138,6 +138,9 @@
             <x-sidebar.dropdown-item href="{{ route('tables.demo') }}" :active="request()->routeIs('tables.demo')">
                 Table Demo
             </x-sidebar.dropdown-item>
+            <x-sidebar.dropdown-item href="{{ route('tables.dynamic') }}" :active="request()->routeIs('tables.dynamic')">
+                Dynamic Table
+            </x-sidebar.dropdown-item>
             <x-sidebar.dropdown-item href="{{ route('api-keys.demo') }}" :active="request()->routeIs('api-keys.*')">
                 API Keys
             </x-sidebar.dropdown-item>
@@ -214,6 +217,13 @@
 
     {{-- Others Section --}}
     <x-sidebar.section title="OTHERS">
+        <x-sidebar.link href="{{ route('video-player.demo') }}" :active="request()->routeIs('video-player.*')">
+            <x-slot:icon>
+                <x-sidebar.icon name="video" />
+            </x-slot:icon>
+            Video Player
+        </x-sidebar.link>
+
         <x-sidebar.link href="{{ route('charts.demo') }}" :active="request()->routeIs('charts.*')">
             <x-slot:icon>
                 <x-sidebar.icon name="charts" />
@@ -238,8 +248,11 @@
             <x-sidebar.dropdown-item href="{{ route('buttons.demo') }}" :active="request()->routeIs('buttons.*')">
                 Buttons
             </x-sidebar.dropdown-item>
-            <x-sidebar.dropdown-item href="{{ route('cards.demo') }}" :active="request()->routeIs('cards.*')">
+            <x-sidebar.dropdown-item href="{{ route('cards.demo') }}" :active="request()->routeIs('cards.demo')">
                 Cards
+            </x-sidebar.dropdown-item>
+            <x-sidebar.dropdown-item href="{{ route('cards.dynamic') }}" :active="request()->routeIs('cards.dynamic')">
+                Dynamic Cards
             </x-sidebar.dropdown-item>
             <x-sidebar.dropdown-item href="{{ route('modals.demo') }}" :active="request()->routeIs('modals.*')">
                 Modals

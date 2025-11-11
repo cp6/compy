@@ -44,6 +44,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
         return view('tables.demo');
     })->name('tables.demo');
     
+    Route::get('/tables/dynamic', function () {
+        return view('tables.dynamic-demo');
+    })->name('tables.dynamic');
+    
     Route::get('/lists/demo', function () {
         return view('lists.demo');
     })->name('lists.demo');
@@ -51,6 +55,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/cards/demo', function () {
         return view('cards.demo');
     })->name('cards.demo');
+    
+    Route::get('/cards/dynamic', function () {
+        return view('cards.dynamic-demo');
+    })->name('cards.dynamic');
     
     Route::get('/buttons/demo', function () {
         return view('buttons.demo');
@@ -143,6 +151,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/api-keys/demo', function () {
         return view('api-keys.demo');
     })->name('api-keys.demo');
+    
+    Route::get('/video-player/demo', function () {
+        return view('video-player-demo');
+    })->name('video-player.demo');
 });
 
 Route::middleware('auth')->group(function () {

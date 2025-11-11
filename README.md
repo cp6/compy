@@ -69,9 +69,9 @@ npm run dev          # Terminal 2
 - **Landing Page**: Complete SaaS landing page with 10 reusable sections (navbar, hero, partners, benefits, how-it-works, pricing, testimonials, FAQ, CTA, footer)
 - **Alerts & Notifications**: Success, error, warning, info alerts + toast notifications
 - **Buttons**: Primary, secondary, danger variants with groups and dropdowns
-- **Cards**: Image cards, profile cards, action cards, and more
+- **Cards**: Image cards, profile cards, action cards, and dynamic card grids with API integration
 - **Forms**: 30+ input types including autocomplete, tags, rich text, color picker
-- **Tables**: Sortable, responsive tables with pagination
+- **Tables**: Sortable, responsive tables with pagination and dynamic API-powered tables
 - **Modals**: Customizable modal dialogs with headers and footers
 - **File Manager**: Upload, browse, and manage files
 - **Comments**: Nested comment system with replies
@@ -79,6 +79,7 @@ npm run dev          # Terminal 2
 - **Email**: Email inbox interface with list view, detail view, and compose functionality
 - **Support Tickets**: Complete ticket management system with status tracking, priorities, categories, and replies
 - **E-store**: E-commerce product cards and grid layouts with ratings, badges, and pricing
+- **Video Player**: Modern video player with custom controls, playlists, fullscreen support, and auto-hide controls
 - **Navigation**: Sidebar, dropdowns, breadcrumbs
 - **Timeline**: Event timeline display
 - **Calendar**: Full calendar system with month, week, and day views with event management
@@ -207,6 +208,13 @@ Reusable Blade components located in `resources/views/components/`:
 #### E-store Components
 - `estore/product-card.blade.php` - Product card component with image, price, rating, badges, and hover effects
 - `estore/product-grid.blade.php` - Product grid container with responsive column layouts
+
+#### Video Components
+- `video/player.blade.php` - Video player component with custom controls, progress bar, volume control, and fullscreen support
+- `video/playlist.blade.php` - Video playlist component with thumbnail previews, duration badges, and active state indicators
+
+#### API Keys Components
+- `api-keys/table.blade.php` - API keys management table with copy-to-clipboard, regenerate, enable/disable toggle, and action buttons
 
 #### Tabs Components
 - `tabs/tabs.blade.php` - Tab container component
@@ -350,6 +358,7 @@ Component demonstration pages located in `resources/views/`:
 
 - `buttons/demo.blade.php` - Button components demo (Route: `/buttons/demo`)
 - `cards/demo.blade.php` - Card components demo (Route: `/cards/demo`)
+- `cards/dynamic-demo.blade.php` - Dynamic cards demo with async API loading, pagination, filtering, searching, and sorting powered by Mock Data API (Route: `/cards/dynamic`)
 - `comments-demo.blade.php` - Nested comments system demo (Route: `/comments/demo`)
 - `ai-chat-demo.blade.php` - AI chat interface demo with interactive messaging (Route: `/ai-chat/demo`)
 - `chat-demo.blade.php` - Team chat interface demo with conversations and messaging (Route: `/chat/demo`)
@@ -370,8 +379,11 @@ Component demonstration pages located in `resources/views/`:
 - `lists/demo.blade.php` - List components demo (Route: `/lists/demo`)
 - `modals/demo.blade.php` - Modal components demo (Route: `/modals/demo`)
 - `tables/demo.blade.php` - Table components demo (Route: `/tables/demo`)
+- `tables/dynamic-demo.blade.php` - Dynamic table demo with async API loading, pagination, filtering, searching, and sorting powered by Mock Data API (Route: `/tables/dynamic`)
 - `misc-demo.blade.php` - Miscellaneous components demo including spinners/loaders, badges, alerts, progress bars, and more (Route: `/misc/demo`)
 - `typography-demo.blade.php` - Typography demo showcasing headings, paragraphs, lists, quotes, text utilities, and responsive typography (Route: `/typography/demo`)
+- `video-player-demo.blade.php` - Video player demo with custom controls, playlists, and various player configurations (Route: `/video-player/demo`)
+- `api-keys/demo.blade.php` - API keys management demo (Route: `/api-keys/demo`)
 - `premium-demo.blade.php` - Premium components demo (Route: `/premium-demo`)
 - `usage-demo.blade.php` - Component usage examples (Route: `/usage-demo`)
 
@@ -443,8 +455,10 @@ Email templates located in `resources/views/emails/`:
 - `GET /forms/demo` - Forms demo
 - `POST /forms/demo` - Submit form demo
 - `GET /tables/demo` - Tables demo
+- `GET /tables/dynamic` - Dynamic table with async API loading, pagination, filtering, searching, and sorting
 - `GET /lists/demo` - Lists demo
 - `GET /cards/demo` - Cards demo
+- `GET /cards/dynamic` - Dynamic cards demo with async API loading, pagination, filtering, searching, and sorting
 - `GET /buttons/demo` - Buttons demo
 - `GET /comments/demo` - Comments demo (nested comment system)
 - `GET /ai-chat/demo` - AI chat interface demo
@@ -464,11 +478,102 @@ Email templates located in `resources/views/emails/`:
 - `GET /modals/demo` - Modals demo
 - `GET /misc/demo` - Miscellaneous demo
 - `GET /typography/demo` - Typography demo
+- `GET /video-player/demo` - Video player demo with custom controls and playlists
 
 ### Development Routes (Local/Development only)
 - `GET /email-preview` - Email preview index
 - `GET /email-preview/verify-email` - Verify email preview
 - `GET /email-preview/reset-password` - Reset password email preview
+
+### API Routes
+- `GET /api/mock-data` - Generate generic mock data with pagination, filtering, and search
+- `GET /api/mock-data/{resource}` - Generate resource-specific mock data (users, products, orders, posts, tasks)
+
+#### Mock Data API Usage
+
+The Mock Data API provides endpoints for generating fake data to use in tables for testing pagination, filtering, and search functionality.
+
+**Base Endpoint:**
+```
+GET /api/mock-data
+```
+
+**Resource-Specific Endpoints:**
+```
+GET /api/mock-data/users
+GET /api/mock-data/products
+GET /api/mock-data/orders
+GET /api/mock-data/posts
+GET /api/mock-data/tasks
+```
+
+**Query Parameters:**
+
+- `page` - Page number (default: 1)
+- `per_page` - Items per page (default: 15, max: 100)
+- `search` - Search across searchable fields (name, email, phone, company, job_title, address, city, state, country, department)
+- `sort_by` - Field to sort by (default: id)
+- `sort_dir` - Sort direction: `asc` or `desc` (default: asc)
+- `total_items` - Total items to generate (default: 1000 for generic, 500 for resources)
+- Any field name - Filter by that field (e.g., `status=active`, `department[]=IT&department[]=Sales`)
+- `{field}_min` / `{field}_max` - Range filters (e.g., `salary_min=50000&salary_max=100000`)
+
+**Example Requests:**
+
+```bash
+# Get paginated mock data
+GET /api/mock-data?page=1&per_page=20
+
+# Search for specific term
+GET /api/mock-data?search=john
+
+# Filter by status
+GET /api/mock-data?status=active
+
+# Filter by multiple values
+GET /api/mock-data?status[]=active&status[]=pending
+
+# Sort by name descending
+GET /api/mock-data?sort_by=name&sort_dir=desc
+
+# Get users resource with filters
+GET /api/mock-data/users?status=active&role=admin&page=1&per_page=10
+
+# Range filter
+GET /api/mock-data/products?price_min=50&price_max=200
+```
+
+**Response Format:**
+
+The API returns Laravel-style paginated responses:
+
+```json
+{
+  "data": [...],
+  "meta": {
+    "current_page": 1,
+    "per_page": 15,
+    "total": 1000,
+    "last_page": 67,
+    "from": 1,
+    "to": 15
+  },
+  "links": {
+    "first": "...",
+    "last": "...",
+    "prev": null,
+    "next": "..."
+  }
+}
+```
+
+**Available Resources:**
+
+- **users** - User data with name, email, username, avatar, role, status, last_login
+- **products** - Product data with name, description, SKU, price, stock, category, brand, rating
+- **orders** - Order data with order_number, customer info, totals, status, payment info
+- **posts** - Post data with title, content, author, category, tags, views, likes
+- **tasks** - Task data with title, description, assignee, status, priority, progress, due_date
 
 ## Technical Stack
 
@@ -517,8 +622,10 @@ After logging in, you can access component demos from the sidebar:
 
 - **Forms Demo**: `/forms/demo` - All form components with examples
 - **Tables Demo**: `/tables/demo` - Data table examples
+- **Dynamic Table Demo**: `/tables/dynamic` - Fully interactive table with async API loading, pagination, filtering, searching, and sorting
 - **Buttons Demo**: `/buttons/demo` - Button variants and styles
 - **Cards Demo**: `/cards/demo` - Card component examples
+- **Dynamic Cards Demo**: `/cards/dynamic` - Fully interactive card grid with async API loading, pagination, filtering, searching, and sorting
 - **Modals Demo**: `/modals/demo` - Modal dialog examples
 - **Calendar Demo**: `/calendar/demo` - Calendar system with month, week, and day views
 - **AI Chat Demo**: `/ai-chat/demo` - Interactive AI chat interface with message bubbles and input
@@ -530,6 +637,7 @@ After logging in, you can access component demos from the sidebar:
 - **Profile Demo**: `/profile/demo` - User profile demo showcasing various profile layouts, cards, stats, social links, and information displays
 - **E-store Demo**: `/estore/demo` - E-commerce store with product cards, grids, ratings, badges, and pricing
 - **Charts Demo**: `/charts/demo` - Interactive charts and data visualization with Chart.js including line, bar, pie, doughnut, radar, polar area, scatter, and bubble charts
+- **Video Player Demo**: `/video-player/demo` - Modern video player with custom controls, playlists, fullscreen support, and auto-hide controls
 - **Misc Demo**: `/misc/demo` - Spinners/loaders, badges, alerts, progress bars, status indicators, and more
 - **Typography Demo**: `/typography/demo` - Typography showcase with headings, paragraphs, lists, quotes, text utilities, and responsive typography
 - And many more...
@@ -784,6 +892,38 @@ All components are located in `resources/views/components/`. Use them in your Bl
     :products="$products" 
     :columns="4"
 />
+
+{{-- Video Components --}}
+{{-- Basic Video Player --}}
+<x-video.player 
+    src="https://example.com/video.mp4"
+    poster="https://example.com/poster.jpg"
+    :controls="true"
+    preload="metadata"
+/>
+
+{{-- Video Player with Autoplay --}}
+<x-video.player 
+    src="https://example.com/video.mp4"
+    :autoplay="true"
+    :muted="true"
+    :controls="true"
+    preload="auto"
+/>
+
+{{-- Video Player with Playlist --}}
+<div x-data="{ currentVideo: {...}, videos: [...] }">
+    <x-video.player 
+        :src="currentVideo.src"
+        :poster="currentVideo.poster"
+        :controls="true"
+    />
+    
+    <x-video.playlist 
+        :videos="$videos"
+        :currentIndex="0"
+    />
+</div>
 
 {{-- Landing Page Components --}}
 {{-- Navbar --}}
