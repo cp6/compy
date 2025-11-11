@@ -114,6 +114,22 @@
             File Manager
         </x-sidebar.link>
 
+        {{-- Text Viewer Link --}}
+        <x-sidebar.link href="{{ route('text-viewer.demo') }}" :active="request()->routeIs('text-viewer.*')">
+            <x-slot:icon>
+                <x-sidebar.icon name="ui" />
+            </x-slot:icon>
+            Text Viewer
+        </x-sidebar.link>
+
+        {{-- Notifications Link --}}
+        <x-sidebar.link href="{{ route('notifications.demo') }}" :active="request()->routeIs('notifications.*')">
+            <x-slot:icon>
+                <x-sidebar.icon name="ui" />
+            </x-slot:icon>
+            Notifications
+        </x-sidebar.link>
+
         {{-- Dropdown Menu --}}
         <x-sidebar.dropdown 
             label="Task" 

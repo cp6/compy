@@ -4,6 +4,7 @@ use App\Http\Controllers\EmailPreviewController;
 use App\Http\Controllers\FormDemoController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TextViewerController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -176,6 +177,12 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/bitcoin/demo', function () {
         return view('bitcoin-demo');
     })->name('bitcoin.demo');
+    
+    Route::get('/text-viewer/demo', [TextViewerController::class, 'demo'])->name('text-viewer.demo');
+    
+    Route::get('/notifications/demo', function () {
+        return view('notifications-demo');
+    })->name('notifications.demo');
 });
 
 Route::middleware('auth')->group(function () {
