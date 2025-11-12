@@ -275,6 +275,7 @@ Reusable Blade components located in `resources/views/components/`:
 - `api-doc/parameter-table.blade.php` - Parameters table component displaying parameter details
 - `api-doc/request-example.blade.php` - Request example component with URL, headers, and body
 - `api-doc/response-example.blade.php` - Response example component with status code and body
+- `api-doc/content-tree.blade.php` - Searchable content type tree component for navigating API models and endpoints
 
 #### Form Components
 - `form/autocomplete.blade.php` - Autocomplete input
@@ -406,6 +407,7 @@ Component demonstration pages located in `resources/views/`:
 - `files/demo.blade.php` - File components demo (Route: `/files/demo`)
 - `text-viewer-demo.blade.php` - Text file viewer demo with line numbers, syntax highlighting, and copy functionality (Route: `/text-viewer/demo`)
 - `api-doc-demo.blade.php` - API documentation demo showcasing GET, POST, PATCH, and DELETE endpoints with request/response examples (Route: `/api-doc/demo`)
+- `api-documentation.blade.php` - Complete API documentation page with searchable content tree navigation for browsing API models and endpoints (Route: `/api-documentation`)
 - `forms/demo.blade.php` - Form components demo (Route: `/forms/demo`)
 - `lists/demo.blade.php` - List components demo (Route: `/lists/demo`)
 - `modals/demo.blade.php` - Modal components demo (Route: `/modals/demo`)
@@ -512,6 +514,7 @@ Email templates located in `resources/views/emails/`:
 - `GET /files/demo` - Files demo
 - `GET /text-viewer/demo` - Text file viewer demo with line numbers, syntax highlighting, and copy functionality
 - `GET /api-doc/demo` - API documentation demo showcasing GET, POST, PATCH, and DELETE endpoints with request/response examples
+- `GET /api-documentation` - Complete API documentation page with searchable content tree navigation for browsing API models and endpoints
 - `GET /modals/demo` - Modals demo
 - `GET /misc/demo` - Miscellaneous demo
 - `GET /typography/demo` - Typography demo
@@ -670,6 +673,7 @@ After logging in, you can access component demos from the sidebar:
 - **Files Demo**: `/files/demo` - File components demo
 - **Text Viewer Demo**: `/text-viewer/demo` - Text file viewer with line numbers, syntax highlighting, and copy functionality
 - **API Documentation Demo**: `/api-doc/demo` - API documentation demo showcasing GET, POST, PATCH, and DELETE endpoints with request/response examples, parameter tables, and method badges
+- **API Documentation**: `/api-documentation` - Complete API documentation page with searchable content tree navigation for browsing API models (Products, Users, Orders, Categories) and their endpoints
 - **Modals Demo**: `/modals/demo` - Modal dialog examples
 - **Calendar Demo**: `/calendar/demo` - Calendar system with month, week, and day views
 - **AI Chat Demo**: `/ai-chat/demo` - Interactive AI chat interface with message bubbles and input

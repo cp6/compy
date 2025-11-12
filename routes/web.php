@@ -187,6 +187,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/api-doc/demo', function () {
         return view('api-doc-demo');
     })->name('api-doc.demo');
+    
+    Route::get('/api-documentation', function () {
+        return view('api-documentation');
+    })->name('api-documentation');
 });
 
 Route::middleware('auth')->group(function () {

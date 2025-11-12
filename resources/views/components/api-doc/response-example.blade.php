@@ -26,8 +26,8 @@
         <p class="text-sm text-gray-600 dark:text-gray-400">{{ $description }}</p>
     @endif
     
-    <div class="bg-gray-900 dark:bg-gray-950 rounded-lg p-4 overflow-x-auto">
-        <pre class="text-sm text-gray-300 dark:text-gray-200 font-mono"><code>{{ is_string($body) ? $body : json_encode($body, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) }}</code></pre>
+    <div class="bg-gray-50 dark:bg-gray-950 rounded-lg p-4 overflow-x-auto border border-gray-200 dark:border-gray-800">
+        <pre class="text-sm text-gray-800 dark:text-gray-200 font-mono"><code>{{ is_string($body) ? $body : json_encode($body, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) }}</code></pre>
     </div>
 </div>
 

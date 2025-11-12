@@ -20,6 +20,17 @@
 
     <x-alert.alerts />
     
+    {{-- Content Tree --}}
+    <div class="mb-6">
+        <x-api-doc.content-tree 
+            :activeModel="'products'"
+            :activeEndpoint="'get'"
+        />
+    </div>
+    
+    {{-- Main Content --}}
+    <div class="space-y-8">
+    
     @php
         // GET endpoint response example
         $getResponseExample = [
@@ -305,8 +316,6 @@
             ],
         ];
     @endphp
-    
-    <div class="space-y-8">
         {{-- Introduction --}}
         <x-card.card variant="gradient">
             <x-slot name="header">
@@ -356,6 +365,7 @@
                     {{-- GET Endpoint --}}
                     <x-tabs.tab-panel id="get-endpoint">
                         <x-api-doc.endpoint
+                            id="products-get"
                             method="GET"
                             path="/api/products"
                             title="Get All Products"
@@ -370,6 +380,7 @@
                     {{-- POST Endpoint --}}
                     <x-tabs.tab-panel id="post-endpoint">
                         <x-api-doc.endpoint
+                            id="products-post"
                             method="POST"
                             path="/api/products"
                             title="Create Product"
@@ -385,6 +396,7 @@
                     {{-- PATCH Endpoint --}}
                     <x-tabs.tab-panel id="patch-endpoint">
                         <x-api-doc.endpoint
+                            id="products-patch"
                             method="PATCH"
                             path="/api/products/{id}"
                             title="Update Product"
@@ -399,6 +411,7 @@
                     {{-- DELETE Endpoint --}}
                     <x-tabs.tab-panel id="delete-endpoint">
                         <x-api-doc.endpoint
+                            id="products-delete"
                             method="DELETE"
                             path="/api/products/{id}"
                             title="Delete Product"
@@ -428,7 +441,7 @@
                 <div class="space-y-4">
                     <div>
                         <h4 class="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-2">Basic Endpoint Documentation</h4>
-                        <pre class="bg-gray-900 dark:bg-gray-950 rounded-lg p-4 overflow-x-auto text-sm text-gray-300 dark:text-gray-200 font-mono"><code>&lt;x-api-doc.endpoint
+                        <pre class="bg-gray-50 dark:bg-gray-950 rounded-lg p-4 overflow-x-auto text-sm text-gray-800 dark:text-gray-200 font-mono border border-gray-200 dark:border-gray-800"><code>&lt;x-api-doc.endpoint
     method="GET"
     path="/api/products"
     title="Get All Products"
@@ -438,7 +451,7 @@
                     
                     <div>
                         <h4 class="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-2">With Parameters</h4>
-                        <pre class="bg-gray-900 dark:bg-gray-950 rounded-lg p-4 overflow-x-auto text-sm text-gray-300 dark:text-gray-200 font-mono"><code>&lt;x-api-doc.endpoint
+                        <pre class="bg-gray-50 dark:bg-gray-950 rounded-lg p-4 overflow-x-auto text-sm text-gray-800 dark:text-gray-200 font-mono border border-gray-200 dark:border-gray-800"><code>&lt;x-api-doc.endpoint
     method="POST"
     path="/api/products"
     title="Create Product"
@@ -455,7 +468,7 @@
                     
                     <div>
                         <h4 class="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-2">With Request/Response Examples</h4>
-                        <pre class="bg-gray-900 dark:bg-gray-950 rounded-lg p-4 overflow-x-auto text-sm text-gray-300 dark:text-gray-200 font-mono"><code>&lt;x-api-doc.endpoint
+                        <pre class="bg-gray-50 dark:bg-gray-950 rounded-lg p-4 overflow-x-auto text-sm text-gray-800 dark:text-gray-200 font-mono border border-gray-200 dark:border-gray-800"><code>&lt;x-api-doc.endpoint
     method="POST"
     path="/api/products"
     :requestExample="[

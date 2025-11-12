@@ -8,9 +8,13 @@
     'responseExample' => null,
     'responseStatusCode' => 200,
     'authentication' => null,
+    'id' => null,
 ])
 
-<div class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden bg-white dark:bg-gray-800">
+<div 
+    @if($id) id="{{ $id }}" @endif
+    class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden bg-white dark:bg-gray-800 scroll-mt-4"
+>
     {{-- Header --}}
     <div class="px-6 py-4 bg-gradient-to-r from-gray-50/80 via-gray-50/40 to-transparent dark:from-gray-800/80 dark:via-gray-800/40 dark:to-transparent border-b border-gray-200/50 dark:border-gray-700/50">
         <div class="flex items-start justify-between gap-4">
