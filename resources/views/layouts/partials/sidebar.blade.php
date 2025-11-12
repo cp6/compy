@@ -45,7 +45,7 @@
         {{-- Products CRUD Link --}}
         <x-sidebar.link href="{{ route('products.index') }}" :active="request()->routeIs('products.*')">
             <x-slot:icon>
-                <x-sidebar.icon name="ecommerce" />
+                <x-sidebar.icon name="package" />
             </x-slot:icon>
             Products
         </x-sidebar.link>
@@ -69,7 +69,7 @@
         {{-- Profile Demo Link --}}
         <x-sidebar.link href="{{ route('profile.demo') }}" :active="request()->routeIs('profile.demo')">
             <x-slot:icon>
-                <x-sidebar.icon name="user" />
+                <x-sidebar.icon name="user-circle" />
             </x-slot:icon>
             Profile Demo
         </x-sidebar.link>
@@ -85,7 +85,7 @@
         {{-- Timeline Link --}}
         <x-sidebar.link href="{{ route('timeline.demo') }}" :active="request()->routeIs('timeline.*')">
             <x-slot:icon>
-                <x-sidebar.icon name="ui" />
+                <x-sidebar.icon name="clock" />
             </x-slot:icon>
             Timeline
         </x-sidebar.link>
@@ -93,7 +93,7 @@
         {{-- Icons Link --}}
         <x-sidebar.link href="{{ route('icons.demo') }}" :active="request()->routeIs('icons.*')">
             <x-slot:icon>
-                <x-sidebar.icon name="ui" />
+                <x-sidebar.icon name="sparkles" />
             </x-slot:icon>
             Icons
         </x-sidebar.link>
@@ -101,7 +101,7 @@
         {{-- Comments Link --}}
         <x-sidebar.link href="{{ route('comments.demo') }}" :active="request()->routeIs('comments.*')">
             <x-slot:icon>
-                <x-sidebar.icon name="chat" />
+                <x-sidebar.icon name="chat-bubble" />
             </x-slot:icon>
             Comments
         </x-sidebar.link>
@@ -117,7 +117,7 @@
         {{-- Text Viewer Link --}}
         <x-sidebar.link href="{{ route('text-viewer.demo') }}" :active="request()->routeIs('text-viewer.*')">
             <x-slot:icon>
-                <x-sidebar.icon name="ui" />
+                <x-sidebar.icon name="document-text" />
             </x-slot:icon>
             Text Viewer
         </x-sidebar.link>
@@ -125,7 +125,7 @@
         {{-- Notifications Link --}}
         <x-sidebar.link href="{{ route('notifications.demo') }}" :active="request()->routeIs('notifications.*')">
             <x-slot:icon>
-                <x-sidebar.icon name="ui" />
+                <x-sidebar.icon name="bell" />
             </x-slot:icon>
             Notifications
         </x-sidebar.link>
@@ -184,7 +184,7 @@
             :active="request()->routeIs('lists.*')"
         >
             <x-slot:icon>
-                <x-sidebar.icon name="ui" />
+                <x-sidebar.icon name="list-bullet" />
             </x-slot:icon>
             <x-sidebar.dropdown-item href="{{ route('lists.demo') }}" :active="request()->routeIs('lists.demo')">
                 List Demo
@@ -265,42 +265,42 @@
 
         <x-sidebar.link href="{{ route('usage-demo') }}" :active="request()->routeIs('usage-demo')">
             <x-slot:icon>
-                <x-sidebar.icon name="ui" />
+                <x-sidebar.icon name="presentation-chart" />
             </x-slot:icon>
             Usage Component
         </x-sidebar.link>
 
         <x-sidebar.link href="{{ route('api-documentation') }}" :active="request()->routeIs('api-documentation') || request()->routeIs('api-doc.*')">
             <x-slot:icon>
-                <x-sidebar.icon name="ui" />
+                <x-sidebar.icon name="code" />
             </x-slot:icon>
             API Documentation
         </x-sidebar.link>
 
         <x-sidebar.link href="{{ route('carbon.demo') }}" :active="request()->routeIs('carbon.*')">
             <x-slot:icon>
-                <x-sidebar.icon name="calendar" />
+                <x-sidebar.icon name="calendar-days" />
             </x-slot:icon>
             Carbon Demo
         </x-sidebar.link>
 
         <x-sidebar.link href="{{ route('weather.demo') }}" :active="request()->routeIs('weather.*')">
             <x-slot:icon>
-                <x-sidebar.icon name="ui" />
+                <x-sidebar.icon name="cloud" />
             </x-slot:icon>
             Weather Demo
         </x-sidebar.link>
 
         <x-sidebar.link href="{{ route('currency-exchange.demo') }}" :active="request()->routeIs('currency-exchange.*')">
             <x-slot:icon>
-                <x-sidebar.icon name="ui" />
+                <x-sidebar.icon name="currency-dollar" />
             </x-slot:icon>
             Currency Exchange
         </x-sidebar.link>
 
         <x-sidebar.link href="{{ route('bitcoin.demo') }}" :active="request()->routeIs('bitcoin.*')">
             <x-slot:icon>
-                <x-sidebar.icon name="ui" />
+                <x-sidebar.icon name="currency-bitcoin" />
             </x-slot:icon>
             Bitcoin Demo
         </x-sidebar.link>
@@ -310,7 +310,7 @@
             :active="request()->routeIs('buttons.*') || request()->routeIs('cards.*') || request()->routeIs('modals.*') || request()->routeIs('misc.*') || request()->routeIs('tabs.*') || request()->routeIs('accordion.*') || request()->routeIs('toast.*') || request()->routeIs('typography.*')"
         >
             <x-slot:icon>
-                <x-sidebar.icon name="ui" />
+                <x-sidebar.icon name="paint-brush" />
             </x-slot:icon>
             <x-sidebar.dropdown-item href="{{ route('buttons.demo') }}" :active="request()->routeIs('buttons.*')">
                 Buttons
