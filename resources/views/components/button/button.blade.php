@@ -25,7 +25,7 @@
     };
     
     // Rounded corners
-    $roundedClasses = $long ? 'rounded-lg' : 'rounded-lg';
+    $roundedClasses = 'rounded-lg';
     
     // Variant classes
     $variantClasses = match($variant) {
@@ -75,7 +75,7 @@
     {{ $attributes->merge(['class' => $buttonClasses]) }}
     @if($isDisabled) disabled @endif
 >
-    <span class="{{ ($icon || $loading) ? $iconSpacingClasses : '' }} flex items-center justify-center">
+    <span class="flex items-center justify-center {{ ($icon || $loading) ? $iconSpacingClasses : '' }}">
         @if($loading)
             <span class="flex-shrink-0">
                 <x-spinner size="{{ $size === 'xs' ? 'sm' : ($size === 'xl' ? 'lg' : 'md') }}" />

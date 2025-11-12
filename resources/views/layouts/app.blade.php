@@ -101,8 +101,8 @@
                 <!-- Page Heading / Breadcrumb -->
                 @isset($header)
                     <header class="bg-transparent">
-                        <div class="py-6 @if($hasSidebar) lg:py-6 pt-24 @endif">
-                            <div class="max-w-8xl mx-auto px-2 sm:px-6 @if($hasSidebar) md:pl-8 md:pr-8 @else md:px-0 @endif">
+                        <div class="py-6 @if($hasSidebar) lg:py-6 pt-20 @endif">
+                            <div class="max-w-8xl mx-auto px-4 sm:px-6 @if($hasSidebar) lg:px-8 @endif">
                                 {{ $header }}
                             </div>
                         </div>
@@ -112,7 +112,7 @@
                 <!-- Page Title Section -->
                 @isset($pageTitle)
                     <div class="@if(!isset($header)) pt-6 @if($hasSidebar) lg:pt-6 pt-20 @endif @endif">
-                        <div class="max-w-8xl mx-auto px-2 sm:px-6 @if($hasSidebar) md:pl-8 md:pr-8 @else md:px-0 @endif">
+                        <div class="max-w-8xl mx-auto px-4 sm:px-6 @if($hasSidebar) lg:px-8 @endif">
                             <h1 class="text-2xl sm:text-4xl font-bold text-gray-900 dark:text-gray-100">
                                 {{ $pageTitle }}
                             </h1>
@@ -171,14 +171,14 @@
                                 style="display: none;"
                                 x-cloak
                             >
-                                <div class="max-w-8xl mx-auto px-2 sm:px-6 @if($hasSidebar) md:pl-8 md:pr-8 @else md:px-0 @endif">
+                                <div class="max-w-8xl mx-auto px-4 sm:px-6 @if($hasSidebar) lg:px-8 @endif">
                                     {{ $slot }}
                                 </div>
                             </div>
                         </div>
                     @else
                         <div class="pt-4 sm:pt-6 md:pt-8 pb-8 sm:pb-10 md:pb-12">
-                            <div class="max-w-8xl mx-auto px-2 sm:px-6 @if($hasSidebar) md:pl-8 md:pr-8 @else md:px-0 @endif">
+                            <div class="max-w-8xl mx-auto px-4 sm:px-6 @if($hasSidebar) lg:px-8 @endif">
                                 {{ $slot }}
                             </div>
                         </div>

@@ -20,10 +20,10 @@
 
     <x-alert.alerts />
 
-    <div class="space-y-8">
+    <div class="space-y-6 sm:space-y-8">
         <!-- Default Tabs -->
         <section>
-            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-4">Default Tabs</h2>
+            <h2 class="text-lg sm:text-xl font-semibold text-gray-900 dark:text-gray-100 mb-4">Default Tabs</h2>
             <x-card.card variant="gradient">
                 <x-tabs.tabs default-tab="tab1">
                     <x-slot name="tabs">
@@ -75,7 +75,7 @@
 
         <!-- Tabs with Icons and Badges -->
         <section>
-            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-4">Tabs with Icons and Badges</h2>
+            <h2 class="text-lg sm:text-xl font-semibold text-gray-900 dark:text-gray-100 mb-4">Tabs with Icons and Badges</h2>
             <x-card.card variant="gradient">
                 <x-tabs.tabs default-tab="icon-tab1">
                     <x-slot name="tabs">
@@ -122,7 +122,7 @@
 
         <!-- Pills Variant -->
         <section>
-            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-4">Pills Variant</h2>
+            <h2 class="text-lg sm:text-xl font-semibold text-gray-900 dark:text-gray-100 mb-4">Pills Variant</h2>
             <x-card.card variant="gradient">
                 <x-tabs.tabs variant="pills" default-tab="pills-tab1">
                     <x-slot name="tabs">

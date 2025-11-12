@@ -19,21 +19,21 @@
     <x-alert.alerts />
     
     <x-card.card title="Welcome" hover variant="gradient" class="mb-6">
-                <p class="text-gray-600 dark:text-gray-400 text-lg">
+                <p class="text-gray-600 dark:text-gray-400 text-base sm:text-lg">
                     {{ __("You're logged in!") }}
                 </p>
             </x-card>
 
             <!-- Demo Pages Section -->
             <div class="mb-6">
-                <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-4">
+                <h2 class="text-lg sm:text-xl font-semibold text-gray-900 dark:text-gray-100 mb-4">
                     Demo Pages
                 </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                     <!-- Forms Demo -->
                     <a href="{{ route('forms.demo') }}" class="group">
                         <x-card.card hover variant="gradient" class="h-full transition-all duration-300 group-hover:scale-[1.02]">
-                            <div class="flex items-start space-x-4">
+                            <div class="flex items-start space-x-3 sm:space-x-4">
                                 <div class="flex-shrink-0">
                                     <div class="w-12 h-12 rounded-xl bg-dodger-blue-100 dark:bg-dodger-blue-900/30 flex items-center justify-center">
                                         <svg class="w-6 h-6 text-dodger-blue-600 dark:text-dodger-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -42,7 +42,7 @@
                                     </div>
                                 </div>
                                 <div class="flex-1 min-w-0">
-                                    <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 group-hover:text-dodger-blue-600 dark:group-hover:text-dodger-blue-400 transition-colors">
+                                    <h3 class="text-base sm:text-lg font-semibold text-gray-900 dark:text-gray-100 group-hover:text-dodger-blue-600 dark:group-hover:text-dodger-blue-400 transition-colors">
                                         Form Components
                                     </h3>
                                     <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
@@ -61,7 +61,7 @@
                     <!-- Tables Demo -->
                     <a href="{{ route('tables.demo') }}" class="group">
                         <x-card.card hover variant="gradient" class="h-full transition-all duration-300 group-hover:scale-[1.02]">
-                            <div class="flex items-start space-x-4">
+                            <div class="flex items-start space-x-3 sm:space-x-4">
                                 <div class="flex-shrink-0">
                                     <div class="w-12 h-12 rounded-xl bg-dodger-blue-100 dark:bg-dodger-blue-900/30 flex items-center justify-center">
                                         <svg class="w-6 h-6 text-dodger-blue-600 dark:text-dodger-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -70,7 +70,7 @@
                                     </div>
                                 </div>
                                 <div class="flex-1 min-w-0">
-                                    <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 group-hover:text-dodger-blue-600 dark:group-hover:text-dodger-blue-400 transition-colors">
+                                    <h3 class="text-base sm:text-lg font-semibold text-gray-900 dark:text-gray-100 group-hover:text-dodger-blue-600 dark:group-hover:text-dodger-blue-400 transition-colors">
                                         Table Components
                                     </h3>
                                     <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
@@ -89,7 +89,7 @@
                     <!-- Lists Demo -->
                     <a href="{{ route('lists.demo') }}" class="group">
                         <x-card.card hover variant="gradient" class="h-full transition-all duration-300 group-hover:scale-[1.02]">
-                            <div class="flex items-start space-x-4">
+                            <div class="flex items-start space-x-3 sm:space-x-4">
                                 <div class="flex-shrink-0">
                                     <div class="w-12 h-12 rounded-xl bg-dodger-blue-100 dark:bg-dodger-blue-900/30 flex items-center justify-center">
                                         <svg class="w-6 h-6 text-dodger-blue-600 dark:text-dodger-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -98,7 +98,7 @@
                                     </div>
                                 </div>
                                 <div class="flex-1 min-w-0">
-                                    <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 group-hover:text-dodger-blue-600 dark:group-hover:text-dodger-blue-400 transition-colors">
+                                    <h3 class="text-base sm:text-lg font-semibold text-gray-900 dark:text-gray-100 group-hover:text-dodger-blue-600 dark:group-hover:text-dodger-blue-400 transition-colors">
                                         List Components
                                     </h3>
                                     <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
@@ -117,7 +117,7 @@
                     <!-- Cards Demo -->
                     <a href="{{ route('cards.demo') }}" class="group">
                         <x-card.card hover variant="gradient" class="h-full transition-all duration-300 group-hover:scale-[1.02]">
-                            <div class="flex items-start space-x-4">
+                            <div class="flex items-start space-x-3 sm:space-x-4">
                                 <div class="flex-shrink-0">
                                     <div class="w-12 h-12 rounded-xl bg-dodger-blue-100 dark:bg-dodger-blue-900/30 flex items-center justify-center">
                                         <svg class="w-6 h-6 text-dodger-blue-600 dark:text-dodger-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -126,7 +126,7 @@
                                     </div>
                                 </div>
                                 <div class="flex-1 min-w-0">
-                                    <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 group-hover:text-dodger-blue-600 dark:group-hover:text-dodger-blue-400 transition-colors">
+                                    <h3 class="text-base sm:text-lg font-semibold text-gray-900 dark:text-gray-100 group-hover:text-dodger-blue-600 dark:group-hover:text-dodger-blue-400 transition-colors">
                                         Card Components
                                     </h3>
                                     <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
@@ -145,7 +145,7 @@
                     <!-- Buttons Demo -->
                     <a href="{{ route('buttons.demo') }}" class="group">
                         <x-card.card hover variant="gradient" class="h-full transition-all duration-300 group-hover:scale-[1.02]">
-                            <div class="flex items-start space-x-4">
+                            <div class="flex items-start space-x-3 sm:space-x-4">
                                 <div class="flex-shrink-0">
                                     <div class="w-12 h-12 rounded-xl bg-dodger-blue-100 dark:bg-dodger-blue-900/30 flex items-center justify-center">
                                         <svg class="w-6 h-6 text-dodger-blue-600 dark:text-dodger-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -154,7 +154,7 @@
                                     </div>
                                 </div>
                                 <div class="flex-1 min-w-0">
-                                    <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 group-hover:text-dodger-blue-600 dark:group-hover:text-dodger-blue-400 transition-colors">
+                                    <h3 class="text-base sm:text-lg font-semibold text-gray-900 dark:text-gray-100 group-hover:text-dodger-blue-600 dark:group-hover:text-dodger-blue-400 transition-colors">
                                         Button Components
                                     </h3>
                                     <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
@@ -173,7 +173,7 @@
                     <!-- File Manager Demo -->
                     <a href="{{ route('files.demo') }}" class="group">
                         <x-card.card hover variant="gradient" class="h-full transition-all duration-300 group-hover:scale-[1.02]">
-                            <div class="flex items-start space-x-4">
+                            <div class="flex items-start space-x-3 sm:space-x-4">
                                 <div class="flex-shrink-0">
                                     <div class="w-12 h-12 rounded-xl bg-dodger-blue-100 dark:bg-dodger-blue-900/30 flex items-center justify-center">
                                         <svg class="w-6 h-6 text-dodger-blue-600 dark:text-dodger-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -182,7 +182,7 @@
                                     </div>
                                 </div>
                                 <div class="flex-1 min-w-0">
-                                    <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 group-hover:text-dodger-blue-600 dark:group-hover:text-dodger-blue-400 transition-colors">
+                                    <h3 class="text-base sm:text-lg font-semibold text-gray-900 dark:text-gray-100 group-hover:text-dodger-blue-600 dark:group-hover:text-dodger-blue-400 transition-colors">
                                         File Manager
                                     </h3>
                                     <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
@@ -201,7 +201,7 @@
                     <!-- Modals Demo -->
                     <a href="{{ route('modals.demo') }}" class="group">
                         <x-card.card hover variant="gradient" class="h-full transition-all duration-300 group-hover:scale-[1.02]">
-                            <div class="flex items-start space-x-4">
+                            <div class="flex items-start space-x-3 sm:space-x-4">
                                 <div class="flex-shrink-0">
                                     <div class="w-12 h-12 rounded-xl bg-dodger-blue-100 dark:bg-dodger-blue-900/30 flex items-center justify-center">
                                         <svg class="w-6 h-6 text-dodger-blue-600 dark:text-dodger-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -210,7 +210,7 @@
                                     </div>
                                 </div>
                                 <div class="flex-1 min-w-0">
-                                    <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 group-hover:text-dodger-blue-600 dark:group-hover:text-dodger-blue-400 transition-colors">
+                                    <h3 class="text-base sm:text-lg font-semibold text-gray-900 dark:text-gray-100 group-hover:text-dodger-blue-600 dark:group-hover:text-dodger-blue-400 transition-colors">
                                         Modal Components
                                     </h3>
                                     <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
@@ -229,7 +229,7 @@
                     <!-- Misc Components Demo -->
                     <a href="{{ route('misc.demo') }}" class="group">
                         <x-card.card hover variant="gradient" class="h-full transition-all duration-300 group-hover:scale-[1.02]">
-                            <div class="flex items-start space-x-4">
+                            <div class="flex items-start space-x-3 sm:space-x-4">
                                 <div class="flex-shrink-0">
                                     <div class="w-12 h-12 rounded-xl bg-dodger-blue-100 dark:bg-dodger-blue-900/30 flex items-center justify-center">
                                         <svg class="w-6 h-6 text-dodger-blue-600 dark:text-dodger-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -238,7 +238,7 @@
                                     </div>
                                 </div>
                                 <div class="flex-1 min-w-0">
-                                    <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 group-hover:text-dodger-blue-600 dark:group-hover:text-dodger-blue-400 transition-colors">
+                                    <h3 class="text-base sm:text-lg font-semibold text-gray-900 dark:text-gray-100 group-hover:text-dodger-blue-600 dark:group-hover:text-dodger-blue-400 transition-colors">
                                         Misc Components
                                     </h3>
                                     <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
@@ -257,7 +257,7 @@
                     <!-- Comments Demo -->
                     <a href="{{ route('comments.demo') }}" class="group">
                         <x-card.card hover variant="gradient" class="h-full transition-all duration-300 group-hover:scale-[1.02]">
-                            <div class="flex items-start space-x-4">
+                            <div class="flex items-start space-x-3 sm:space-x-4">
                                 <div class="flex-shrink-0">
                                     <div class="w-12 h-12 rounded-xl bg-dodger-blue-100 dark:bg-dodger-blue-900/30 flex items-center justify-center">
                                         <svg class="w-6 h-6 text-dodger-blue-600 dark:text-dodger-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -266,7 +266,7 @@
                                     </div>
                                 </div>
                                 <div class="flex-1 min-w-0">
-                                    <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 group-hover:text-dodger-blue-600 dark:group-hover:text-dodger-blue-400 transition-colors">
+                                    <h3 class="text-base sm:text-lg font-semibold text-gray-900 dark:text-gray-100 group-hover:text-dodger-blue-600 dark:group-hover:text-dodger-blue-400 transition-colors">
                                         Comments Demo
                                     </h3>
                                     <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
@@ -285,7 +285,7 @@
                     <!-- Tabs Demo -->
                     <a href="{{ route('tabs.demo') }}" class="group">
                         <x-card.card hover variant="gradient" class="h-full transition-all duration-300 group-hover:scale-[1.02]">
-                            <div class="flex items-start space-x-4">
+                            <div class="flex items-start space-x-3 sm:space-x-4">
                                 <div class="flex-shrink-0">
                                     <div class="w-12 h-12 rounded-xl bg-dodger-blue-100 dark:bg-dodger-blue-900/30 flex items-center justify-center">
                                         <svg class="w-6 h-6 text-dodger-blue-600 dark:text-dodger-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -294,7 +294,7 @@
                                     </div>
                                 </div>
                                 <div class="flex-1 min-w-0">
-                                    <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 group-hover:text-dodger-blue-600 dark:group-hover:text-dodger-blue-400 transition-colors">
+                                    <h3 class="text-base sm:text-lg font-semibold text-gray-900 dark:text-gray-100 group-hover:text-dodger-blue-600 dark:group-hover:text-dodger-blue-400 transition-colors">
                                         Tabs Demo
                                     </h3>
                                     <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
@@ -313,7 +313,7 @@
                     <!-- Accordion Demo -->
                     <a href="{{ route('accordion.demo') }}" class="group">
                         <x-card.card hover variant="gradient" class="h-full transition-all duration-300 group-hover:scale-[1.02]">
-                            <div class="flex items-start space-x-4">
+                            <div class="flex items-start space-x-3 sm:space-x-4">
                                 <div class="flex-shrink-0">
                                     <div class="w-12 h-12 rounded-xl bg-dodger-blue-100 dark:bg-dodger-blue-900/30 flex items-center justify-center">
                                         <svg class="w-6 h-6 text-dodger-blue-600 dark:text-dodger-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -322,7 +322,7 @@
                                     </div>
                                 </div>
                                 <div class="flex-1 min-w-0">
-                                    <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 group-hover:text-dodger-blue-600 dark:group-hover:text-dodger-blue-400 transition-colors">
+                                    <h3 class="text-base sm:text-lg font-semibold text-gray-900 dark:text-gray-100 group-hover:text-dodger-blue-600 dark:group-hover:text-dodger-blue-400 transition-colors">
                                         Accordion Demo
                                     </h3>
                                     <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
@@ -341,7 +341,7 @@
                     <!-- Toast Demo -->
                     <a href="{{ route('toast.demo') }}" class="group">
                         <x-card.card hover variant="gradient" class="h-full transition-all duration-300 group-hover:scale-[1.02]">
-                            <div class="flex items-start space-x-4">
+                            <div class="flex items-start space-x-3 sm:space-x-4">
                                 <div class="flex-shrink-0">
                                     <div class="w-12 h-12 rounded-xl bg-dodger-blue-100 dark:bg-dodger-blue-900/30 flex items-center justify-center">
                                         <svg class="w-6 h-6 text-dodger-blue-600 dark:text-dodger-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -350,7 +350,7 @@
                                     </div>
                                 </div>
                                 <div class="flex-1 min-w-0">
-                                    <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 group-hover:text-dodger-blue-600 dark:group-hover:text-dodger-blue-400 transition-colors">
+                                    <h3 class="text-base sm:text-lg font-semibold text-gray-900 dark:text-gray-100 group-hover:text-dodger-blue-600 dark:group-hover:text-dodger-blue-400 transition-colors">
                                         Toast Demo
                                     </h3>
                                     <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
@@ -369,7 +369,7 @@
                     <!-- Timeline Demo -->
                     <a href="{{ route('timeline.demo') }}" class="group">
                         <x-card.card hover variant="gradient" class="h-full transition-all duration-300 group-hover:scale-[1.02]">
-                            <div class="flex items-start space-x-4">
+                            <div class="flex items-start space-x-3 sm:space-x-4">
                                 <div class="flex-shrink-0">
                                     <div class="w-12 h-12 rounded-xl bg-dodger-blue-100 dark:bg-dodger-blue-900/30 flex items-center justify-center">
                                         <svg class="w-6 h-6 text-dodger-blue-600 dark:text-dodger-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -378,7 +378,7 @@
                                     </div>
                                 </div>
                                 <div class="flex-1 min-w-0">
-                                    <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 group-hover:text-dodger-blue-600 dark:group-hover:text-dodger-blue-400 transition-colors">
+                                    <h3 class="text-base sm:text-lg font-semibold text-gray-900 dark:text-gray-100 group-hover:text-dodger-blue-600 dark:group-hover:text-dodger-blue-400 transition-colors">
                                         Timeline Demo
                                     </h3>
                                     <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
@@ -407,7 +407,7 @@
                                         </div>
                                     </div>
                                     <div class="flex-1 min-w-0">
-                                        <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 group-hover:text-dodger-blue-600 dark:group-hover:text-dodger-blue-400 transition-colors">
+                                        <h3 class="text-base sm:text-lg font-semibold text-gray-900 dark:text-gray-100 group-hover:text-dodger-blue-600 dark:group-hover:text-dodger-blue-400 transition-colors">
                                             Email Templates
                                         </h3>
                                         <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
@@ -427,7 +427,7 @@
                     <!-- Pricing Plans -->
                     <a href="{{ route('pricing') }}" class="group">
                         <x-card.card hover variant="gradient" class="h-full transition-all duration-300 group-hover:scale-[1.02]">
-                            <div class="flex items-start space-x-4">
+                            <div class="flex items-start space-x-3 sm:space-x-4">
                                 <div class="flex-shrink-0">
                                     <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-dodger-blue-100 to-purple-100 dark:from-dodger-blue-900/30 dark:to-purple-900/30 flex items-center justify-center">
                                         <svg class="w-6 h-6 text-dodger-blue-600 dark:text-dodger-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -436,7 +436,7 @@
                                     </div>
                                 </div>
                                 <div class="flex-1 min-w-0">
-                                    <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 group-hover:text-dodger-blue-600 dark:group-hover:text-dodger-blue-400 transition-colors">
+                                    <h3 class="text-base sm:text-lg font-semibold text-gray-900 dark:text-gray-100 group-hover:text-dodger-blue-600 dark:group-hover:text-dodger-blue-400 transition-colors">
                                         Pricing Plans
                                     </h3>
                                     <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
@@ -455,7 +455,7 @@
                     <!-- Premium Demo -->
                     <a href="{{ route('premium-demo') }}" class="group">
                         <x-card.card hover variant="gradient" class="h-full transition-all duration-300 group-hover:scale-[1.02]">
-                            <div class="flex items-start space-x-4">
+                            <div class="flex items-start space-x-3 sm:space-x-4">
                                 <div class="flex-shrink-0">
                                     <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-yellow-100 to-orange-100 dark:from-yellow-900/30 dark:to-orange-900/30 flex items-center justify-center">
                                         <svg class="w-6 h-6 text-yellow-600 dark:text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -464,7 +464,7 @@
                                     </div>
                                 </div>
                                 <div class="flex-1 min-w-0">
-                                    <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 group-hover:text-dodger-blue-600 dark:group-hover:text-dodger-blue-400 transition-colors">
+                                    <h3 class="text-base sm:text-lg font-semibold text-gray-900 dark:text-gray-100 group-hover:text-dodger-blue-600 dark:group-hover:text-dodger-blue-400 transition-colors">
                                         Premium Features Demo
                                     </h3>
                                     <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
@@ -483,7 +483,7 @@
                     <!-- Usage Component Demo -->
                     <a href="{{ route('usage-demo') }}" class="group">
                         <x-card.card hover variant="gradient" class="h-full transition-all duration-300 group-hover:scale-[1.02]">
-                            <div class="flex items-start space-x-4">
+                            <div class="flex items-start space-x-3 sm:space-x-4">
                                 <div class="flex-shrink-0">
                                     <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-100 to-blue-100 dark:from-cyan-900/30 dark:to-blue-900/30 flex items-center justify-center">
                                         <svg class="w-6 h-6 text-cyan-600 dark:text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -492,7 +492,7 @@
                                     </div>
                                 </div>
                                 <div class="flex-1 min-w-0">
-                                    <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 group-hover:text-dodger-blue-600 dark:group-hover:text-dodger-blue-400 transition-colors">
+                                    <h3 class="text-base sm:text-lg font-semibold text-gray-900 dark:text-gray-100 group-hover:text-dodger-blue-600 dark:group-hover:text-dodger-blue-400 transition-colors">
                                         Usage Component Demo
                                     </h3>
                                     <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
@@ -511,14 +511,14 @@
                     <!-- Icons Demo -->
                     <a href="{{ route('icons.demo') }}" class="group">
                         <x-card.card hover variant="gradient" class="h-full transition-all duration-300 group-hover:scale-[1.02]">
-                            <div class="flex items-start space-x-4">
+                            <div class="flex items-start space-x-3 sm:space-x-4">
                                 <div class="flex-shrink-0">
                                     <div class="w-12 h-12 rounded-xl bg-dodger-blue-100 dark:bg-dodger-blue-900/30 flex items-center justify-center">
                                         <x-sidebar.icon name="ui" />
                                     </div>
                                 </div>
                                 <div class="flex-1 min-w-0">
-                                    <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 group-hover:text-dodger-blue-600 dark:group-hover:text-dodger-blue-400 transition-colors">
+                                    <h3 class="text-base sm:text-lg font-semibold text-gray-900 dark:text-gray-100 group-hover:text-dodger-blue-600 dark:group-hover:text-dodger-blue-400 transition-colors">
                                         Icons Demo
                                     </h3>
                                     <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
@@ -537,7 +537,7 @@
                     <!-- Notifications Demo -->
                     <a href="{{ route('notifications.demo') }}" class="group">
                         <x-card.card hover variant="gradient" class="h-full transition-all duration-300 group-hover:scale-[1.02]">
-                            <div class="flex items-start space-x-4">
+                            <div class="flex items-start space-x-3 sm:space-x-4">
                                 <div class="flex-shrink-0">
                                     <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-dodger-blue-100 to-purple-100 dark:from-dodger-blue-900/30 dark:to-purple-900/30 flex items-center justify-center">
                                         <svg class="w-6 h-6 text-dodger-blue-600 dark:text-dodger-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -546,7 +546,7 @@
                                     </div>
                                 </div>
                                 <div class="flex-1 min-w-0">
-                                    <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 group-hover:text-dodger-blue-600 dark:group-hover:text-dodger-blue-400 transition-colors">
+                                    <h3 class="text-base sm:text-lg font-semibold text-gray-900 dark:text-gray-100 group-hover:text-dodger-blue-600 dark:group-hover:text-dodger-blue-400 transition-colors">
                                         Notifications Center
                                     </h3>
                                     <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
@@ -565,14 +565,14 @@
                     <!-- E-store Demo -->
                     <a href="{{ route('estore.demo') }}" class="group">
                         <x-card.card hover variant="gradient" class="h-full transition-all duration-300 group-hover:scale-[1.02]">
-                            <div class="flex items-start space-x-4">
+                            <div class="flex items-start space-x-3 sm:space-x-4">
                                 <div class="flex-shrink-0">
                                     <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-100 to-teal-100 dark:from-emerald-900/30 dark:to-teal-900/30 flex items-center justify-center">
                                         <x-sidebar.icon name="ecommerce" />
                                     </div>
                                 </div>
                                 <div class="flex-1 min-w-0">
-                                    <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 group-hover:text-dodger-blue-600 dark:group-hover:text-dodger-blue-400 transition-colors">
+                                    <h3 class="text-base sm:text-lg font-semibold text-gray-900 dark:text-gray-100 group-hover:text-dodger-blue-600 dark:group-hover:text-dodger-blue-400 transition-colors">
                                         E-store Demo
                                     </h3>
                                     <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
@@ -591,7 +591,7 @@
                     <!-- Charts Demo -->
                     <a href="{{ route('charts.demo') }}" class="group">
                         <x-card.card hover variant="gradient" class="h-full transition-all duration-300 group-hover:scale-[1.02]">
-                            <div class="flex items-start space-x-4">
+                            <div class="flex items-start space-x-3 sm:space-x-4">
                                 <div class="flex-shrink-0">
                                     <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-100 to-purple-100 dark:from-indigo-900/30 dark:to-purple-900/30 flex items-center justify-center">
                                         <svg class="w-6 h-6 text-indigo-600 dark:text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -600,7 +600,7 @@
                                     </div>
                                 </div>
                                 <div class="flex-1 min-w-0">
-                                    <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 group-hover:text-dodger-blue-600 dark:group-hover:text-dodger-blue-400 transition-colors">
+                                    <h3 class="text-base sm:text-lg font-semibold text-gray-900 dark:text-gray-100 group-hover:text-dodger-blue-600 dark:group-hover:text-dodger-blue-400 transition-colors">
                                         Charts Demo
                                     </h3>
                                     <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
@@ -619,7 +619,7 @@
                     <!-- Typography Demo -->
                     <a href="{{ route('typography.demo') }}" class="group">
                         <x-card.card hover variant="gradient" class="h-full transition-all duration-300 group-hover:scale-[1.02]">
-                            <div class="flex items-start space-x-4">
+                            <div class="flex items-start space-x-3 sm:space-x-4">
                                 <div class="flex-shrink-0">
                                     <div class="w-12 h-12 rounded-xl bg-dodger-blue-100 dark:bg-dodger-blue-900/30 flex items-center justify-center">
                                         <svg class="w-6 h-6 text-dodger-blue-600 dark:text-dodger-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -628,7 +628,7 @@
                                     </div>
                                 </div>
                                 <div class="flex-1 min-w-0">
-                                    <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 group-hover:text-dodger-blue-600 dark:group-hover:text-dodger-blue-400 transition-colors">
+                                    <h3 class="text-base sm:text-lg font-semibold text-gray-900 dark:text-gray-100 group-hover:text-dodger-blue-600 dark:group-hover:text-dodger-blue-400 transition-colors">
                                         Typography Demo
                                     </h3>
                                     <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">

@@ -17,7 +17,7 @@
 
     <x-alert.alerts />
     
-    <div class="space-y-8">
+    <div class="space-y-6 sm:space-y-8">
                 <!-- Button Variants -->
                 <x-card.card variant="gradient" title="Button Variants">
                     <p class="mb-6 text-gray-600 dark:text-gray-400">

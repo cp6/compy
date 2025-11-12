@@ -78,7 +78,7 @@
 
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
-        <div class="pt-2 pb-3 space-y-1">
+        <div class="pt-2 pb-3 space-y-1 px-4">
             <x-nav.responsive-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-nav.responsive-link>
@@ -97,7 +97,7 @@
                 <div class="font-medium text-sm text-gray-500 dark:text-gray-400">{{ Auth::user()->email }}</div>
             </div>
 
-            <div class="mt-3 space-y-1">
+            <div class="mt-3 space-y-1 px-4">
                 <x-nav.responsive-link :href="route('profile.edit')">
                     {{ __('Profile') }}
                 </x-nav.responsive-link>

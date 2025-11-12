@@ -43,12 +43,12 @@
         class="fixed top-4 left-4 z-50 p-2.5 rounded-lg text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 lg:hidden focus:outline-none focus:ring-2 focus:ring-inset focus:ring-dodger-blue-500 transition-all duration-200 bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700"
         aria-label="Toggle sidebar"
         x-show="isMobile"
-        style="display: none;"
+        x-cloak
     >
-        <svg x-show="!sidebarOpen" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display: none;">
+        <svg x-show="!sidebarOpen" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" x-cloak>
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
-        <svg x-show="sidebarOpen" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display: none;">
+        <svg x-show="sidebarOpen" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" x-cloak>
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
         </svg>
     </button>
@@ -64,7 +64,7 @@
         x-transition:leave-end="opacity-0"
         @click="closeSidebar()"
         class="fixed inset-0 bg-gray-600 bg-opacity-75 z-30 lg:hidden"
-        style="display: none;"
+        x-cloak
     ></div>
 
     {{-- Sidebar --}}
@@ -77,7 +77,7 @@
         x-transition:leave-start="translate-x-0"
         x-transition:leave-end="-translate-x-full"
         {{ $attributes->merge(['class' => 'fixed left-0 top-0 z-40 h-screen w-64 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 flex flex-col lg:translate-x-0 shadow-lg lg:shadow-none ' . $class]) }}
-        style="display: none;"
+        x-cloak
     >
         <div 
             class="flex-1 overflow-x-hidden py-6 px-3 transition-all duration-300 scrollbar-thin"

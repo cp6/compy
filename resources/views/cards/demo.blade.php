@@ -17,14 +17,14 @@
 
     <x-alert.alerts />
     
-    <div class="space-y-8">
+    <div class="space-y-6 sm:space-y-8">
                 <!-- Card Variants -->
                 <x-card.card variant="gradient" title="Card Variants">
                     <p class="mb-6 text-gray-600 dark:text-gray-400">
                         The card component comes in three variants: default, gradient, and glass. Each has its own unique styling and use cases.
                     </p>
                     
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
                         <!-- Default Variant -->
                         <x-card.card variant="default" title="Default Card">
                             <p class="text-gray-600 dark:text-gray-400">
@@ -54,7 +54,7 @@
                         Cards can include titles and subtitles for better content organization.
                     </p>
                     
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                         <x-card.card variant="gradient" title="Card with Title">
                             <p class="text-gray-600 dark:text-gray-400">
                                 This card has a title only. The title uses a gradient text effect for visual appeal.
@@ -75,7 +75,7 @@
                         You can use the header slot to create custom card headers with any content you need.
                     </p>
                     
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                         <x-card.card variant="gradient">
                             <x-slot name="header">
                                 <div class="flex items-center justify-between">
@@ -120,7 +120,7 @@
                         The <code class="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded text-sm">x-card.with-actions</code> component provides a dedicated card variant with title and subtitle on the left, and a dropdown action menu on the right.
                     </p>
                     
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                         <!-- Basic Card with Actions -->
                         <x-card.with-actions 
                             variant="gradient"
@@ -275,7 +275,7 @@
                         Enable hover effects to add interactivity to your cards. Hover over the cards below to see the effect.
                     </p>
                     
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
                         <x-card.card variant="default" hover title="Default with Hover">
                             <p class="text-gray-600 dark:text-gray-400">
                                 Hover over this card to see the scale and shadow effect.
@@ -302,7 +302,7 @@
                         Cards can contain any type of content - text, images, forms, lists, or combinations of elements.
                     </p>
                     
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                         <!-- Card with List -->
                         <x-card.card variant="gradient" title="Card with List">
                             <ul class="space-y-2 text-gray-600 dark:text-gray-400">
@@ -507,7 +507,7 @@
                     <!-- Top Image Cards -->
                     <div class="mb-6">
                         <h4 class="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-3">Image on Top</h4>
-                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                             <x-card.image 
                                 variant="gradient"
                                 hover
@@ -555,7 +555,7 @@
                     <!-- Overlay Image Cards -->
                     <div class="mb-6">
                         <h4 class="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-3">Image with Overlay Text</h4>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                             <x-card.image 
                                 variant="gradient"
                                 hover
@@ -593,7 +593,7 @@
                     <!-- Horizontal Image Cards -->
                     <div class="mb-6">
                         <h4 class="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-3">Horizontal Layout</h4>
-                        <div class="grid grid-cols-1 gap-6">
+                        <div class="grid grid-cols-1 gap-4 sm:gap-6">
                             <x-card.image 
                                 variant="gradient"
                                 hover
@@ -768,7 +768,7 @@
                         Sports-themed cards perfect for displaying live game scores, player statistics, and team information.
                     </p>
                     
-                    <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 items-start">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 items-start">
                         <!-- Live NBA Game Score Card -->
                         <x-card.card variant="gradient" hover class="h-auto">
                             <x-slot name="header">
