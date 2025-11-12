@@ -270,6 +270,13 @@
             Usage Component
         </x-sidebar.link>
 
+        <x-sidebar.link href="{{ route('api-doc.demo') }}" :active="request()->routeIs('api-doc.*')">
+            <x-slot:icon>
+                <x-sidebar.icon name="ui" />
+            </x-slot:icon>
+            API Documentation
+        </x-sidebar.link>
+
         <x-sidebar.link href="{{ route('carbon.demo') }}" :active="request()->routeIs('carbon.*')">
             <x-slot:icon>
                 <x-sidebar.icon name="calendar" />

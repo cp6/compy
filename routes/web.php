@@ -183,6 +183,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/notifications/demo', function () {
         return view('notifications-demo');
     })->name('notifications.demo');
+    
+    Route::get('/api-doc/demo', function () {
+        return view('api-doc-demo');
+    })->name('api-doc.demo');
 });
 
 Route::middleware('auth')->group(function () {

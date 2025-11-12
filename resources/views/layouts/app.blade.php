@@ -53,6 +53,8 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         
+        @stack('styles')
+        
         <!-- Theme initialization script - must run before Alpine -->
         <script>
             (function() {

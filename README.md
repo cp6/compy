@@ -99,6 +99,7 @@ npm run dev          # Terminal 2
 - **Lists**: Various list styles with avatars, badges, and actions
 - **Typography**: Comprehensive typography system with headings, paragraphs, lists, quotes, and text utilities
 - **Spinners & Loaders**: Multiple spinner variants (default, gradient, pulse) with various sizes and loading text support
+- **API Documentation**: Complete API documentation components for documenting REST endpoints (GET, POST, PATCH, DELETE) with request/response examples, parameter tables, and method badges
 
 ### Dark Mode Support
 - Automatic system preference detection
@@ -265,6 +266,16 @@ Reusable Blade components located in `resources/views/components/`:
 - `file/toolbar.blade.php` - File manager toolbar
 - `file/upload.blade.php` - File upload component
 
+#### Text Viewer Components
+- `text-viewer/viewer.blade.php` - Text file viewer component with line numbers, syntax highlighting, and copy functionality
+
+#### API Documentation Components
+- `api-doc/endpoint.blade.php` - Complete endpoint documentation component with method, path, parameters, request/response examples
+- `api-doc/method-badge.blade.php` - HTTP method badge component (GET, POST, PATCH, DELETE) with color coding
+- `api-doc/parameter-table.blade.php` - Parameters table component displaying parameter details
+- `api-doc/request-example.blade.php` - Request example component with URL, headers, and body
+- `api-doc/response-example.blade.php` - Response example component with status code and body
+
 #### Form Components
 - `form/autocomplete.blade.php` - Autocomplete input
 - `form/checkbox.blade.php` - Checkbox input
@@ -393,6 +404,8 @@ Component demonstration pages located in `resources/views/`:
 - `timeline-demo.blade.php` - Timeline components demo (Route: `/timeline/demo`)
 - `calendar-demo.blade.php` - Calendar components demo with month, week, and day views (Route: `/calendar/demo`)
 - `files/demo.blade.php` - File components demo (Route: `/files/demo`)
+- `text-viewer-demo.blade.php` - Text file viewer demo with line numbers, syntax highlighting, and copy functionality (Route: `/text-viewer/demo`)
+- `api-doc-demo.blade.php` - API documentation demo showcasing GET, POST, PATCH, and DELETE endpoints with request/response examples (Route: `/api-doc/demo`)
 - `forms/demo.blade.php` - Form components demo (Route: `/forms/demo`)
 - `lists/demo.blade.php` - List components demo (Route: `/lists/demo`)
 - `modals/demo.blade.php` - Modal components demo (Route: `/modals/demo`)
@@ -497,6 +510,8 @@ Email templates located in `resources/views/emails/`:
 - `GET /timeline/demo` - Timeline demo
 - `GET /calendar/demo` - Calendar demo (month, week, day views with events)
 - `GET /files/demo` - Files demo
+- `GET /text-viewer/demo` - Text file viewer demo with line numbers, syntax highlighting, and copy functionality
+- `GET /api-doc/demo` - API documentation demo showcasing GET, POST, PATCH, and DELETE endpoints with request/response examples
 - `GET /modals/demo` - Modals demo
 - `GET /misc/demo` - Miscellaneous demo
 - `GET /typography/demo` - Typography demo
@@ -652,6 +667,9 @@ After logging in, you can access component demos from the sidebar:
 - **Buttons Demo**: `/buttons/demo` - Button variants and styles
 - **Cards Demo**: `/cards/demo` - Card component examples
 - **Dynamic Cards Demo**: `/cards/dynamic` - Fully interactive card grid with async API loading, pagination, filtering, searching, and sorting
+- **Files Demo**: `/files/demo` - File components demo
+- **Text Viewer Demo**: `/text-viewer/demo` - Text file viewer with line numbers, syntax highlighting, and copy functionality
+- **API Documentation Demo**: `/api-doc/demo` - API documentation demo showcasing GET, POST, PATCH, and DELETE endpoints with request/response examples, parameter tables, and method badges
 - **Modals Demo**: `/modals/demo` - Modal dialog examples
 - **Calendar Demo**: `/calendar/demo` - Calendar system with month, week, and day views
 - **AI Chat Demo**: `/ai-chat/demo` - Interactive AI chat interface with message bubbles and input
@@ -1057,6 +1075,42 @@ All components are located in `resources/views/components/`. Use them in your Bl
     title="Ready to Get Started?"
     subtitle="Join thousands of teams already using our platform"
     ctaText="Start Your Free Trial"
+/>
+
+{{-- API Documentation Components --}}
+{{-- Complete Endpoint Documentation --}}
+<x-api-doc.endpoint
+    method="GET"
+    path="/api/products"
+    title="Get All Products"
+    description="Retrieve a paginated list of all products"
+    :parameters="[
+        ['name' => 'page', 'type' => 'integer', 'required' => false, 'description' => 'Page number'],
+        ['name' => 'per_page', 'type' => 'integer', 'required' => false, 'description' => 'Items per page'],
+    ]"
+    :requestExample="['url' => '/api/products', 'queryParams' => ['page' => 1]]"
+    :responseExample="['data' => [...], 'meta' => [...]]"
+    authentication="Bearer token required"
+/>
+
+{{-- Method Badge --}}
+<x-api-doc.method-badge method="POST" />
+
+{{-- Parameter Table --}}
+<x-api-doc.parameter-table :parameters="$parameters" />
+
+{{-- Request Example --}}
+<x-api-doc.request-example
+    method="POST"
+    url="/api/products"
+    :headers="['Authorization' => 'Bearer token']"
+    :body="['name' => 'Product Name']"
+/>
+
+{{-- Response Example --}}
+<x-api-doc.response-example
+    :statusCode="201"
+    :body="['data' => [...], 'message' => 'Success']"
 />
 ```
 

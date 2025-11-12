@@ -258,25 +258,21 @@
         <x-card.card variant="gradient" title="Quick Actions">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
                 <button class="p-4 rounded-lg bg-gray-50 dark:bg-gray-900/50 hover:bg-gray-100 dark:hover:bg-gray-900 transition-colors text-left">
-                    <div class="text-2xl mb-2">📤</div>
                     <div class="font-semibold text-gray-900 dark:text-gray-100">Send</div>
                     <div class="text-sm text-gray-600 dark:text-gray-400">Send Bitcoin</div>
                 </button>
                 
                 <button class="p-4 rounded-lg bg-gray-50 dark:bg-gray-900/50 hover:bg-gray-100 dark:hover:bg-gray-900 transition-colors text-left">
-                    <div class="text-2xl mb-2">📥</div>
                     <div class="font-semibold text-gray-900 dark:text-gray-100">Receive</div>
                     <div class="text-sm text-gray-600 dark:text-gray-400">Receive Bitcoin</div>
                 </button>
                 
                 <button class="p-4 rounded-lg bg-gray-50 dark:bg-gray-900/50 hover:bg-gray-100 dark:hover:bg-gray-900 transition-colors text-left">
-                    <div class="text-2xl mb-2">💱</div>
                     <div class="font-semibold text-gray-900 dark:text-gray-100">Exchange</div>
                     <div class="text-sm text-gray-600 dark:text-gray-400">Swap coins</div>
                 </button>
                 
                 <button class="p-4 rounded-lg bg-gray-50 dark:bg-gray-900/50 hover:bg-gray-100 dark:hover:bg-gray-900 transition-colors text-left">
-                    <div class="text-2xl mb-2">📊</div>
                     <div class="font-semibold text-gray-900 dark:text-gray-100">Analytics</div>
                     <div class="text-sm text-gray-600 dark:text-gray-400">View analytics</div>
                 </button>
